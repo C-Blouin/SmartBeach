@@ -1,8 +1,6 @@
-# React + Vite
+# Smart Beach | Predictive Beach Safety Solution
+<br>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## About the Project
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The Smart Beach project aims to improve safety at Station Beach, located in Kincardine, Ontario, by utilizing machine learning models to create a predictive-based solution to inform users of various water and weather conditions, delivering impactful information to all visitors of Station Beach by raising awareness regarding potential hazards and risks associated with visiting the beach.
