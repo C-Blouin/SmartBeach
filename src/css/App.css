@@ -1,0 +1,9 @@
+@charset "utf-8";
+
+/* All Styles For The Application Go Here. */
+
+:root {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
