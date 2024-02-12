@@ -3,6 +3,47 @@ import React from "react";
 function Home() {
   return (
     <section className="container">
+      <section className="reasons_why">
+        <h3>Why Kincardine</h3>
+        <p>
+          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+          accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae
+          ab illo inventore veritatis et quasi architecto beatae vitae dicta
+          sunt explicabo.
+        </p>
+        <section class="reasons">
+          <ul>
+            <li>
+              <img src="/image.jpg" width="200" height="200" alt="" />
+              <h4>Reason 1</h4>
+              <p>
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+              </p>
+            </li>
+            <li>
+              <img src="/image.jpg" width="200" height="200" alt="" />
+              <h4>Reason 2</h4>
+              <p>
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+              </p>
+            </li>
+            <li>
+              <img src="/image.jpg" width="200" height="200" alt="" />
+              <h4>Reason 3</h4>
+              <p>
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+              </p>
+            </li>
+            <li>
+              <img src="/image.jpg" width="200" height="200" alt="" />
+              <h4>Reason 4</h4>
+              <p>
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+              </p>
+            </li>
+          </ul>
+        </section>
+      </section>
       <section className="about_us row">
         <div className="col mx-auto p-5">
           <img src="/image.jpg" width="500" height="350" alt="" />
