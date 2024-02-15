@@ -2,47 +2,35 @@ import React from "react";
 
 function Home() {
   return (
-    <section className="container">
-      <section className="reasons_why">
-        <h3>Why Kincardine</h3>
-        <p>
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-          accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae
-          ab illo inventore veritatis et quasi architecto beatae vitae dicta
-          sunt explicabo.
-        </p>
-        <section class="reasons">
-          <ul>
-            <li>
-              <img src="/image.jpg" width="200" height="200" alt="" />
-              <h4>Reason 1</h4>
-              <p>
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              </p>
-            </li>
-            <li>
-              <img src="/image.jpg" width="200" height="200" alt="" />
-              <h4>Reason 2</h4>
-              <p>
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              </p>
-            </li>
-            <li>
-              <img src="/image.jpg" width="200" height="200" alt="" />
-              <h4>Reason 3</h4>
-              <p>
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              </p>
-            </li>
-            <li>
-              <img src="/image.jpg" width="200" height="200" alt="" />
-              <h4>Reason 4</h4>
-              <p>
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              </p>
-            </li>
-          </ul>
-        </section>
+    <section className="container reasons_why">
+      <h3>Why Kincardine</h3>
+      <p>
+        Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+        accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab
+        illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+        explicabo.
+      </p>
+      <a href="#">Read More</a>
+      <section className="reasons">
+        <ul className="row text-center">
+          <li className="col">
+            {/* with pseudo-elements we will add icons for each li */}
+            <p>Free Parking</p>
+            <p>Sed ut perspiciatis unde omnis</p>
+          </li>
+          <li className="col">
+            <p>Free Parking</p>
+            <p>Sed ut perspiciatis unde omnis</p>
+          </li>
+          <li className="col">
+            <p>Free Parking</p>
+            <p>Sed ut perspiciatis unde omnis</p>
+          </li>
+          <li className="col">
+            <p>Free Parking</p>
+            <p>Sed ut perspiciatis unde omnis</p>
+          </li>
+        </ul>
       </section>
       <section className="about_us row">
         <div className="col mx-auto p-5">
@@ -56,7 +44,7 @@ function Home() {
             quae ab illo inventore veritatis et quasi architecto beatae vitae
             dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
             aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
-            eos qui ratione voluptatem sequi nesciunt.{" "}
+            eos qui ratione voluptatem sequi nesciunt.
           </p>
           <p>
             Sed ut perspiciatis unde omnis iste natus error sit voluptatem
@@ -158,15 +146,15 @@ function Home() {
               class="accordion-button collapsed"
               type="button"
               data-bs-toggle="collapse"
-              data-bs-target="#collapseThree"
+              data-bs-target="#collapseFour"
               aria-expanded="false"
-              aria-controls="collapseThree"
+              aria-controls="collapseFour"
             >
               Question 4
             </button>
           </h2>
           <div
-            id="collapseThree"
+            id="collapseFour"
             class="accordion-collapse collapse"
             data-bs-parent="#faqsQuestions"
           >
@@ -184,15 +172,15 @@ function Home() {
               class="accordion-button collapsed"
               type="button"
               data-bs-toggle="collapse"
-              data-bs-target="#collapseThree"
+              data-bs-target="#collapseFive"
               aria-expanded="false"
-              aria-controls="collapseThree"
+              aria-controls="collapseFive"
             >
               Question 5
             </button>
           </h2>
           <div
-            id="collapseThree"
+            id="collapseFive"
             class="accordion-collapse collapse"
             data-bs-parent="#faqsQuestions"
           >
