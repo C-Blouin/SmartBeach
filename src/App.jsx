@@ -12,6 +12,8 @@ import './css/App.css';
 import Header from './views/shared/Header.jsx';
 import Footer from './views/shared/Footer.jsx';
 
+import BeachInfo from './views/BeachInfo.jsx';
+
 function App() {
 
   return (
@@ -21,7 +23,8 @@ function App() {
           {/* Start of Browser Router Wrapper */}
           <BrowserRouter>
             {/* Application Routes Here */}
-            <Routes>          
+            <Routes>    
+            <Route path="/beachinfo" element={<BeachInfo />} />      
               {/* Place Page Component Routes Here (e.g. Home, About, Dashboard, etc.) */}
             </Routes>            
           </BrowserRouter>

@@ -1,7 +1,7 @@
 function Footer() {
     return (
         // Start of Footer.
-        <footer className="fixed-bottom">
+        <footer>
             <section>
                 <ul>
                     <li>
