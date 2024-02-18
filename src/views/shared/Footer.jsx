@@ -1,4 +1,5 @@
 function Footer() {
+ 
     return (
         // Start of Footer.
         <footer>
@@ -36,6 +37,7 @@ function Footer() {
         </footer>
         // End of Footer.
     );
+  
 }
 
 export default Footer;
