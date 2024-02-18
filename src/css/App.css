@@ -1,9 +1,101 @@
 @charset "utf-8";
 
-/* All Styles For The Application Go Here. */
+/* Font Family Imports */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
 :root {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* Typography Font Family Variables */
+  --heading-font: 'Inter', sans-serif;
+  --body-font: 'Inter', sans-serif;
+
+  /* Typography Font Size Variables */
+  --desktop-h1: 68px;
+  --mobile-h1: 48px;
+  --desktop-h2: 32px;
+  --mobile-h2: 28px;
+  --desktop-h3: 22px;
+  --mobile-h3: 19px;
+  --desktop-body: 18px;
+  --mobile-body: 16px;
+  --label-font: 14px;
+  --links-font: 18px;
+
+  /* Typography Colours */
+  --primary-heading: #343c41;
+  --primary-body: #415463;
+
+  /* Brand Colours & Accents */
+  /* Primary Yellow */
+  --primary-yellow: #f9dc5d;
+  --yellow-accent-1: #fae278;
+  --yellow-accent-2: #fbe893;
+  --yellow-accent-3: #fceeae;
+  --yellow-accent-4: #fdf3c9;
+  --yellow-accent-5: #fef9e4;
+
+  /* Primary Orange */
+  --primary-orange: #f26321;
+  --orange-accent-1: #f47d46;
+  --orange-accent-2: #f6976b;
+  --orange-accent-3: #f9b190;
+  --orange-accent-4: #fbcbb5;
+  --orange-accent-5: #fde5da;
+
+  /* Primary Blue */
+  --primary-blue: #3499d7;
+  --blue-accent-1: #56aade;
+  --blue-accent-2: #78bbe4;
+  --blue-accent-3: #9acceb;
+  --blue-accent-4: #bbddf2;
+  --blue-accent-5: #ddeef8;
+
+  /* Primary Green */
+  --primary-green: #42c69c;
+
+  /* Primary Slate Navy */
+  --primary-slate: #1b3244;
+  --slate-accent-1: #415463;
+  --slate-accent-2: #677682;
+  --slate-accent-3: #8d99a2;
+  --slate-accent-4: #b3bbc1;
+  --slate-accent-5: #d9dde0;
+
+  /* Background & Section Background Colours */
+  --primary-background: #f7f9fe;
+  --section-background: #e7f6ff;
+  --white: #ffffff;
+
+  /* Gradients */
+  --gradient: linear-gradient(0deg, rgba(249,220,93,1) 0%, rgba(242,99,33,1) 100%);
+
+  /* Icon Background and Inner Stroke Colours */
+  --icon-background: #3499d7;
+  --icon-inner: #f7f9fe;
+
+  /* CTA Button Varaibles */
+  --cta-button: #f26321;
+  --cta-button-hover: #f47d46;
+
+  /* Form Input Box Shadows */
+  --input-static: 0 0 0 0.075rem #b3bbc1;
+  --input-focus: 0 0 0 0.075rem #3499d7;
+  --input-error: 0 0 0 0.075rem #f26321;
+
+  /* Box Shadows */
+  --regular-shadow: 
+    0px 1px 2px 0px rgba(0, 0, 0, 0.06),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.10);
+  --medium-shadow: 
+    0px 2px 4px -1px rgba(0, 0, 0, 0.06),
+    0px 4px 6px -1px rgba(0, 0, 0, 0.10);
+  --large-shadow: 
+    0px 4px 6px -2px rgba(0, 0, 0, 0.05),
+    0px 10px 15px -3px rgba(0, 0, 0, 0.10);
+  --extra-large-shadow: 
+    0px 10px 10px -5px rgba(0, 0, 0, 0.04),
+    0px 20px 25px -5px rgba(0, 0, 0, 0.10);
 }
