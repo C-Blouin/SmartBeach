@@ -127,6 +127,69 @@ function Home() {
 				
 			</div>
 			{/* End of Hero Wrapper */}
+
+			{/* Start of Why Section */}
+			<section id="why">
+
+				{/* Start of Why Section Primary Content */}
+				<article className="why-container">
+					<h2>Why Station Beach</h2>
+					<div className="why-contents">
+						<p>
+						Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+						accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab
+						illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+						explicabo. Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+						accusantium doloremque laudantium.
+						</p>
+						<a href="#">Read More</a>
+					</div>
+				</article>
+				{/* End of Why Section Primary Content */}
+
+				{/* Start of Reasons Container */}
+				<div className="reasons">
+
+					{/* Reason One Card */}
+					<article>
+						<img src={reasonIcon} alt="Reason" />              
+						<div>
+							<h3 className="reason-heading">Heading</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, saepe.</p>
+						</div>
+					</article>
+
+					{/* Reson Two Card */}
+					<article>
+						<img src={reasonIcon} alt="Reason" /> 
+						<div>
+							<h3 className="reason-heading">Heading</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, saepe.</p>
+						</div>
+					</article>
+
+					{/* Reason Three Card */}
+					<article>
+						<img src={reasonIcon} alt="Reason" /> 
+						<div>
+							<h3 className="reason-heading">Heading</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, saepe.</p>
+						</div>
+					</article>
+
+					{/* Reason Four Card */}
+					<article>
+						<img src={reasonIcon} alt="Reason" /> 
+						<div>
+							<h3 className="reason-heading">Heading</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, saepe.</p>
+						</div>
+					</article>
+				</div>
+				{/* End of Reasons Container */}
+
+			</section>
+			{/* End of Why Section */}
 			
 		</div>
 
