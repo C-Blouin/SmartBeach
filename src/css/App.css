@@ -1028,3 +1028,66 @@ footer > nav {
     } 
 
 }
+
+/* Start of About Section Styles */
+
+/* About wrapper, setting the background colour to the light blue section background. */
+.about-wrapper {
+  background-color: var(--section-background);
+}
+
+/* About container styles. */
+#about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Consistent width with other sections. */
+  max-width: 1600px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 6rem 3rem;
+  gap: 4rem;
+}
+
+/* Flex proportions of the image and content containers. */
+#about > img {
+  flex: 1.5;
+}
+
+#about > article {
+  flex: 2;
+  padding: 0;
+}
+
+/* About Section Media Query, 1100px Wide */
+@media screen and (max-width: 1100px) {
+
+  /* Stack about container children. */
+  #about {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  /* Adjust the image size on smaller screens, retaining it's width will scaling down. */
+  #about > img {
+    max-width: 100%;
+  }
+
+  /* About article content padding. */
+  #about > article {
+    padding: 0 0 2rem 0;
+  }
+
+}
+
+/* About Section Media Query, 768px Wide */
+@media screen and (max-width: 768px) {
+
+  /* Consistent spacing with other sections on mobile. */
+  #about {
+    padding: 6rem 1rem;
+  }
+
+}
+
+/* End of About Styles */
