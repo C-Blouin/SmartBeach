@@ -218,6 +218,136 @@ function Home() {
 			</div>
 			{/* End of About Section */}
 
+			{/* Start of Reviews Wrapper */}
+			<div className="reviews-wrapper">
+
+				{/* Start of Reviews Section */}
+				<section id="reviews">
+					<h2>Visitor Reviews</h2>
+					{/* Start of Reviews Carousel */}
+					<div id="reviewsCarousel" className="carousel slide">
+						{/* Carousel Indicators */}
+						<div className="carousel-indicators">
+							<button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="0" className="active"
+								aria-current="true" aria-label="Slide 1"></button>
+							<button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+							<button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+						</div>
+						{/* Start of Inner Carousel Content */}
+						<div className="carousel-inner">
+							{/* Start of First Carousel Item, Each Item Holds Two Cards. */}
+							<div className="carousel-item active">
+								<div className="row justify-content-center reviews-container">
+									<div className="col-lg-6 mx-auto">
+										<div className="review">
+											<div>
+												<img src={reviewImage} alt="Review Portrait Image" />
+												<article>
+													<h3>Laura Ingraham</h3>
+													<p>Connecticut, United States</p>
+												</article>
+											</div>
+											<p className="review-content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus vitae, suscipit perferendis ipsum, cumque soluta in quae, distinctio alias sint est blanditiis commodi delectus fuga consequatur quis dolorem eaque porro.</p>
+										</div>
+									</div>
+									<div className="col-lg-6 mx-auto d-none d-lg-block">
+										<div className="review">
+											<div>
+												<img src={reviewImage} alt="Review Portrait Image" />
+												<article>
+													<h3>John Doe</h3>
+													<p>New York, United States</p>
+												</article>
+											</div>
+											<p className="review-content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus vitae, suscipit perferendis ipsum, cumque soluta in quae, distinctio alias sint est blanditiis commodi delectus fuga consequatur quis dolorem eaque porro.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							{/* End of First Carousel Item */}
+
+							{/* Start of Second Carousel Item */}
+							<div className="carousel-item">								
+								<div className="row reviews-container">
+									<div className="col-lg-6 mx-auto">
+										<div className="review">
+											<div>
+												<img src={reviewImage} alt="Review Portrait Image" />
+												<article>
+													<h3>Jane Doe</h3>
+													<p>California, United States</p>
+												</article>
+											</div>
+											<p className="review-content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus vitae, suscipit perferendis ipsum, cumque soluta in quae, distinctio alias sint est blanditiis commodi delectus fuga consequatur quis dolorem eaque porro.</p>
+										</div>
+									</div>
+									<div className="col-lg-6 mx-auto d-none d-lg-block">
+										<div className="review">
+											<div>
+												<img src={reviewImage} alt="Review Portrait Image" />
+												<article>
+													<h3>Chris Smith</h3>
+													<p>Texas, United States</p>
+												</article>
+											</div>
+											<p className="review-content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus vitae, suscipit perferendis ipsum, cumque soluta in quae, distinctio alias sint est blanditiis commodi delectus fuga consequatur quis dolorem eaque porro.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							{/* End of Second Carousel Item */}
+
+							{/* Start of Third Carousel Item */}
+							<div className="carousel-item">
+								<div className="row reviews-container">
+									<div className="col-lg-6 mx-auto">
+										<div className="review">
+											<div>
+												<img src={reviewImage} alt="Review Portrait Image" />
+												<article>
+													<h3>Jeffrey Rehal</h3>
+													<p>Newmarket, Ontario</p>
+												</article>
+											</div>
+											<p className="review-content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus vitae, suscipit perferendis ipsum, cumque soluta in quae, distinctio alias sint est blanditiis commodi delectus fuga consequatur quis dolorem eaque porro.</p>
+										</div>
+									</div>
+									<div className="col-lg-6 mx-auto d-none d-lg-block">
+										<div className="review">
+											<div>
+												<img src={reviewImage} alt="Review Portrait Image" />
+												<article>
+													<h3>Monica Decabre</h3>
+													<p>Ohio, United States</p>
+												</article>
+											</div>
+											<p className="review-content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus vitae, suscipit perferendis ipsum, cumque soluta in quae, distinctio alias sint est blanditiis commodi delectus fuga consequatur quis dolorem eaque porro.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							{/* End of Third Carousel Item */}
+						</div>
+						{/* End of Inner Carousel Content */}
+				
+						{/* Carousel Control Buttons, Next & Previous, Can always customize the icons to use SVGs of our choosing. */}
+						<button className="carousel-control-prev" type="button" data-bs-target="#reviewsCarousel" data-bs-slide="prev">
+							<span className="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span className="visually-hidden">Previous</span>
+						</button>
+						<button className="carousel-control-next" type="button" data-bs-target="#reviewsCarousel" data-bs-slide="next">
+							<span className="carousel-control-next-icon" aria-hidden="true"></span>
+							<span className="visually-hidden">Next</span>
+						</button>
+					</div>
+					{/* End of Reviews Carousel */}
+				
+				</section>
+				{/* End of Reviews Section */}
+
+			</div>
+			{/* End of Reviews Wrapper */}
+			
 		</div>
 
 	);
