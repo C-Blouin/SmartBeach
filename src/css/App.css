@@ -410,3 +410,110 @@ div .navbar-toggler:focus {
   }
 
 }
+
+/* Start of Footer Styles. */
+
+/* Footer Borders */
+footer {
+  border-top: 8px solid var(--primary-yellow);
+  border-bottom: 6px solid var(--primary-blue);
+}
+
+/* Apply a fixed width to the footer navigation menu to keep consistency with header */
+footer > nav {
+  max-width: 1600px;
+  /* Center the container with margin auto */
+  margin: 0 auto;
+  padding: 0.25rem 3rem 1.25rem 3rem;
+}
+
+/* Footer top and bottom styles. The footer is divided into two flex containers. */
+.footer-top, .footer-bottom{
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+/* Footer primary navigation links styles. */
+.footer-top ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Remove margin from the footer copyright paragraph. */
+.footer-bottom > p {
+  /* Automatically position the copyright from the top with margin auto. */
+  margin: auto 0 0 0;
+}
+
+/* Footer Media Query, 768px Wide.  */
+@media screen and (max-width: 768px) {
+  
+  /* Adjust border properties for mobile. */
+  footer {
+    border-top: 5px solid var(--primary-yellow);
+    border-bottom: 12px solid var(--primary-blue);
+    transition: var(--global-transition);
+  }
+
+  /* Stack the flex containers using column. */
+  .footer-top, .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Reduce logo size. */
+  .footer-top a img {
+    width: 160px;
+    height: auto;
+  }
+
+  /* Stack the primary navigation links. */
+  .footer-top ul {
+    flex-direction: column;
+    margin-bottom: 1.25rem;
+  }
+
+  /* Mobile footer spacing of the navigation items. */
+  .footer-top ul .nav-item {
+    margin: 0.75rem 0;
+    padding: 0;
+  }
+
+  .footer-top ul .nav-item .nav-link {
+    padding: 0.35rem 0;
+  }
+
+  .social-links-container a {
+    padding: 0.35rem;
+  }
+
+  /* Reduce social icon SVG size when on mobile. */
+  .social-links-container a svg {
+    width: 27px;
+    height: 25px;
+  }
+
+  /* Adjust padding to keep consistent with header. */
+  footer > nav {
+    padding: 1rem 1rem 1.25rem 1rem;
+  }
+
+  /* Position the social links container above the copy right on mobile. Changing the source order with flex:order */
+  .social-links-container {
+    order: 1;
+  }
+
+  /* Copyright info below the social links with order 2. */
+  .footer-bottom p {
+    order: 2;
+    margin: 1.25rem 0 0 0;
+  }
+  
+}
+
+/* End of Footer Styles. */
+
+/* End of Navigation Styles (Header & Footer) */
