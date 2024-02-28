@@ -900,3 +900,131 @@ footer > nav {
 }
 
 /* End of Hero Styles */
+
+/* Start of Why Section Styles */
+
+#why {
+  /* Why container styles, setting a min-height and max-width to keep consistency across sections. */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  max-width: 1600px;
+  /* Center the containing contents and applying padding. */
+  margin: 0 auto;
+  padding: 6rem 3rem 8rem 3rem;
+}
+
+.why-container {
+  display: flex;
+}
+
+/* Dynamic font sizing for the heading and paragraph elements using the clamp function, adjust based on the viewport width. */
+.why-container > h2 {
+  font-size: clamp(var(--mobile-h2), 5vw, var(--desktop-h2));
+  font-weight: 800;
+  flex: 2;
+}
+
+.why-contents p {
+  font-size: clamp(var(--mobile-body), 3vw, var(--desktop-body));
+  color: var(--primary-body);
+}
+
+/* The why contents sections paragraph and readmore link will take up 4 pieces of the available space. */
+.why-contents {
+  flex: 4;
+}
+
+/* Read more link stlyes. */
+.why-contents a,
+#about > article a {
+  text-decoration: none;
+  color: var(--cta-button);
+  font-size: var(--links-font);
+  transition: var(--global-transition);
+}
+
+/* Read more link hover styles */
+.why-contents a:hover,
+#about > article a:hover {
+  color: var(--cta-button-hover);
+}
+
+/* Reasons grid container. */
+.reasons {
+  display: grid;
+  /* creating 4 equal columns with repeat. */
+  grid-template-columns: repeat(4, 1fr);
+  /* Spacing each grid item with gap. */
+  gap: 2rem;
+  margin-top: 5rem;
+  text-align: center;
+}
+
+.reason-heading {
+  font-size: clamp(var(--mobile-h3), 5vw, var(--desktop-h3));
+  font-weight: 800;
+  margin: 1rem 0;
+  line-height: normal;
+}
+
+/* Reason card styles. */
+.reasons > article {
+  padding: 2rem;
+  box-shadow: var(--extra-large-shadow);
+  border-radius: 1rem;
+}
+
+/* Why & Reasons Media Query, 1200px Wide */
+@media screen and (max-width: 1200px) {
+
+    /* Stack the why container on smaller screens. */
+    .why-container {
+      flex-direction: column;     
+    }
+
+    /* Adjust the template columns to create two equal columns on devices of 1200px wide. */
+    .reasons {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+/* On devices 800px wide, the column layout will change to a single column layout. */
+@media screen and (max-width: 800px) {
+
+    /* Single column layout. */
+    .reasons {
+      grid-template-columns: auto;
+    }
+
+    /* Card content will appear in a two column layout with flex. */
+    .reasons > article {
+      display: flex;
+      text-align: left;
+      /* Card content spacing. */
+      gap: 2rem;
+    }
+
+    @media screen and (max-width: 380px) {
+
+      /* Stack the card content to prevent overflow on very small device widths, 380px wide. */
+      .reasons > article {
+        display: block;
+        text-align: center;
+      }
+    
+    }
+
+}
+
+/* Why Section Media Query, 768px wide, mobile. */
+@media screen and (max-width: 768px) {
+    
+    /* Adjust why section padding to keep consistency with other sections. */
+    #why {
+      padding: 6rem 1rem 8rem 1rem;
+    } 
+
+}
