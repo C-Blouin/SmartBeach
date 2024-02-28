@@ -1,8 +1,9 @@
 @charset "utf-8";
 
-/* Font Family Imports */
+/* Font Family Imports ~ Inter 100-900 Weight */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
+/* Global Root Variables for Website Theme Consistency */
 :root {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -23,6 +24,9 @@
   --mobile-body: 16px;
   --label-font: 14px;
   --links-font: 18px;
+
+  --header-background: transparent;
+  --header-mobile: #ffffff;
 
   /* Typography Colours */
   --primary-heading: #343c41;
@@ -98,4 +102,311 @@
   --extra-large-shadow: 
     0px 10px 10px -5px rgba(0, 0, 0, 0.04),
     0px 20px 25px -5px rgba(0, 0, 0, 0.10);
+
+    --global-transition: 0.3s ease-in-out;
+}
+
+/* Apply the border-box sizing to all elements and either before and after elements. */
+html,
+*, 
+::after, ::before {
+  box-sizing: border-box;
+}
+
+/* All elements will inherit the box-sizing set in the root html styles. */
+*::before, *::after, * {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+/* Start of Scrollbar Styles. */
+
+body::-webkit-scrollbar {
+  width: 6px; 
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--primary-slate); 
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--primary-orange); 
+  border-radius: 25px;
+}
+
+/* End of Scrollbar Styles. */
+
+/* Using the selection pseudo class on all DOM elements to change the highlighted text background and text colour. */
+*::selection {
+  background-color: var(--orange-accent-1);
+  color: var(--white);
+}
+
+
+/* Global Heading Styles */
+
+h1, h2, h3, h4, h5, h6, p {
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--heading-font);
+  font-weight: 900;
+  color: var(--primary-heading);
+  margin-bottom: 1rem;
+}
+
+/* Global Anchor & List Styles */
+
+a {
+  text-decoration: none;
+  font-style: normal;
+  /* Style Guide Weight for Links. */
+  font-weight: 700;
+}
+
+/* Remove default margin and padding from unordered lists and list items. */
+ul, li {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+/* Start of Navigation Styles. */
+
+nav ul li a {
+  color: var(--white);
+  font-family: var(--body-font);
+  font-style: normal;
+  letter-spacing: 0.05rem;
+}
+
+header .nav-link {
+  font-size: var(--links-font);
+  font-weight: 600;
+}
+header .nav-link, 
+footer .nav-link {
+  transition: var(--global-transition);
+}
+
+header .nav-link:hover,
+footer .nav-link:hover{
+  color: var(--primary-orange);
+}
+
+nav ul li a:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+  color: var(--primary-orange);
+}
+
+/* Background and white space styles of the navbar bootstrap component */
+.navbar {
+    background-color: var(--header-background);
+    max-width: 1800px;
+    margin: 0 auto;
+    z-index: 99;
+}
+
+/* Primary Navigation Links */
+.nav-item {
+    /* Padding on the right to all links except the last link. */
+    padding-right: 1.5rem;
+}
+
+.navbar-nav li:last-of-type {
+    padding-right: 0;
+}
+
+/* When using Bootstraps light theme, overwrite the toggler icons background image with a custom hamburger SVG. */
+[data-bs-theme=light] .navbar-toggler-icon {
+  background-image: url(../images/navigation/mobile-open.svg);
+}
+
+/* Override bootstrap navbar-toggler button styles. */
+div .navbar-toggler {
+    /* Apply custom size to the hamburger menu */
+    font-size: 1.5rem;
+    padding: 0.75rem;
+    background-color: var(--icon-background);
+    border-radius: 5rem;
+    z-index: 99;
+}
+
+/* Remove default button styles of boostraps toggle menu. */
+div .navbar-toggler,
+.close-toggle {
+  outline: none;
+  border: none;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+/* Close menu toggle button styles. */
+.close-toggle {
+  position: absolute;
+  top: 50px;
+  right: 15px;
+  padding: 0.75rem;
+  background: none;
+}
+
+.close-toggle svg {
+  stroke: var(--icon-background);
+}
+
+/* Remove the default box shadow when the toggler button is in the focused state. */
+div .navbar-toggler:focus {
+    box-shadow: none;
+}
+
+/* Center the navbar element contents. */
+.navbar > .container-fluid {
+  justify-content: space-between;
+  max-width: 1600px;
+  padding: 0 3rem;
+}
+
+/* Center the primary navigation links. */
+.offcanvas-body ul {
+  margin: auto;
+}
+
+/* Start of Header Navigation Social Link Styles */
+
+.social-links-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-links-container a {
+  margin-right: 2rem;
+  background-color: var(--icon-background);
+  padding: 0.5rem;
+  border-radius: 5rem;
+  transition: var(--global-transition);
+}
+
+/* Remove the margins for the last social link to keep consistent navigation spacing. */
+.social-links-container a:last-of-type {
+  margin-right: 0;
+}
+
+/* Social Icon SVG Styles */
+
+.social-links-container a:nth-of-type(1) svg,
+.social-links-container a:nth-of-type(2) svg {
+  fill: var(--icon-inner);
+}
+
+.social-links-container a svg {
+  stroke: var(--icon-inner);
+}
+
+/* Social link hover */
+.social-links-container a:hover {
+  background-color: var(--primary-slate);
+}
+
+/* Navigation Media Query, at 1200px Max Width, Apply the following properties. */
+
+@media screen and (max-width: 1200px) {
+
+  /* Apply a solid background and box shadow to the header element on smaller screens. */
+  .navbar {
+    background-color: var(--header-mobile);
+    box-shadow: var(--medium-shadow);
+  }
+
+  /* The slide in canvas menu will contain the entirety of the viewport. */
+  .container-fluid .offcanvas {
+    /* max-width: min(75vw, 800px)!important; IF we don't like the full menu overlay, we can use this style declaration instead. */
+    --bs-offcanvas-width: 100%;
+  }
+
+  /* Remove the default canvas border when the menu is toggled. */
+  div .offcanvas.offcanvas-end {
+    border-left: none;
+  }
+
+  /* Overwrite boostrap ms-auto utility class when on smaller screens. */
+  .offcanvas-body .ms-auto {
+    margin: 0;
+  }
+
+  .navbar-nav {
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+  }
+
+  /* White space on the top and bottom of the primary navigation links, on smaller screens. */
+  header .nav-item {
+      margin: 1rem 0;
+      padding: 0;
+  }
+
+  footer .nav-item {
+    padding-right: 1.5rem;
+  }
+
+  /* Set the background color of the slide out canvas body at smaller screen widths. */
+  .offcanvas-body {
+      background-color: var(--white);          
+  }
+
+  /* Remove the auto margin on mobile */
+  .offcanvas-body ul {
+    margin: 0;
+  }
+
+  /* Display the navigation content in a centered column layout when the mobile menu is toggled. */
+  #navbarNav > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+  }
+
+  /* Spacing between primary navigation links and social links container. */
+  header .social-links-container {
+    margin-top: 5rem;
+  }
+
+  /* Increase spacing of the social links on mobile. */
+  header .social-links-container a {
+    margin-right: 3.25rem;
+    padding: 0;
+    background: none;
+  }
+
+  /* Mobile social SVG styles. */
+  header .social-links-container a:nth-of-type(1) svg,
+  header .social-links-container a:nth-of-type(2) svg {
+    fill: var(--icon-background);
+  }
+
+  header .social-links-container a svg {
+    stroke: var(--icon-background);
+    width: 40px;
+    height: 40px;
+  }
+
+  @media screen and (max-width: 768px) {
+
+    /* Reduce Navigation left and right padding on mobile screen widths. */
+    .navbar > .container-fluid {
+      padding: 0 1rem;
+    }
+    
+    .social-links-container a:hover {
+      background-color: transparent;
+    }
+  }
+
 }
