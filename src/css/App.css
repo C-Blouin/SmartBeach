@@ -517,3 +517,386 @@ footer > nav {
 /* End of Footer Styles. */
 
 /* End of Navigation Styles (Header & Footer) */
+
+/* Start of Hero Styles */
+
+.hero-wrapper {
+  /* Background image and sizing properties. */
+  background-image: url(../images/landing/hero/hero-desktop.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* Negative margin to bring the background image behind the header. */
+  margin-top: -300px;
+  /* Positioning the content with padding top, beinging it back into the viewport. */
+  padding-top: 400px;
+  overflow: hidden;
+}
+
+/* Primary Hero Container Styles. */
+#hero {
+  /* Display flex with a max-width to keep consistent with all sections. */
+  display: flex;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 3rem;
+  z-index: 2;
+}
+
+/* Hero Font Styles. */
+#hero h1 {
+  /* Using the clamp function to dynamically adjust the cont size based on the viewport width. */
+  font-size: clamp(var(--mobile-h1), 5vw, var(--desktop-h1));
+  font-weight: 900;
+  color: var(--primary-heading);
+  margin-bottom: 1rem;
+}
+
+#hero p {
+  font-size: clamp(var(--mobile-body), 3vw, var(--desktop-body));
+  color: var(--primary-body);
+}
+
+/* Hero content will take up more space then the forecast. */
+.hero-content {
+  flex: 2;
+}
+
+/* Forecast Grid Widget Styles. */
+.hero-forecast {
+  flex: 1;
+  display: grid;
+  /* Create 4 Equal Columns */
+  grid-template-columns: repeat(4, 1fr);
+  /* Background properties. */
+  background-color: var(--section-background);
+  box-shadow: var(--extra-large-shadow);
+  /* Spacing properties. */
+  padding: 1.5rem;
+  gap: 0.75rem;
+  border-radius: 1rem;
+  /* The widget can only be 450px wide regardless of viewport width. */
+  max-width: 450px;
+}
+
+.hero-forecast > div,
+.hero-forecast > article {
+  padding: 1rem;
+  background-color: var(--white);
+  border-radius: 0.5rem;
+}
+
+/* Primary Weather Card Styles */
+.primary-card {
+  /* Position at the top of the widget and span across all columns. */
+  grid-area: 1 / 1 / 2 / 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Second & Third Widget Cards, positionging on the second row side by side. */
+.hero-forecast > .widget-card:nth-of-type(1) {
+  grid-area: 2 / 1 / 3 / 3;
+}
+
+.hero-forecast > .widget-card:nth-of-type(2) {
+  grid-area: 2 / 3 / 3 / 5;
+}
+
+/* Fourth & Fifth Widget Cards, positionging on the third row side by side. */
+.hero-forecast > .widget-card:nth-of-type(3) {
+  grid-area: 3 / 1 / 4 / 3;
+}
+
+.hero-forecast > .widget-card:nth-of-type(4) {
+  grid-area: 3 / 3 / 4 / 5;
+}
+
+/* Primary card heading styles. */
+.primary-card h3 {
+  /* Adjust font size based on viewport width with clamp function. */
+  font-size: clamp(38px, 5vw, 70px);
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
+}
+
+/* Primary card image icon styles. */
+.primary-card img {
+  max-width: 100%;
+  height: 120px;
+}
+
+/* Allow High & Low temperatues to sit side by each. */
+.temperature-container {
+  display: flex;
+  gap: 0 1rem;
+  margin-top: 0.5rem;
+}
+
+/* Allow containers within the temperature container to appear side by each. */
+.temperature-container > div {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+}
+
+/* The widget cards content will stak vertically, flex-direction */
+.hero-forecast > article {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#hero .hero-forecast > article > p {
+  font-size: clamp(18px, 5vw, 22px);
+  font-weight: 600;
+  line-height: normal;
+}
+
+/* Top of widget cards styles. */
+.hero-forecast .widget-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Safety indicator image size styles. */
+.hero-forecast .safety-indicators {
+  max-width: 100%;
+  height: 15px;
+  margin: 0;
+}
+
+/* Widget SVG icon styles. */
+.widget-card img {
+  max-width: 100%;
+  height: 50px;
+  margin-right: auto;
+}
+
+/* Widget CTA (Get Full Forecast) */
+#forecast-cta {
+  /* Position in the last row, and the entire column width. */
+  grid-area: 4 / 1 / 5 / 5;
+  /* The button will keep a consistent width of the widget container. */
+  width: 100%;
+  /* Button color properties. */
+  background-color: var(--primary-orange);
+  color: var(--primary-background);
+  text-align: center;
+  font-weight: 700;
+  /* Spacing properties. */
+  padding: 1rem 0;
+  margin: 0.25rem auto 0 auto;
+  border-radius: 5rem;
+  /* Setting up button transition for hover state. */
+  transition: var(--global-transition);
+}
+
+#forecast-cta:hover {
+  background-color: var(--cta-button-hover);
+}
+
+/* Remove default margins on paragraph elements in the forecast widget. */
+.hero-forecast p {
+  margin: 0;
+}
+
+/* Hero Section Media Query 1200px */
+@media screen and (max-width: 1200px) {
+  
+  /* Removing the background iamge from the hero-wrapper to apply to the hero section instead. */
+  .hero-wrapper {    
+    background-image: none;
+  }
+
+  #hero {
+    /* Stack Hero Contents */
+    display: flex;
+    /* Applying the hero background to the hero section rather than the wrapper on smaller screens. */
+    background-image: url(/src/images/landing/hero/hero-desktop.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    /* Negative margins to position to background contents according to viewport width. */
+    margin-top: -110px;
+    padding-top: 120px;
+  }
+
+  /* Reduce primary card content gap on smaller screen sizes */
+  .primary-card {
+    gap: 1rem;
+  }
+
+  /* Reduce image size. */
+  .primary-card img {
+    height: 90px;
+  }
+
+  /* The widget will take up more space in the container when on the viewport is 1200px wide. */
+  #hero .hero-forecast {
+    flex: 2;    
+    max-width: 500px;
+  }
+
+  /* Widget card styles at 1200px */
+  .primary-card-content > .widget-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Primary Card Condition Text */
+  #hero .primary-card-content > article > p {
+    font-size: clamp(22px, 3vw, 28px);
+  }
+
+}
+
+/* Hero Media Query, 960px Wide. */
+@media screen and (max-width: 960px) {
+
+  /* Stack the hero content. */
+  #hero {
+    flex-direction: column;
+  }
+
+  /* Add some spacing between the hero content and forecast widget card. */
+  .hero-forecast {
+    margin-top: 3rem;
+  }
+
+  .primary-card-content > article {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+}
+
+/* Hero Media Query, 768px Wide. */
+@media screen and (max-width: 768px) {
+    
+  #hero {
+    padding: 6rem 1rem;
+  }
+
+  #hero {
+    padding: 120px 1rem 3rem 1rem;
+    background-size: contain;
+    background-image: url(/src/images/landing/hero/hero-mobile-bg-light.jpg);
+  }
+
+  #hero h1 {
+    font-size: clamp(40px, 5vw, var(--desktop-h1));      
+  }
+
+}
+
+@media screen and (max-width: 680px) {
+
+  /* Display the primary card contents in a row. */
+  .primary-card {
+    flex-direction: row;
+    /* Span the entire wide of the grid. */
+    grid-area: 1 / 1 / 2 / 5;
+  }
+
+  .hero-forecast > .widget-card:nth-of-type(1) {
+    /* Start at row 2 and end at row 2, start at column 1 and end at 3. */
+    grid-area: 2 / 1 / 2 / 3;
+  }
+
+  .hero-forecast > .widget-card:nth-of-type(2) {
+    /* Start at row 2 and end at row 2, start at column 3 and end at 5. */
+    grid-area: 2 / 3 / 2 / 5;
+  }
+
+  .hero-forecast > .widget-card:nth-of-type(3) {
+    /* Start at row 3 and end at row 3, start at column 1 and end at 3. */
+    grid-area: 3 / 1 / 3 / 3;
+  }
+
+  .hero-forecast > .widget-card:nth-of-type(4) {
+    /* Start at row 3 and end at row 3, start at column 3 and end at 5. */
+    grid-area: 3 / 3 / 3 / 5;
+  }
+
+  #forecast-cta {
+    /* Start at row 4 and end at row 4, start at column 1 and end at 5. */
+    grid-area: 4 / 1 / 4 / 5;
+  }
+
+  @media screen and (max-width: 460px) {
+
+    .primary-card-content > article {
+      flex-direction: column;
+      align-items: start;
+    }
+
+    .primary-card-content > article,
+    .primary-card-content > .widget-card {
+      /* Remove the gap between elements of the widget card on very small device widths. */
+      gap: 0;
+    }
+
+  }
+
+  /* Hero Container Media Query, 400px Wide.  */
+  @media screen and (max-width: 400px) {
+
+    /* Change the grid template layout to allow for a single column layout on very small device widths. */
+    .hero-forecast {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(5, 1fr);
+      padding: 1rem 1rem 2rem 1rem;
+    }
+
+    /* Each Widget card will span the entire grid column layout. */
+    .primary-card,
+    .hero-forecast > .widget-card:nth-of-type(1),
+    .hero-forecast > .widget-card:nth-of-type(2),
+    .hero-forecast > .widget-card:nth-of-type(3),
+    .hero-forecast > .widget-card:nth-of-type(4),
+    #forecast-cta {
+      grid-column: 1 / 5;
+    }
+
+    /* Defining the grid rows for each of the cards */
+
+    .primary-card {
+      grid-row: 1;
+    }
+
+    .hero-forecast > .widget-card:nth-of-type(1) {
+      grid-row: 2;
+    }
+
+    .hero-forecast > .widget-card:nth-of-type(2) {
+      grid-row: 3;
+    }
+
+    .hero-forecast > .widget-card:nth-of-type(3) {
+      grid-row: 4;
+    }
+
+    .hero-forecast > .widget-card:nth-of-type(4) {
+      grid-row: 5;
+    }
+
+    #forecast-cta {
+      grid-row: 6;
+    }
+
+    .primary-card img {
+      height: 70px;
+    }
+
+  }
+
+}
+
+/* End of Hero Styles */
