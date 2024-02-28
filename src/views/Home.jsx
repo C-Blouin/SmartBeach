@@ -130,7 +130,7 @@ function Home() {
 
 			{/* Start of Why Section */}
 			<section id="why">
-
+				
 				{/* Start of Why Section Primary Content */}
 				<article className="why-container">
 					<h2>Why Station Beach</h2>
@@ -190,7 +190,34 @@ function Home() {
 
 			</section>
 			{/* End of Why Section */}
-			
+
+			{/* Start of About Section */}
+			<div className="about-wrapper">
+				<div id="about">	
+					<img src={aboutImage} alt="About the Project Graphic" />
+					<article>
+						<h2>About the Project</h2>	
+						<p>
+							Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+							accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+							quae ab illo inventore veritatis et quasi architecto beatae vitae
+							dicta sunt explicabo. Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+							accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+							quae ab illo inventore veritatis et quasi architecto beatae vitae
+							dicta sunt explicabo.
+						</p>
+						<p>
+							Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+							accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+							quae ab illo inventore veritatis et quasi architecto beatae vitae
+							dicta sunt explicabo.
+						</p>
+						<a href="#">Read More</a>
+					</article>
+				</div>
+			</div>
+			{/* End of About Section */}
+
 		</div>
 
 	);
