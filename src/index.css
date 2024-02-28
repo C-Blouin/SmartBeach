@@ -1,0 +1,5 @@
+/* Import normalize.css or any other global styles */
+@import './src/css/normalize.css';
+
+/* Import Custom Styles */
+@import './src/css/App.css';
