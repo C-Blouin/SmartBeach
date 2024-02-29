@@ -3,11 +3,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 // Importing createContext, useState, and useEffect hooks.
 import React, { createContext, useState, useEffect } from "react";
 
-// Normalize CSS Before Custom Styles.
-import "./css/normalize.css";
-// Custom Styles.
-import "./css/App.css";
-
 // Importing shared Header and Footer components.
 import Header from "./views/shared/Header.jsx";
 import Footer from "./views/shared/Footer.jsx";
@@ -28,7 +23,7 @@ function App() {
           <Routes>
             {/* Place Page Component Routes Here (e.g. Home, About, Dashboard, etc.) */}
             <Route path="/" element={<Home />} />
-            <Route path="/beachinfo" element={<BeachInfo />} />   
+            <Route path="/beach-info" element={<BeachInfo />} />   
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </BrowserRouter>

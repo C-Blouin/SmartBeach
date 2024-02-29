@@ -1,8 +1,9 @@
 @charset "utf-8";
 
-/* Font Family Imports */
+/* Font Family Imports ~ Inter 100-900 Weight */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
+/* Global Root Variables for Website Theme Consistency */
 :root {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -23,6 +24,9 @@
   --mobile-body: 16px;
   --label-font: 14px;
   --links-font: 18px;
+
+  --header-background: transparent;
+  --header-mobile: #ffffff;
 
   /* Typography Colours */
   --primary-heading: #343c41;
@@ -98,7 +102,1420 @@
   --extra-large-shadow:
     0px 10px 10px -5px rgba(0, 0, 0, 0.04),
     0px 20px 25px -5px rgba(0, 0, 0, 0.10);
+
+    --global-transition: 0.3s ease-in-out;
 }
+
+/* Apply the border-box sizing to all elements and either before and after elements. */
+html,
+*, 
+::after, ::before {
+  box-sizing: border-box;
+}
+
+/* All elements will inherit the box-sizing set in the root html styles. */
+*::before, *::after, * {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+/* Start of Scrollbar Styles. */
+
+body::-webkit-scrollbar {
+  width: 6px; 
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--primary-slate); 
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--primary-orange); 
+  border-radius: 25px;
+}
+
+/* End of Scrollbar Styles. */
+
+/* Using the selection pseudo class on all DOM elements to change the highlighted text background and text colour. */
+*::selection {
+  background-color: var(--orange-accent-1);
+  color: var(--white);
+}
+
+
+/* Global Heading Styles */
+
+h1, h2, h3, h4, h5, h6, p {
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--heading-font);
+  font-weight: 900;
+  color: var(--primary-heading);
+  margin-bottom: 1rem;
+}
+
+/* Global Anchor & List Styles */
+
+a {
+  text-decoration: none;
+  font-style: normal;
+  /* Style Guide Weight for Links. */
+  font-weight: 700;
+}
+
+/* Remove default margin and padding from unordered lists and list items. */
+ul, li {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+/* Start of Navigation Styles. */
+
+nav ul li a {
+  color: var(--white);
+  font-family: var(--body-font);
+  font-style: normal;
+  letter-spacing: 0.05rem;
+}
+
+header .nav-link {
+  font-size: var(--links-font);
+  font-weight: 600;
+}
+header .nav-link, 
+footer .nav-link {
+  transition: var(--global-transition);
+}
+
+header .nav-link:hover,
+footer .nav-link:hover{
+  color: var(--primary-orange);
+}
+
+nav ul li a:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+  color: var(--primary-orange);
+}
+
+/* Background and white space styles of the navbar bootstrap component */
+.navbar {
+    background-color: var(--header-background);
+    max-width: 1800px;
+    margin: 0 auto;
+    z-index: 99;
+}
+
+/* Primary Navigation Links */
+.nav-item {
+    /* Padding on the right to all links except the last link. */
+    padding-right: 1.5rem;
+}
+
+.navbar-nav li:last-of-type {
+    padding-right: 0;
+}
+
+/* When using Bootstraps light theme, overwrite the toggler icons background image with a custom hamburger SVG. */
+[data-bs-theme=light] .navbar-toggler-icon {
+  background-image: url(../images/navigation/mobile-open.svg);
+}
+
+/* Override bootstrap navbar-toggler button styles. */
+div .navbar-toggler {
+    /* Apply custom size to the hamburger menu */
+    font-size: 1.5rem;
+    padding: 0.75rem;
+    background-color: var(--icon-background);
+    border-radius: 5rem;
+    z-index: 99;
+}
+
+/* Remove default button styles of boostraps toggle menu. */
+div .navbar-toggler,
+.close-toggle {
+  outline: none;
+  border: none;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+/* Close menu toggle button styles. */
+.close-toggle {
+  position: absolute;
+  top: 50px;
+  right: 15px;
+  padding: 0.75rem;
+  background: none;
+}
+
+.close-toggle svg {
+  stroke: var(--icon-background);
+}
+
+/* Remove the default box shadow when the toggler button is in the focused state. */
+div .navbar-toggler:focus {
+    box-shadow: none;
+}
+
+/* Center the navbar element contents. */
+.navbar > .container-fluid {
+  justify-content: space-between;
+  max-width: 1600px;
+  padding: 0 3rem;
+}
+
+/* Center the primary navigation links. */
+.offcanvas-body ul {
+  margin: auto;
+}
+
+/* Start of Header Navigation Social Link Styles */
+
+.social-links-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-links-container a {
+  margin-right: 2rem;
+  background-color: var(--icon-background);
+  padding: 0.5rem;
+  border-radius: 5rem;
+  transition: var(--global-transition);
+}
+
+/* Remove the margins for the last social link to keep consistent navigation spacing. */
+.social-links-container a:last-of-type {
+  margin-right: 0;
+}
+
+/* Social Icon SVG Styles */
+
+.social-links-container a:nth-of-type(1) svg,
+.social-links-container a:nth-of-type(2) svg {
+  fill: var(--icon-inner);
+}
+
+.social-links-container a svg {
+  stroke: var(--icon-inner);
+}
+
+/* Social link hover */
+.social-links-container a:hover {
+  background-color: var(--primary-slate);
+}
+
+/* Navigation Media Query, at 1200px Max Width, Apply the following properties. */
+
+@media screen and (max-width: 1200px) {
+
+  /* Apply a solid background and box shadow to the header element on smaller screens. */
+  .navbar {
+    background-color: var(--header-mobile);
+    box-shadow: var(--medium-shadow);
+  }
+
+  /* The slide in canvas menu will contain the entirety of the viewport. */
+  .container-fluid .offcanvas {
+    /* max-width: min(75vw, 800px)!important; IF we don't like the full menu overlay, we can use this style declaration instead. */
+    --bs-offcanvas-width: 100%;
+  }
+
+  /* Remove the default canvas border when the menu is toggled. */
+  div .offcanvas.offcanvas-end {
+    border-left: none;
+  }
+
+  /* Overwrite boostrap ms-auto utility class when on smaller screens. */
+  .offcanvas-body .ms-auto {
+    margin: 0;
+  }
+
+  .navbar-nav {
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+  }
+
+  /* White space on the top and bottom of the primary navigation links, on smaller screens. */
+  header .nav-item {
+      margin: 1rem 0;
+      padding: 0;
+  }
+
+  footer .nav-item {
+    padding-right: 1.5rem;
+  }
+
+  /* Set the background color of the slide out canvas body at smaller screen widths. */
+  .offcanvas-body {
+      background-color: var(--white);          
+  }
+
+  /* Remove the auto margin on mobile */
+  .offcanvas-body ul {
+    margin: 0;
+  }
+
+  /* Display the navigation content in a centered column layout when the mobile menu is toggled. */
+  #navbarNav > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+  }
+
+  /* Spacing between primary navigation links and social links container. */
+  header .social-links-container {
+    margin-top: 5rem;
+  }
+
+  /* Increase spacing of the social links on mobile. */
+  header .social-links-container a {
+    margin-right: 3.25rem;
+    padding: 0;
+    background: none;
+  }
+
+  /* Mobile social SVG styles. */
+  header .social-links-container a:nth-of-type(1) svg,
+  header .social-links-container a:nth-of-type(2) svg {
+    fill: var(--icon-background);
+  }
+
+  header .social-links-container a svg {
+    stroke: var(--icon-background);
+    width: 40px;
+    height: 40px;
+  }
+
+  @media screen and (max-width: 768px) {
+
+    /* Reduce Navigation left and right padding on mobile screen widths. */
+    .navbar > .container-fluid {
+      padding: 0 1rem;
+    }
+    
+    .social-links-container a:hover {
+      background-color: transparent;
+    }
+  }
+
+}
+
+/* Start of Footer Styles. */
+
+/* Footer Borders */
+footer {
+  border-top: 8px solid var(--primary-yellow);
+  border-bottom: 6px solid var(--primary-blue);
+}
+
+/* Apply a fixed width to the footer navigation menu to keep consistency with header */
+footer > nav {
+  max-width: 1600px;
+  /* Center the container with margin auto */
+  margin: 0 auto;
+  padding: 0.25rem 3rem 1.25rem 3rem;
+}
+
+/* Footer top and bottom styles. The footer is divided into two flex containers. */
+.footer-top, .footer-bottom{
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+/* Footer primary navigation links styles. */
+.footer-top ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Remove margin from the footer copyright paragraph. */
+.footer-bottom > p {
+  /* Automatically position the copyright from the top with margin auto. */
+  margin: auto 0 0 0;
+}
+
+/* Footer Media Query, 768px Wide.  */
+@media screen and (max-width: 768px) {
+  
+  /* Adjust border properties for mobile. */
+  footer {
+    border-top: 5px solid var(--primary-yellow);
+    border-bottom: 12px solid var(--primary-blue);
+    transition: var(--global-transition);
+  }
+
+  /* Stack the flex containers using column. */
+  .footer-top, .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Reduce logo size. */
+  .footer-top a img {
+    width: 160px;
+    height: auto;
+  }
+
+  /* Stack the primary navigation links. */
+  .footer-top ul {
+    flex-direction: column;
+    margin-bottom: 1.25rem;
+  }
+
+  /* Mobile footer spacing of the navigation items. */
+  .footer-top ul .nav-item {
+    margin: 0.75rem 0;
+    padding: 0;
+  }
+
+  .footer-top ul .nav-item .nav-link {
+    padding: 0.35rem 0;
+  }
+
+  .social-links-container a {
+    padding: 0.35rem;
+  }
+
+  /* Reduce social icon SVG size when on mobile. */
+  .social-links-container a svg {
+    width: 27px;
+    height: 25px;
+  }
+
+  /* Adjust padding to keep consistent with header. */
+  footer > nav {
+    padding: 1rem 1rem 1.25rem 1rem;
+  }
+
+  /* Position the social links container above the copy right on mobile. Changing the source order with flex:order */
+  .social-links-container {
+    order: 1;
+  }
+
+  /* Copyright info below the social links with order 2. */
+  .footer-bottom p {
+    order: 2;
+    margin: 1.25rem 0 0 0;
+  }
+  
+}
+
+/* End of Footer Styles. */
+
+/* End of Navigation Styles (Header & Footer) */
+
+/* Start of Hero Styles */
+
+.hero-wrapper {
+  /* Background image and sizing properties. */
+  background-image: url(../images/landing/hero/hero-desktop.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* Negative margin to bring the background image behind the header. */
+  margin-top: -300px;
+  /* Positioning the content with padding top, beinging it back into the viewport. */
+  padding-top: 400px;
+  overflow: hidden;
+}
+
+/* Primary Hero Container Styles. */
+#hero {
+  /* Display flex with a max-width to keep consistent with all sections. */
+  display: flex;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 3rem;
+  z-index: 2;
+}
+
+/* Hero Font Styles. */
+#hero h1 {
+  /* Using the clamp function to dynamically adjust the cont size based on the viewport width. */
+  font-size: clamp(var(--mobile-h1), 5vw, var(--desktop-h1));
+  font-weight: 900;
+  color: var(--primary-heading);
+  margin-bottom: 1rem;
+}
+
+#hero p {
+  font-size: clamp(var(--mobile-body), 3vw, var(--desktop-body));
+  color: var(--primary-body);
+}
+
+/* Hero content will take up more space then the forecast. */
+.hero-content {
+  flex: 2;
+}
+
+/* Forecast Grid Widget Styles. */
+.hero-forecast {
+  flex: 1;
+  display: grid;
+  /* Create 4 Equal Columns */
+  grid-template-columns: repeat(4, 1fr);
+  /* Background properties. */
+  background-color: var(--section-background);
+  box-shadow: var(--extra-large-shadow);
+  /* Spacing properties. */
+  padding: 1.5rem;
+  gap: 0.75rem;
+  border-radius: 1rem;
+  /* The widget can only be 450px wide regardless of viewport width. */
+  max-width: 450px;
+}
+
+.hero-forecast > div,
+.hero-forecast > article {
+  padding: 1rem;
+  background-color: var(--white);
+  border-radius: 0.5rem;
+}
+
+/* Primary Weather Card Styles */
+.primary-card {
+  /* Position at the top of the widget and span across all columns. */
+  grid-area: 1 / 1 / 2 / 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Second & Third Widget Cards, positionging on the second row side by side. */
+.hero-forecast > .widget-card:nth-of-type(1) {
+  grid-area: 2 / 1 / 3 / 3;
+}
+
+.hero-forecast > .widget-card:nth-of-type(2) {
+  grid-area: 2 / 3 / 3 / 5;
+}
+
+/* Fourth & Fifth Widget Cards, positionging on the third row side by side. */
+.hero-forecast > .widget-card:nth-of-type(3) {
+  grid-area: 3 / 1 / 4 / 3;
+}
+
+.hero-forecast > .widget-card:nth-of-type(4) {
+  grid-area: 3 / 3 / 4 / 5;
+}
+
+/* Primary card heading styles. */
+.primary-card h3 {
+  /* Adjust font size based on viewport width with clamp function. */
+  font-size: clamp(38px, 5vw, 70px);
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
+}
+
+/* Primary card image icon styles. */
+.primary-card img {
+  max-width: 100%;
+  height: 120px;
+}
+
+/* Allow High & Low temperatues to sit side by each. */
+.temperature-container {
+  display: flex;
+  gap: 0 1rem;
+  margin-top: 0.5rem;
+}
+
+/* Allow containers within the temperature container to appear side by each. */
+.temperature-container > div {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+}
+
+/* The widget cards content will stak vertically, flex-direction */
+.hero-forecast > article {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#hero .hero-forecast > article > p {
+  font-size: clamp(18px, 5vw, 22px);
+  font-weight: 600;
+  line-height: normal;
+}
+
+/* Top of widget cards styles. */
+.hero-forecast .widget-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Safety indicator image size styles. */
+.hero-forecast .safety-indicators {
+  max-width: 100%;
+  height: 15px;
+  margin: 0;
+}
+
+/* Widget SVG icon styles. */
+.widget-card img {
+  max-width: 100%;
+  height: 50px;
+  margin-right: auto;
+}
+
+/* Widget CTA (Get Full Forecast) */
+#forecast-cta {
+  /* Position in the last row, and the entire column width. */
+  grid-area: 4 / 1 / 5 / 5;
+  /* The button will keep a consistent width of the widget container. */
+  width: 100%;
+  /* Button color properties. */
+  background-color: var(--primary-orange);
+  color: var(--primary-background);
+  text-align: center;
+  font-weight: 700;
+  /* Spacing properties. */
+  padding: 1rem 0;
+  margin: 0.25rem auto 0 auto;
+  border-radius: 5rem;
+  /* Setting up button transition for hover state. */
+  transition: var(--global-transition);
+}
+
+#forecast-cta:hover {
+  background-color: var(--cta-button-hover);
+}
+
+/* Remove default margins on paragraph elements in the forecast widget. */
+.hero-forecast p {
+  margin: 0;
+}
+
+/* Hero Section Media Query 1200px */
+@media screen and (max-width: 1200px) {
+  
+  /* Removing the background iamge from the hero-wrapper to apply to the hero section instead. */
+  .hero-wrapper {    
+    background-image: none;
+  }
+
+  #hero {
+    /* Stack Hero Contents */
+    display: flex;
+    /* Applying the hero background to the hero section rather than the wrapper on smaller screens. */
+    background-image: url(/src/images/landing/hero/hero-desktop.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    /* Negative margins to position to background contents according to viewport width. */
+    margin-top: -110px;
+    padding-top: 120px;
+  }
+
+  /* Reduce primary card content gap on smaller screen sizes */
+  .primary-card {
+    gap: 1rem;
+  }
+
+  /* Reduce image size. */
+  .primary-card img {
+    height: 90px;
+  }
+
+  /* The widget will take up more space in the container when on the viewport is 1200px wide. */
+  #hero .hero-forecast {
+    flex: 2;    
+    max-width: 500px;
+  }
+
+  /* Widget card styles at 1200px */
+  .primary-card-content > .widget-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Primary Card Condition Text */
+  #hero .primary-card-content > article > p {
+    font-size: clamp(22px, 3vw, 28px);
+  }
+
+}
+
+/* Hero Media Query, 960px Wide. */
+@media screen and (max-width: 960px) {
+
+  /* Stack the hero content. */
+  #hero {
+    flex-direction: column;
+  }
+
+  /* Add some spacing between the hero content and forecast widget card. */
+  .hero-forecast {
+    margin-top: 3rem;
+  }
+
+  .primary-card-content > article {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+}
+
+/* Hero Media Query, 768px Wide. */
+@media screen and (max-width: 768px) {
+    
+  #hero {
+    padding: 6rem 1rem;
+  }
+
+  #hero {
+    padding: 120px 1rem 3rem 1rem;
+    background-size: contain;
+    background-image: url(/src/images/landing/hero/hero-mobile-bg-light.jpg);
+  }
+
+  #hero h1 {
+    font-size: clamp(40px, 5vw, var(--desktop-h1));      
+  }
+
+}
+
+@media screen and (max-width: 680px) {
+
+  /* Display the primary card contents in a row. */
+  .primary-card {
+    flex-direction: row;
+    /* Span the entire wide of the grid. */
+    grid-area: 1 / 1 / 2 / 5;
+  }
+
+  .hero-forecast > .widget-card:nth-of-type(1) {
+    /* Start at row 2 and end at row 2, start at column 1 and end at 3. */
+    grid-area: 2 / 1 / 2 / 3;
+  }
+
+  .hero-forecast > .widget-card:nth-of-type(2) {
+    /* Start at row 2 and end at row 2, start at column 3 and end at 5. */
+    grid-area: 2 / 3 / 2 / 5;
+  }
+
+  .hero-forecast > .widget-card:nth-of-type(3) {
+    /* Start at row 3 and end at row 3, start at column 1 and end at 3. */
+    grid-area: 3 / 1 / 3 / 3;
+  }
+
+  .hero-forecast > .widget-card:nth-of-type(4) {
+    /* Start at row 3 and end at row 3, start at column 3 and end at 5. */
+    grid-area: 3 / 3 / 3 / 5;
+  }
+
+  #forecast-cta {
+    /* Start at row 4 and end at row 4, start at column 1 and end at 5. */
+    grid-area: 4 / 1 / 4 / 5;
+  }
+
+  @media screen and (max-width: 460px) {
+
+    .primary-card-content > article {
+      flex-direction: column;
+      align-items: start;
+    }
+
+    .primary-card-content > article,
+    .primary-card-content > .widget-card {
+      /* Remove the gap between elements of the widget card on very small device widths. */
+      gap: 0;
+    }
+
+  }
+
+  /* Hero Container Media Query, 400px Wide.  */
+  @media screen and (max-width: 400px) {
+
+    /* Change the grid template layout to allow for a single column layout on very small device widths. */
+    .hero-forecast {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(5, 1fr);
+      padding: 1rem 1rem 2rem 1rem;
+    }
+
+    /* Each Widget card will span the entire grid column layout. */
+    .primary-card,
+    .hero-forecast > .widget-card:nth-of-type(1),
+    .hero-forecast > .widget-card:nth-of-type(2),
+    .hero-forecast > .widget-card:nth-of-type(3),
+    .hero-forecast > .widget-card:nth-of-type(4),
+    #forecast-cta {
+      grid-column: 1 / 5;
+    }
+
+    /* Defining the grid rows for each of the cards */
+
+    .primary-card {
+      grid-row: 1;
+    }
+
+    .hero-forecast > .widget-card:nth-of-type(1) {
+      grid-row: 2;
+    }
+
+    .hero-forecast > .widget-card:nth-of-type(2) {
+      grid-row: 3;
+    }
+
+    .hero-forecast > .widget-card:nth-of-type(3) {
+      grid-row: 4;
+    }
+
+    .hero-forecast > .widget-card:nth-of-type(4) {
+      grid-row: 5;
+    }
+
+    #forecast-cta {
+      grid-row: 6;
+    }
+
+    .primary-card img {
+      height: 70px;
+    }
+
+  }
+
+}
+
+/* End of Hero Styles */
+
+/* Start of Why Section Styles */
+
+#why {
+  /* Why container styles, setting a min-height and max-width to keep consistency across sections. */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  max-width: 1600px;
+  /* Center the containing contents and applying padding. */
+  margin: 0 auto;
+  padding: 6rem 3rem 8rem 3rem;
+}
+
+.why-container {
+  display: flex;
+}
+
+/* Dynamic font sizing for the heading and paragraph elements using the clamp function, adjust based on the viewport width. */
+.why-container > h2 {
+  font-size: clamp(var(--mobile-h2), 5vw, var(--desktop-h2));
+  font-weight: 800;
+  flex: 2;
+}
+
+.why-contents p {
+  font-size: clamp(var(--mobile-body), 3vw, var(--desktop-body));
+  color: var(--primary-body);
+}
+
+/* The why contents sections paragraph and readmore link will take up 4 pieces of the available space. */
+.why-contents {
+  flex: 4;
+}
+
+/* Read more link stlyes. */
+.why-contents a,
+#about > article a {
+  text-decoration: none;
+  color: var(--cta-button);
+  font-size: var(--links-font);
+  transition: var(--global-transition);
+}
+
+/* Read more link hover styles */
+.why-contents a:hover,
+#about > article a:hover {
+  color: var(--cta-button-hover);
+}
+
+/* Reasons grid container. */
+.reasons {
+  display: grid;
+  /* creating 4 equal columns with repeat. */
+  grid-template-columns: repeat(4, 1fr);
+  /* Spacing each grid item with gap. */
+  gap: 2rem;
+  margin-top: 5rem;
+  text-align: center;
+}
+
+.reason-heading {
+  font-size: clamp(var(--mobile-h3), 5vw, var(--desktop-h3));
+  font-weight: 800;
+  margin: 1rem 0;
+  line-height: normal;
+}
+
+/* Reason card styles. */
+.reasons > article {
+  padding: 2rem;
+  box-shadow: var(--extra-large-shadow);
+  border-radius: 1rem;
+}
+
+/* Why & Reasons Media Query, 1200px Wide */
+@media screen and (max-width: 1200px) {
+
+    /* Stack the why container on smaller screens. */
+    .why-container {
+      flex-direction: column;     
+    }
+
+    /* Adjust the template columns to create two equal columns on devices of 1200px wide. */
+    .reasons {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+/* On devices 800px wide, the column layout will change to a single column layout. */
+@media screen and (max-width: 800px) {
+
+    /* Single column layout. */
+    .reasons {
+      grid-template-columns: auto;
+    }
+
+    /* Card content will appear in a two column layout with flex. */
+    .reasons > article {
+      display: flex;
+      text-align: left;
+      /* Card content spacing. */
+      gap: 2rem;
+    }
+
+    @media screen and (max-width: 380px) {
+
+      /* Stack the card content to prevent overflow on very small device widths, 380px wide. */
+      .reasons > article {
+        display: block;
+        text-align: center;
+      }
+    
+    }
+
+}
+
+/* Why Section Media Query, 768px wide, mobile. */
+@media screen and (max-width: 768px) {
+    
+    /* Adjust why section padding to keep consistency with other sections. */
+    #why {
+      padding: 6rem 1rem 8rem 1rem;
+    } 
+
+}
+
+/* Start of About Section Styles */
+
+/* About wrapper, setting the background colour to the light blue section background. */
+.about-wrapper {
+  background-color: var(--section-background);
+}
+
+/* About container styles. */
+#about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Consistent width with other sections. */
+  max-width: 1600px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 6rem 3rem;
+  gap: 4rem;
+}
+
+/* Flex proportions of the image and content containers. */
+#about > img {
+  flex: 1.5;
+}
+
+#about > article {
+  flex: 2;
+  padding: 0;
+}
+
+/* About Section Media Query, 1100px Wide */
+@media screen and (max-width: 1100px) {
+
+  /* Stack about container children. */
+  #about {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  /* Adjust the image size on smaller screens, retaining it's width will scaling down. */
+  #about > img {
+    max-width: 100%;
+  }
+
+  /* About article content padding. */
+  #about > article {
+    padding: 0 0 2rem 0;
+  }
+
+}
+
+/* About Section Media Query, 768px Wide */
+@media screen and (max-width: 768px) {
+
+  /* Consistent spacing with other sections on mobile. */
+  #about {
+    padding: 6rem 1rem;
+  }
+
+}
+
+/* End of About Styles */
+
+/* Start of Reviews Section Styles */
+
+/* Review wrapper container background properties. */
+.reviews-wrapper {
+  background-image: url(../images/landing/reviews/review-spiral.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left left;
+}
+
+/* Reviews container styles. */
+#reviews {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 6rem 3rem;
+}
+
+/* Allow the carousel to be 100% width of the parent container (Reviews) */
+#reviewsCarousel,
+.carousel-item {
+  width: 100%;
+}
+
+/* Adjust the width of the innder carousel container holding the two review cards. */
+.carousel-inner {
+  width: 85%;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* Carousel indicator styles. Overriding the default bootstrap indicators. */
+.carousel-indicators {
+  position: absolute;
+  right: 0;
+  bottom: -60px;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+
+/* Changing the indicators background color to the slate grey and rouding them. */
+.carousel-indicators [data-bs-target] {
+  background-color: var(--slate-accent-1);
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  transition: var(--global-transition);
+}
+
+/* The active indicator will appear orange for usability purposes. */
+.carousel-indicators [data-bs-target].active {
+  background-color: var(--primary-orange);
+}
+
+.carousel-control-next, .carousel-control-prev {
+  position: absolute;
+  top: 40%;
+  height: 50px;
+  width: 50px;
+  border-radius: 5rem;
+  color: #fff;
+  background-color: var(--primary-orange);
+  opacity: 1;
+}
+
+/* Carousel next and previous button positioning. */
+.carousel-control-next {
+  right: 25px;
+}
+
+.carousel-control-prev {
+  left: 25px;
+}
+
+/* Review card styles. */
+.review {
+  box-sizing: border-box;
+  background-color: var(--white);
+  padding: 1rem 3rem;
+  min-height: 20rem;
+  height: auto;
+  margin: 0;
+  border-radius: 0.5rem;
+  box-shadow: var(--extra-large-shadow);
+  /* outline: 1px solid var(--slate-accent-4); */
+}
+
+/* Review card heading and image container styles. Positioning the elements side by side. */
+.review > div {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin: 1rem 0;
+}
+
+/* Review heading styles. */
+.review > div h3 {
+  /* Dynamically adjust the font based on the device viewport width. */
+  font-size: clamp(18px, 5vw, 22px);
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Review card image styles. */
+.review > div img {
+  max-width: 100%;
+  border-radius: 50%;
+  border: 3px solid var(--primary-yellow);
+}
+
+/* Review primary paragraph content */
+.review-content {
+  margin: 0;
+  font-size: clamp(--mobile-body, 3vw, var(--desktop-body));
+  margin-bottom: 1rem;
+}
+
+/* Review Card Media Query, 1200px Wide */
+@media screen and (max-width: 1200px) {
+  
+  /* Apply a min-height to the review cards, stack the card content and center it. */
+  .review {
+    min-height: 25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  @media screen and (max-width: 1000px) {
+    .review {
+      min-height: 18rem;
+    }
+  }
+
+}
+
+/* Review Card Media Query, 768px Wide */
+@media screen and (max-width: 768px) {
+
+  /* On mobile devices, reduce padding to prevent overflow and keep consistency with other sections. */
+  #reviews {
+    padding: 6rem 1rem;
+  }
+
+  /* The inner carousel container will take up 100% width on mobile, rather than only 85%. */
+  .carousel-inner {
+    width: 100%;
+  }
+
+  /* Positioning the indicators slightly closer to the review cards. */
+  .carousel-indicators {
+    margin: 0 auto;
+    bottom: -40px;
+  }
+
+  /* Reduce the size of the next and prev buttons. */
+  .carousel-control-next, .carousel-control-prev {
+    top: 45%;
+    width: 35px;
+    height: 35px;
+  }
+
+  /* Reduce the size of the next and prev button icons. */
+  .carousel-control-next-icon, .carousel-control-prev-icon {
+    width: 25px;
+    height: 25px;
+  }
+
+  /* Adjust the next and prev carousel button horizontal positoning. */
+  .carousel-control-next {
+    right: -8px;
+  }
+
+  .carousel-control-prev {
+    left: -8px;
+  }
+
+}
+
+/* Review Media Query, 460px Wide */
+@media screen and (max-width: 460px) {
+
+  /* Adjust review card height and padding on small screen sizes */
+  .review {
+    min-height: 24rem;
+    padding: 1rem 2rem;
+  }
+
+}
+
+@media screen and (max-width: 360px) {
+
+  /* Stack the review card content on very small screen sizes */
+  .review > div {
+    flex-direction: column;
+    /* Remove the gap and center the card contents. */
+    gap: 0;
+    justify-content: center;
+  }
+
+  /* Slight spacing of the primary content and heading container content. */
+  .review > div article {
+    margin: 1rem 0;
+  }
+
+  .review > div article p {
+    margin: 0;
+  }
+
+  /* Review card image styles */
+  .review > div img {
+    height: 70px;
+    width: 70px;
+  }
+
+  /* Center text  */
+  .review > div,
+  .review-content {
+    text-align: center;
+  }
+
+}
+
+/* End of Reviews Styles */
+
+/* Start of FAQs Styles */
+
+/* FAQ Container Wrapper Styles. */
+.faq-wrapper {
+  background-color: var(--section-background);
+  position: relative;
+  overflow: hidden;
+}
+
+#faq {
+  position: relative;
+  /* Min-height of the container. */
+  min-height: 100vh;
+  /* Center the faq container contents. */
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 10rem 3rem;
+  z-index: 99;
+  margin-bottom: 5rem;
+ 
+}
+
+/* Padding to the accordion buttons in the collapsed state. */
+.accordion-button.collapsed {
+  padding: 0.5rem;
+}
+
+/* Accordion Styles */
+#faq-accordion {
+  /* Positioning relative to allow for the life buoy to be positioned absolutely to this accordion container. */
+  position: relative;
+  max-width: 1000px;
+  /* Center contents and white space */
+  margin: 3rem auto;
+  padding: 2rem 2.25rem;
+  background-color: var(--white);
+  /* Round corners and add a box shadow to the accordion. */
+  border-radius: 0.5rem;
+  box-shadow: var(--extra-large-shadow);
+  /* Ensure the accordion is positioned above the life buoy. */
+  z-index: 99;
+}
+
+/* FAQ accordion heading styles. */
+.accordion-item h2 {
+  color: var(--primary-color);
+  /* Dynamically adjust the heading font depending on the viewport width. */
+  font-size: clamp(20px, 5vw, 24px);
+  font-weight: 500;
+}
+
+/* Faq text styles. */
+#faq h2 {
+  text-align: center;
+}
+
+/* FAQ paragraph styles. */
+#faq p {
+  margin: 1rem 0;
+}
+
+#faq > p:nth-of-type(1) {
+  font-weight: 600;
+}
+
+/* Accordion item styles. */
+.accordion-flush .accordion-item {
+  transition: 0.2s ease-in-out;
+  max-width: 1000px;
+  border-bottom: 1px solid var(--slate-accent-5);
+  padding: 0.5rem 0;
+}
+
+/* The last item (child) in the accordion (parent) will not contain a border. */
+.accordion-item:last-child {
+  border-bottom: none;
+}
+
+/* Add some padding to the button heading, adjust the font size with clamp, and font weight. */
+.accordion-flush .accordion-item .accordion-button, 
+.accordion-flush .accordion-item .accordion-button.collapsed {
+  padding: 1.25rem;
+  font-size: clamp(var(--mobile-h3), 5vw, var(--desktop-h3));
+  font-weight: 400;
+}
+
+/* Accordion body styles. */
+.accordion-body {
+  padding: 0.25rem 1.25rem;
+}
+
+.accordion-body p {
+  text-align: left;
+}
+
+/* If the accordion button doesn't have the .collapsed class, apply these properties. */
+.accordion-button:not(.collapsed) {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+/* When an item is focused, remove the border colour, box-shadow and outline styles. */
+.accordion-button:focus, .accordion-button:active {
+  border-color: none;
+  box-shadow: none;
+  outline: 0;
+}
+
+/* Accordion dropdown button styles. */
+.accordion-button:after {
+  margin-left: auto;
+  color: #fff;
+  width: 1.75rem;
+  height: 1.75rem;
+  padding: 0.75rem;
+  background-size: 100%;
+  background-color: #ff6347;
+  border-radius: 50%;
+  transition: var(--global-transition);
+}
+
+
+/* Accordion Button Background SVGs */
+.accordion-button:after,
+.accordion-button:not(.collapsed)::after {
+  background-image: url(/src/images/landing/faq/chevron.svg);
+}
+
+/* On accordion item hover, the button heading will change to the primary red from the root styles, signifying the item is clickable. */
+.accordion-item:hover .accordion-button {
+  color: var(--primary-color);
+}
+
+/* Life buoy styles. */
+.life-buoy {
+  /* Positioned absolutely, relative to the parent container (accordion) */
+  position: absolute;
+  /* Position at the bottom right. */
+  bottom: -25px;
+  right: -100px;
+  z-index: 1;
+  max-width: 100%;
+  height: auto;
+  pointer-events: none;
+}
+
+/* FAQ Media Query, 768px Wide */
+@media screen and (max-width: 768px) {
+
+  /* For smaller screens, increase the FAQ section padding on the top and bottom, and reduce the horizontal padding */
+  #faq {
+    padding: 10rem 1rem;    
+  }
+
+  /* Reduce accordion container padding to prevent overflow. */
+  #faq-accordion {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .accordion-flush .accordion-item .accordion-button, 
+  .accordion-flush .accordion-item .accordion-button.collapsed {
+    padding: 1.25rem 0;
+  }
+
+  /* Apply separation of the button text and icon of the accordion button */
+  .accordion-flush .accordion-item .accordion-button {
+    gap: 1rem;
+  }
+
+  /* Reduce padding on the accordion body for smaller device widths. */
+  .accordion-body {
+    padding: 0.25rem 0;
+  }
+
+  /* On mobile, the life buoy graphic will be positioned in the center */
+  .life-buoy { 
+    bottom: -20px;
+    right: 0;  
+  }
+
+  /* On very small screen widths of 368px, push down the buoy graphic positioning adjusting the bottom value. */
+  @media screen and (max-width: 368px) {
+      
+      .life-buoy {
+        bottom: 15px;      
+      }
+  }
+
+}
+
+/* End of FAQs Styles */
 
 /* contact us page style */
 
