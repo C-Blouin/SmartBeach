@@ -1,9 +1,8 @@
 function Footer() {
- 
-    return (
-        // Start of Footer.
-        <footer>
-            <section>
+  return (
+    // Start of Footer.
+    <footer>
+      {/* <section>
                 <ul>
                     <li>
                         <a href="#">
@@ -33,11 +32,10 @@ function Footer() {
                 <p><i></i>College One</p>
                 <p><i></i>College Two</p>
                 <small>©2024</small>
-            </section>
-        </footer>
-        // End of Footer.
-    );
-  
+            </section> */}
+    </footer>
+    // End of Footer.
+  );
 }
 
 export default Footer;

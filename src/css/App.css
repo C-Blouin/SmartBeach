@@ -70,7 +70,7 @@
   --white: #ffffff;
 
   /* Gradients */
-  --gradient: linear-gradient(0deg, rgba(249,220,93,1) 0%, rgba(242,99,33,1) 100%);
+  --gradient: linear-gradient(0deg, rgba(249, 220, 93, 1) 0%, rgba(242, 99, 33, 1) 100%);
 
   /* Icon Background and Inner Stroke Colours */
   --icon-background: #3499d7;
@@ -86,16 +86,111 @@
   --input-error: 0 0 0 0.075rem #f26321;
 
   /* Box Shadows */
-  --regular-shadow: 
+  --regular-shadow:
     0px 1px 2px 0px rgba(0, 0, 0, 0.06),
     0px 1px 3px 0px rgba(0, 0, 0, 0.10);
-  --medium-shadow: 
+  --medium-shadow:
     0px 2px 4px -1px rgba(0, 0, 0, 0.06),
     0px 4px 6px -1px rgba(0, 0, 0, 0.10);
-  --large-shadow: 
+  --large-shadow:
     0px 4px 6px -2px rgba(0, 0, 0, 0.05),
     0px 10px 15px -3px rgba(0, 0, 0, 0.10);
-  --extra-large-shadow: 
+  --extra-large-shadow:
     0px 10px 10px -5px rgba(0, 0, 0, 0.04),
     0px 20px 25px -5px rgba(0, 0, 0, 0.10);
+}
+
+/* contact us page style */
+
+.contact_us {
+  background-color: var(--primary-background);
+}
+
+.contact_us_info {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.contact_us_info .contact_info {
+  width: 492px;
+  margin-right: 80px;
+}
+
+.contact_us h1 {
+  font-family: var(--heading-font);
+  font-size: clamp(var(--mobile-h1), 5vw, var(--desktop-h1));
+  color: var(--primary-heading);
+  font-weight: 800;
+}
+
+.contact_us p,
+.contact_us ul li {
+  font-family: var(--body-font);
+  font-size: clamp(var(--mobile-body), 3vw, var(--desktop-body));
+  color: var(--primary-body);
+  font-weight: 400;
+  line-height: 21.78px;
+}
+
+.contact_us ul li:before {}
+
+.contact_us .contact_us_form {
+  background-color: var(--white);
+  padding: 0;
+  width: 357px;
+  height: 428px;
+  border-radius: 6px;
+  box-shadow: var(--large-shadow);
+  margin-top: -50px;
+}
+
+.contact_us .contact_us_form form {
+  width: 287px;
+  height: 331px;
+  padding: 45px 35px;
+}
+
+.contact_us label {
+  font-size: var(--label-font);
+  font-family: var(--body-font);
+  padding-left: 4px;
+  font-weight: 500;
+  line-height: 16.94px;
+}
+
+.contact_us placeholder {
+  font-size: clamp(var(--mobile-body), 3vw, var(--desktop-body));
+  font-family: var(--body-font);
+  padding-left: 9px;
+  font-weight: 400;
+  line-height: 21.78px;
+  color: rgb(179, 187, 193)
+}
+
+.contact_us input {
+  width: 287px;
+  height: 43px;
+  border: 1px solid rgb(179, 187, 193);
+  border-radius: 6px;
+}
+
+.contact_us fieldset {
+  margin-bottom: 20px;
+}
+
+.contact_us form fieldset:nth-child(3) {
+  margin-bottom: 45px;
+}
+
+.contact_us button {
+  width: 287px;
+  height: 60px;
+  background-color: var(--cta-button);
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 137px;
+  font-family: var(--body-font);
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 28px;
 }
