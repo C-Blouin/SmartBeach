@@ -1323,3 +1323,196 @@ footer > nav {
 }
 
 /* End of Reviews Styles */
+
+/* Start of FAQs Styles */
+
+/* FAQ Container Wrapper Styles. */
+.faq-wrapper {
+  background-color: var(--section-background);
+  position: relative;
+  overflow: hidden;
+}
+
+#faq {
+  position: relative;
+  /* Min-height of the container. */
+  min-height: 100vh;
+  /* Center the faq container contents. */
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 10rem 3rem;
+  z-index: 99;
+  margin-bottom: 5rem;
+ 
+}
+
+/* Padding to the accordion buttons in the collapsed state. */
+.accordion-button.collapsed {
+  padding: 0.5rem;
+}
+
+/* Accordion Styles */
+#faq-accordion {
+  /* Positioning relative to allow for the life buoy to be positioned absolutely to this accordion container. */
+  position: relative;
+  max-width: 1000px;
+  /* Center contents and white space */
+  margin: 3rem auto;
+  padding: 2rem 2.25rem;
+  background-color: var(--white);
+  /* Round corners and add a box shadow to the accordion. */
+  border-radius: 0.5rem;
+  box-shadow: var(--extra-large-shadow);
+  /* Ensure the accordion is positioned above the life buoy. */
+  z-index: 99;
+}
+
+/* FAQ accordion heading styles. */
+.accordion-item h2 {
+  color: var(--primary-color);
+  /* Dynamically adjust the heading font depending on the viewport width. */
+  font-size: clamp(20px, 5vw, 24px);
+  font-weight: 500;
+}
+
+/* Faq text styles. */
+#faq h2 {
+  text-align: center;
+}
+
+/* FAQ paragraph styles. */
+#faq p {
+  margin: 1rem 0;
+}
+
+#faq > p:nth-of-type(1) {
+  font-weight: 600;
+}
+
+/* Accordion item styles. */
+.accordion-flush .accordion-item {
+  transition: 0.2s ease-in-out;
+  max-width: 1000px;
+  border-bottom: 1px solid var(--slate-accent-5);
+  padding: 0.5rem 0;
+}
+
+/* The last item (child) in the accordion (parent) will not contain a border. */
+.accordion-item:last-child {
+  border-bottom: none;
+}
+
+/* Add some padding to the button heading, adjust the font size with clamp, and font weight. */
+.accordion-flush .accordion-item .accordion-button, 
+.accordion-flush .accordion-item .accordion-button.collapsed {
+  padding: 1.25rem;
+  font-size: clamp(var(--mobile-h3), 5vw, var(--desktop-h3));
+  font-weight: 400;
+}
+
+/* Accordion body styles. */
+.accordion-body {
+  padding: 0.25rem 1.25rem;
+}
+
+.accordion-body p {
+  text-align: left;
+}
+
+/* If the accordion button doesn't have the .collapsed class, apply these properties. */
+.accordion-button:not(.collapsed) {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+/* When an item is focused, remove the border colour, box-shadow and outline styles. */
+.accordion-button:focus, .accordion-button:active {
+  border-color: none;
+  box-shadow: none;
+  outline: 0;
+}
+
+/* Accordion dropdown button styles. */
+.accordion-button:after {
+  margin-left: auto;
+  color: #fff;
+  width: 1.75rem;
+  height: 1.75rem;
+  padding: 0.75rem;
+  background-size: 100%;
+  background-color: #ff6347;
+  border-radius: 50%;
+  transition: var(--global-transition);
+}
+
+
+/* Accordion Button Background SVGs */
+.accordion-button:after,
+.accordion-button:not(.collapsed)::after {
+  background-image: url(/src/images/landing/faq/chevron.svg);
+}
+
+/* On accordion item hover, the button heading will change to the primary red from the root styles, signifying the item is clickable. */
+.accordion-item:hover .accordion-button {
+  color: var(--primary-color);
+}
+
+/* Life buoy styles. */
+.life-buoy {
+  /* Positioned absolutely, relative to the parent container (accordion) */
+  position: absolute;
+  /* Position at the bottom right. */
+  bottom: -25px;
+  right: -100px;
+  z-index: 1;
+  max-width: 100%;
+  height: auto;
+  pointer-events: none;
+}
+
+/* FAQ Media Query, 768px Wide */
+@media screen and (max-width: 768px) {
+
+  /* For smaller screens, increase the FAQ section padding on the top and bottom, and reduce the horizontal padding */
+  #faq {
+    padding: 10rem 1rem;    
+  }
+
+  /* Reduce accordion container padding to prevent overflow. */
+  #faq-accordion {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .accordion-flush .accordion-item .accordion-button, 
+  .accordion-flush .accordion-item .accordion-button.collapsed {
+    padding: 1.25rem 0;
+  }
+
+  /* Apply separation of the button text and icon of the accordion button */
+  .accordion-flush .accordion-item .accordion-button {
+    gap: 1rem;
+  }
+
+  /* Reduce padding on the accordion body for smaller device widths. */
+  .accordion-body {
+    padding: 0.25rem 0;
+  }
+
+  /* On mobile, the life buoy graphic will be positioned in the center */
+  .life-buoy { 
+    bottom: -20px;
+    right: 0;  
+  }
+
+  /* On very small screen widths of 368px, push down the buoy graphic positioning adjusting the bottom value. */
+  @media screen and (max-width: 368px) {
+      
+      .life-buoy {
+        bottom: 15px;      
+      }
+  }
+
+}
+
+/* End of FAQs Styles */
