@@ -1091,3 +1091,235 @@ footer > nav {
 }
 
 /* End of About Styles */
+
+/* Start of Reviews Section Styles */
+
+/* Review wrapper container background properties. */
+.reviews-wrapper {
+  background-image: url(../images/landing/reviews/review-spiral.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left left;
+}
+
+/* Reviews container styles. */
+#reviews {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 6rem 3rem;
+}
+
+/* Allow the carousel to be 100% width of the parent container (Reviews) */
+#reviewsCarousel,
+.carousel-item {
+  width: 100%;
+}
+
+/* Adjust the width of the innder carousel container holding the two review cards. */
+.carousel-inner {
+  width: 85%;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* Carousel indicator styles. Overriding the default bootstrap indicators. */
+.carousel-indicators {
+  position: absolute;
+  right: 0;
+  bottom: -60px;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+
+/* Changing the indicators background color to the slate grey and rouding them. */
+.carousel-indicators [data-bs-target] {
+  background-color: var(--slate-accent-1);
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  transition: var(--global-transition);
+}
+
+/* The active indicator will appear orange for usability purposes. */
+.carousel-indicators [data-bs-target].active {
+  background-color: var(--primary-orange);
+}
+
+.carousel-control-next, .carousel-control-prev {
+  position: absolute;
+  top: 40%;
+  height: 50px;
+  width: 50px;
+  border-radius: 5rem;
+  color: #fff;
+  background-color: var(--primary-orange);
+  opacity: 1;
+}
+
+/* Carousel next and previous button positioning. */
+.carousel-control-next {
+  right: 25px;
+}
+
+.carousel-control-prev {
+  left: 25px;
+}
+
+/* Review card styles. */
+.review {
+  box-sizing: border-box;
+  background-color: var(--white);
+  padding: 1rem 3rem;
+  min-height: 20rem;
+  height: auto;
+  margin: 0;
+  border-radius: 0.5rem;
+  box-shadow: var(--extra-large-shadow);
+  /* outline: 1px solid var(--slate-accent-4); */
+}
+
+/* Review card heading and image container styles. Positioning the elements side by side. */
+.review > div {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin: 1rem 0;
+}
+
+/* Review heading styles. */
+.review > div h3 {
+  /* Dynamically adjust the font based on the device viewport width. */
+  font-size: clamp(18px, 5vw, 22px);
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Review card image styles. */
+.review > div img {
+  max-width: 100%;
+  border-radius: 50%;
+  border: 3px solid var(--primary-yellow);
+}
+
+/* Review primary paragraph content */
+.review-content {
+  margin: 0;
+  font-size: clamp(--mobile-body, 3vw, var(--desktop-body));
+  margin-bottom: 1rem;
+}
+
+/* Review Card Media Query, 1200px Wide */
+@media screen and (max-width: 1200px) {
+  
+  /* Apply a min-height to the review cards, stack the card content and center it. */
+  .review {
+    min-height: 25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  @media screen and (max-width: 1000px) {
+    .review {
+      min-height: 18rem;
+    }
+  }
+
+}
+
+/* Review Card Media Query, 768px Wide */
+@media screen and (max-width: 768px) {
+
+  /* On mobile devices, reduce padding to prevent overflow and keep consistency with other sections. */
+  #reviews {
+    padding: 6rem 1rem;
+  }
+
+  /* The inner carousel container will take up 100% width on mobile, rather than only 85%. */
+  .carousel-inner {
+    width: 100%;
+  }
+
+  /* Positioning the indicators slightly closer to the review cards. */
+  .carousel-indicators {
+    margin: 0 auto;
+    bottom: -40px;
+  }
+
+  /* Reduce the size of the next and prev buttons. */
+  .carousel-control-next, .carousel-control-prev {
+    top: 45%;
+    width: 35px;
+    height: 35px;
+  }
+
+  /* Reduce the size of the next and prev button icons. */
+  .carousel-control-next-icon, .carousel-control-prev-icon {
+    width: 25px;
+    height: 25px;
+  }
+
+  /* Adjust the next and prev carousel button horizontal positoning. */
+  .carousel-control-next {
+    right: -8px;
+  }
+
+  .carousel-control-prev {
+    left: -8px;
+  }
+
+}
+
+/* Review Media Query, 460px Wide */
+@media screen and (max-width: 460px) {
+
+  /* Adjust review card height and padding on small screen sizes */
+  .review {
+    min-height: 24rem;
+    padding: 1rem 2rem;
+  }
+
+}
+
+@media screen and (max-width: 360px) {
+
+  /* Stack the review card content on very small screen sizes */
+  .review > div {
+    flex-direction: column;
+    /* Remove the gap and center the card contents. */
+    gap: 0;
+    justify-content: center;
+  }
+
+  /* Slight spacing of the primary content and heading container content. */
+  .review > div article {
+    margin: 1rem 0;
+  }
+
+  .review > div article p {
+    margin: 0;
+  }
+
+  /* Review card image styles */
+  .review > div img {
+    height: 70px;
+    width: 70px;
+  }
+
+  /* Center text  */
+  .review > div,
+  .review-content {
+    text-align: center;
+  }
+
+}
+
+/* End of Reviews Styles */
