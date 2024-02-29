@@ -347,6 +347,103 @@ function Home() {
 
 			</div>
 			{/* End of Reviews Wrapper */}
+
+			{/* Start of FAQS Wrapper */}
+			<div className="faq-wrapper">
+
+				{/* Start of FAQS Section */}
+				<section id="faq">				
+					<h2>Frequently Asked Questions</h2>
+					
+					{/* Start of Accordion Container */}
+					<div className="accordion accordion-flush" id="faq-accordion">
+						
+						{/* Question 1 Accordion Item */}
+						<article className="accordion-item">                
+							<h2 className="accordion-header" id="headingOne">
+								<button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+								What is SmartBeach and how does it work?
+								</button>
+							</h2>
+							
+							<div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="faq-accordion">
+								<div className="accordion-body">
+									<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis unde consequatur sunt fugiat voluptatibus voluptatem doloremque adipisci nemo, veniam, velit qui! Neque nihil consequuntur repellendus est suscipit doloremque voluptatibus minima tenetur illum assumenda excepturi tempore, laboriosam commodi saepe sunt! Accusamus eius animi dolore dignissimos mollitia? A fugiat corporis explicabo sapiente!</p>
+								</div>
+							</div>                
+						</article>
+						
+						{/* Question 2 Accordion Item */}
+						<article className="accordion-item">
+							<h2 className="accordion-header" id="headingTwo">
+								<button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+								What type of information does SmartBeach provide about beach facilities?
+								</button>
+							</h2>
+						
+							<div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="faq-accordion">
+								<div className="accordion-body">
+									<p>SmartBeach not only focuses on water conditions but also offers detailed information about beach facilities. You can find details about amenities such as restrooms, lifeguard availability, beach equipment rentals, and more. This ensures you have all the information you need for a comfortable and enjoyable day at the beach.</p>
+								</div>
+							</div>                
+						</article>
+						
+						{/* Question 3 Accordion Item */}
+						<article className="accordion-item">                
+							<h2 className="accordion-header" id="headingThree">
+								<button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+								Can Smart Beach help me plan activities at the beach?
+								</button>
+							</h2>
+							
+							<div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="faq-accordion">
+								<div className="accordion-body">
+									<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis unde consequatur sunt fugiat voluptatibus voluptatem doloremque adipisci nemo, veniam, velit qui! Neque nihil consequuntur repellendus est suscipit doloremque voluptatibus minima tenetur illum assumenda excepturi tempore, laboriosam commodi saepe sunt! Accusamus eius animi dolore dignissimos mollitia? A fugiat corporis explicabo sapiente!</p>
+								</div>
+							</div>
+						</article>
+						
+						{/* Question 4 Accordion Item */}
+						<article className="accordion-item">
+							<h2 className="accordion-header" id="headingFour">
+								<button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+								Are there any safety alerts provided by SmartBeach?
+								</button>
+							</h2>
+						
+							<div id="collapseFour" className="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="faq-accordion">
+								<div className="accordion-body">
+									<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis unde consequatur sunt fugiat voluptatibus voluptatem doloremque adipisci nemo, veniam, velit qui! Neque nihil consequuntur repellendus est suscipit doloremque voluptatibus minima tenetur illum assumenda excepturi tempore, laboriosam commodi saepe sunt! Accusamus eius animi dolore dignissimos mollitia? A fugiat corporis explicabo sapiente!</p>                            
+								</div>
+							</div>               
+						</article>
+
+						{/* Question 5 Accordion Item */}
+						<article className="accordion-item">                
+							<h2 className="accordion-header" id="headingFive">
+								<button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+								How can I contribute to Smart Beach and share my experiences?
+								</button>
+							</h2>
+							
+							<div id="collapseFive" className="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="faq-accordion">
+								<div className="accordion-body">
+									<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis unde consequatur sunt fugiat voluptatibus voluptatem doloremque adipisci nemo, veniam, velit qui! Neque nihil consequuntur repellendus est suscipit doloremque voluptatibus minima tenetur illum assumenda excepturi tempore, laboriosam commodi saepe sunt! Accusamus eius animi dolore dignissimos mollitia? A fugiat corporis explicabo sapiente!</p>                          
+								</div>
+							</div>                
+						</article>	
+
+					</div>
+					{/* End of Accordion Container */}
+
+					{/* Life Buoy Image to be Positioned Absolutely, Relative to the Accordion Container */}
+					<img src={lifeBuoy} alt="Life Buoy" className="life-buoy" />
+
+				</section>
+				{/* End of FAQS Section */}
+
+			</div>
+			{/* End of FAQS Wrapper */}
 			
 		</div>
 
