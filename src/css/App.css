@@ -74,7 +74,7 @@
   --white: #ffffff;
 
   /* Gradients */
-  --gradient: linear-gradient(0deg, rgba(249,220,93,1) 0%, rgba(242,99,33,1) 100%);
+  --gradient: linear-gradient(0deg, rgba(249, 220, 93, 1) 0%, rgba(242, 99, 33, 1) 100%);
 
   /* Icon Background and Inner Stroke Colours */
   --icon-background: #3499d7;
@@ -90,31 +90,34 @@
   --input-error: 0 0 0 0.075rem #f26321;
 
   /* Box Shadows */
-  --regular-shadow: 
+  --regular-shadow:
     0px 1px 2px 0px rgba(0, 0, 0, 0.06),
     0px 1px 3px 0px rgba(0, 0, 0, 0.10);
-  --medium-shadow: 
+  --medium-shadow:
     0px 2px 4px -1px rgba(0, 0, 0, 0.06),
     0px 4px 6px -1px rgba(0, 0, 0, 0.10);
-  --large-shadow: 
+  --large-shadow:
     0px 4px 6px -2px rgba(0, 0, 0, 0.05),
     0px 10px 15px -3px rgba(0, 0, 0, 0.10);
-  --extra-large-shadow: 
+  --extra-large-shadow:
     0px 10px 10px -5px rgba(0, 0, 0, 0.04),
     0px 20px 25px -5px rgba(0, 0, 0, 0.10);
 
-    --global-transition: 0.3s ease-in-out;
+  --global-transition: 0.3s ease-in-out;
 }
 
 /* Apply the border-box sizing to all elements and either before and after elements. */
 html,
-*, 
-::after, ::before {
+*,
+::after,
+::before {
   box-sizing: border-box;
 }
 
 /* All elements will inherit the box-sizing set in the root html styles. */
-*::before, *::after, * {
+*::before,
+*::after,
+* {
   box-sizing: inherit;
   margin: 0;
   padding: 0;
@@ -123,15 +126,15 @@ html,
 /* Start of Scrollbar Styles. */
 
 body::-webkit-scrollbar {
-  width: 6px; 
+  width: 6px;
 }
 
 body::-webkit-scrollbar-track {
-  background: var(--primary-slate); 
+  background: var(--primary-slate);
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: var(--primary-orange); 
+  background-color: var(--primary-orange);
   border-radius: 25px;
 }
 
@@ -146,11 +149,22 @@ body::-webkit-scrollbar-thumb {
 
 /* Global Heading Styles */
 
-h1, h2, h3, h4, h5, h6, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   padding: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--heading-font);
   font-weight: 900;
   color: var(--primary-heading);
@@ -167,7 +181,8 @@ a {
 }
 
 /* Remove default margin and padding from unordered lists and list items. */
-ul, li {
+ul,
+li {
   padding: 0;
   margin: 0;
 }
@@ -189,13 +204,14 @@ header .nav-link {
   font-size: var(--links-font);
   font-weight: 600;
 }
-header .nav-link, 
+
+header .nav-link,
 footer .nav-link {
   transition: var(--global-transition);
 }
 
 header .nav-link:hover,
-footer .nav-link:hover{
+footer .nav-link:hover {
   color: var(--primary-orange);
 }
 
@@ -206,20 +222,20 @@ nav ul li a:hover,
 
 /* Background and white space styles of the navbar bootstrap component */
 .navbar {
-    background-color: var(--header-background);
-    max-width: 1800px;
-    margin: 0 auto;
-    z-index: 99;
+  background-color: var(--header-background);
+  max-width: 1800px;
+  margin: 0 auto;
+  z-index: 99;
 }
 
 /* Primary Navigation Links */
 .nav-item {
-    /* Padding on the right to all links except the last link. */
-    padding-right: 1.5rem;
+  /* Padding on the right to all links except the last link. */
+  padding-right: 1.5rem;
 }
 
 .navbar-nav li:last-of-type {
-    padding-right: 0;
+  padding-right: 0;
 }
 
 /* When using Bootstraps light theme, overwrite the toggler icons background image with a custom hamburger SVG. */
@@ -229,12 +245,12 @@ nav ul li a:hover,
 
 /* Override bootstrap navbar-toggler button styles. */
 div .navbar-toggler {
-    /* Apply custom size to the hamburger menu */
-    font-size: 1.5rem;
-    padding: 0.75rem;
-    background-color: var(--icon-background);
-    border-radius: 5rem;
-    z-index: 99;
+  /* Apply custom size to the hamburger menu */
+  font-size: 1.5rem;
+  padding: 0.75rem;
+  background-color: var(--icon-background);
+  border-radius: 5rem;
+  z-index: 99;
 }
 
 /* Remove default button styles of boostraps toggle menu. */
@@ -261,11 +277,11 @@ div .navbar-toggler,
 
 /* Remove the default box shadow when the toggler button is in the focused state. */
 div .navbar-toggler:focus {
-    box-shadow: none;
+  box-shadow: none;
 }
 
 /* Center the navbar element contents. */
-.navbar > .container-fluid {
+.navbar>.container-fluid {
   justify-content: space-between;
   max-width: 1600px;
   padding: 0 3rem;
@@ -340,15 +356,15 @@ div .navbar-toggler:focus {
   }
 
   .navbar-nav {
-      justify-content: center;
-      align-items: center;
-      text-align: center;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
   }
 
   /* White space on the top and bottom of the primary navigation links, on smaller screens. */
   header .nav-item {
-      margin: 1rem 0;
-      padding: 0;
+    margin: 1rem 0;
+    padding: 0;
   }
 
   footer .nav-item {
@@ -357,7 +373,7 @@ div .navbar-toggler:focus {
 
   /* Set the background color of the slide out canvas body at smaller screen widths. */
   .offcanvas-body {
-      background-color: var(--white);          
+    background-color: var(--white);
   }
 
   /* Remove the auto margin on mobile */
@@ -366,7 +382,7 @@ div .navbar-toggler:focus {
   }
 
   /* Display the navigation content in a centered column layout when the mobile menu is toggled. */
-  #navbarNav > div {
+  #navbarNav>div {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -400,10 +416,10 @@ div .navbar-toggler:focus {
   @media screen and (max-width: 768px) {
 
     /* Reduce Navigation left and right padding on mobile screen widths. */
-    .navbar > .container-fluid {
+    .navbar>.container-fluid {
       padding: 0 1rem;
     }
-    
+
     .social-links-container a:hover {
       background-color: transparent;
     }
@@ -420,7 +436,7 @@ footer {
 }
 
 /* Apply a fixed width to the footer navigation menu to keep consistency with header */
-footer > nav {
+footer>nav {
   max-width: 1600px;
   /* Center the container with margin auto */
   margin: 0 auto;
@@ -428,7 +444,8 @@ footer > nav {
 }
 
 /* Footer top and bottom styles. The footer is divided into two flex containers. */
-.footer-top, .footer-bottom{
+.footer-top,
+.footer-bottom {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
@@ -443,14 +460,14 @@ footer > nav {
 }
 
 /* Remove margin from the footer copyright paragraph. */
-.footer-bottom > p {
+.footer-bottom>p {
   /* Automatically position the copyright from the top with margin auto. */
   margin: auto 0 0 0;
 }
 
 /* Footer Media Query, 768px Wide.  */
 @media screen and (max-width: 768px) {
-  
+
   /* Adjust border properties for mobile. */
   footer {
     border-top: 5px solid var(--primary-yellow);
@@ -459,7 +476,8 @@ footer > nav {
   }
 
   /* Stack the flex containers using column. */
-  .footer-top, .footer-bottom {
+  .footer-top,
+  .footer-bottom {
     flex-direction: column;
     align-items: center;
   }
@@ -497,7 +515,7 @@ footer > nav {
   }
 
   /* Adjust padding to keep consistent with header. */
-  footer > nav {
+  footer>nav {
     padding: 1rem 1rem 1.25rem 1rem;
   }
 
@@ -511,7 +529,7 @@ footer > nav {
     order: 2;
     margin: 1.25rem 0 0 0;
   }
-  
+
 }
 
 /* End of Footer Styles. */
@@ -579,8 +597,8 @@ footer > nav {
   max-width: 450px;
 }
 
-.hero-forecast > div,
-.hero-forecast > article {
+.hero-forecast>div,
+.hero-forecast>article {
   padding: 1rem;
   background-color: var(--white);
   border-radius: 0.5rem;
@@ -597,20 +615,20 @@ footer > nav {
 }
 
 /* Second & Third Widget Cards, positionging on the second row side by side. */
-.hero-forecast > .widget-card:nth-of-type(1) {
+.hero-forecast>.widget-card:nth-of-type(1) {
   grid-area: 2 / 1 / 3 / 3;
 }
 
-.hero-forecast > .widget-card:nth-of-type(2) {
+.hero-forecast>.widget-card:nth-of-type(2) {
   grid-area: 2 / 3 / 3 / 5;
 }
 
 /* Fourth & Fifth Widget Cards, positionging on the third row side by side. */
-.hero-forecast > .widget-card:nth-of-type(3) {
+.hero-forecast>.widget-card:nth-of-type(3) {
   grid-area: 3 / 1 / 4 / 3;
 }
 
-.hero-forecast > .widget-card:nth-of-type(4) {
+.hero-forecast>.widget-card:nth-of-type(4) {
   grid-area: 3 / 3 / 4 / 5;
 }
 
@@ -637,20 +655,20 @@ footer > nav {
 }
 
 /* Allow containers within the temperature container to appear side by each. */
-.temperature-container > div {
+.temperature-container>div {
   display: flex;
   align-items: center;
   font-weight: 500;
 }
 
 /* The widget cards content will stak vertically, flex-direction */
-.hero-forecast > article {
+.hero-forecast>article {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-#hero .hero-forecast > article > p {
+#hero .hero-forecast>article>p {
   font-size: clamp(18px, 5vw, 22px);
   font-weight: 600;
   line-height: normal;
@@ -707,9 +725,9 @@ footer > nav {
 
 /* Hero Section Media Query 1200px */
 @media screen and (max-width: 1200px) {
-  
+
   /* Removing the background iamge from the hero-wrapper to apply to the hero section instead. */
-  .hero-wrapper {    
+  .hero-wrapper {
     background-image: none;
   }
 
@@ -737,12 +755,12 @@ footer > nav {
 
   /* The widget will take up more space in the container when on the viewport is 1200px wide. */
   #hero .hero-forecast {
-    flex: 2;    
+    flex: 2;
     max-width: 500px;
   }
 
   /* Widget card styles at 1200px */
-  .primary-card-content > .widget-card {
+  .primary-card-content>.widget-card {
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -750,7 +768,7 @@ footer > nav {
   }
 
   /* Primary Card Condition Text */
-  #hero .primary-card-content > article > p {
+  #hero .primary-card-content>article>p {
     font-size: clamp(22px, 3vw, 28px);
   }
 
@@ -769,7 +787,7 @@ footer > nav {
     margin-top: 3rem;
   }
 
-  .primary-card-content > article {
+  .primary-card-content>article {
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -779,7 +797,7 @@ footer > nav {
 
 /* Hero Media Query, 768px Wide. */
 @media screen and (max-width: 768px) {
-    
+
   #hero {
     padding: 6rem 1rem;
   }
@@ -791,7 +809,7 @@ footer > nav {
   }
 
   #hero h1 {
-    font-size: clamp(40px, 5vw, var(--desktop-h1));      
+    font-size: clamp(40px, 5vw, var(--desktop-h1));
   }
 
 }
@@ -805,22 +823,22 @@ footer > nav {
     grid-area: 1 / 1 / 2 / 5;
   }
 
-  .hero-forecast > .widget-card:nth-of-type(1) {
+  .hero-forecast>.widget-card:nth-of-type(1) {
     /* Start at row 2 and end at row 2, start at column 1 and end at 3. */
     grid-area: 2 / 1 / 2 / 3;
   }
 
-  .hero-forecast > .widget-card:nth-of-type(2) {
+  .hero-forecast>.widget-card:nth-of-type(2) {
     /* Start at row 2 and end at row 2, start at column 3 and end at 5. */
     grid-area: 2 / 3 / 2 / 5;
   }
 
-  .hero-forecast > .widget-card:nth-of-type(3) {
+  .hero-forecast>.widget-card:nth-of-type(3) {
     /* Start at row 3 and end at row 3, start at column 1 and end at 3. */
     grid-area: 3 / 1 / 3 / 3;
   }
 
-  .hero-forecast > .widget-card:nth-of-type(4) {
+  .hero-forecast>.widget-card:nth-of-type(4) {
     /* Start at row 3 and end at row 3, start at column 3 and end at 5. */
     grid-area: 3 / 3 / 3 / 5;
   }
@@ -832,13 +850,13 @@ footer > nav {
 
   @media screen and (max-width: 460px) {
 
-    .primary-card-content > article {
+    .primary-card-content>article {
       flex-direction: column;
       align-items: start;
     }
 
-    .primary-card-content > article,
-    .primary-card-content > .widget-card {
+    .primary-card-content>article,
+    .primary-card-content>.widget-card {
       /* Remove the gap between elements of the widget card on very small device widths. */
       gap: 0;
     }
@@ -857,10 +875,10 @@ footer > nav {
 
     /* Each Widget card will span the entire grid column layout. */
     .primary-card,
-    .hero-forecast > .widget-card:nth-of-type(1),
-    .hero-forecast > .widget-card:nth-of-type(2),
-    .hero-forecast > .widget-card:nth-of-type(3),
-    .hero-forecast > .widget-card:nth-of-type(4),
+    .hero-forecast>.widget-card:nth-of-type(1),
+    .hero-forecast>.widget-card:nth-of-type(2),
+    .hero-forecast>.widget-card:nth-of-type(3),
+    .hero-forecast>.widget-card:nth-of-type(4),
     #forecast-cta {
       grid-column: 1 / 5;
     }
@@ -871,19 +889,19 @@ footer > nav {
       grid-row: 1;
     }
 
-    .hero-forecast > .widget-card:nth-of-type(1) {
+    .hero-forecast>.widget-card:nth-of-type(1) {
       grid-row: 2;
     }
 
-    .hero-forecast > .widget-card:nth-of-type(2) {
+    .hero-forecast>.widget-card:nth-of-type(2) {
       grid-row: 3;
     }
 
-    .hero-forecast > .widget-card:nth-of-type(3) {
+    .hero-forecast>.widget-card:nth-of-type(3) {
       grid-row: 4;
     }
 
-    .hero-forecast > .widget-card:nth-of-type(4) {
+    .hero-forecast>.widget-card:nth-of-type(4) {
       grid-row: 5;
     }
 
@@ -920,7 +938,7 @@ footer > nav {
 }
 
 /* Dynamic font sizing for the heading and paragraph elements using the clamp function, adjust based on the viewport width. */
-.why-container > h2 {
+.why-container>h2 {
   font-size: clamp(var(--mobile-h2), 5vw, var(--desktop-h2));
   font-weight: 800;
   flex: 2;
@@ -938,7 +956,7 @@ footer > nav {
 
 /* Read more link stlyes. */
 .why-contents a,
-#about > article a {
+#about>article a {
   text-decoration: none;
   color: var(--cta-button);
   font-size: var(--links-font);
@@ -947,7 +965,7 @@ footer > nav {
 
 /* Read more link hover styles */
 .why-contents a:hover,
-#about > article a:hover {
+#about>article a:hover {
   color: var(--cta-button-hover);
 }
 
@@ -970,7 +988,7 @@ footer > nav {
 }
 
 /* Reason card styles. */
-.reasons > article {
+.reasons>article {
   padding: 2rem;
   box-shadow: var(--extra-large-shadow);
   border-radius: 1rem;
@@ -979,53 +997,53 @@ footer > nav {
 /* Why & Reasons Media Query, 1200px Wide */
 @media screen and (max-width: 1200px) {
 
-    /* Stack the why container on smaller screens. */
-    .why-container {
-      flex-direction: column;     
-    }
+  /* Stack the why container on smaller screens. */
+  .why-container {
+    flex-direction: column;
+  }
 
-    /* Adjust the template columns to create two equal columns on devices of 1200px wide. */
-    .reasons {
-      grid-template-columns: repeat(2, 1fr);
-    }
+  /* Adjust the template columns to create two equal columns on devices of 1200px wide. */
+  .reasons {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
 }
 
 /* On devices 800px wide, the column layout will change to a single column layout. */
 @media screen and (max-width: 800px) {
 
-    /* Single column layout. */
-    .reasons {
-      grid-template-columns: auto;
+  /* Single column layout. */
+  .reasons {
+    grid-template-columns: auto;
+  }
+
+  /* Card content will appear in a two column layout with flex. */
+  .reasons>article {
+    display: flex;
+    text-align: left;
+    /* Card content spacing. */
+    gap: 2rem;
+  }
+
+  @media screen and (max-width: 380px) {
+
+    /* Stack the card content to prevent overflow on very small device widths, 380px wide. */
+    .reasons>article {
+      display: block;
+      text-align: center;
     }
 
-    /* Card content will appear in a two column layout with flex. */
-    .reasons > article {
-      display: flex;
-      text-align: left;
-      /* Card content spacing. */
-      gap: 2rem;
-    }
-
-    @media screen and (max-width: 380px) {
-
-      /* Stack the card content to prevent overflow on very small device widths, 380px wide. */
-      .reasons > article {
-        display: block;
-        text-align: center;
-      }
-    
-    }
+  }
 
 }
 
 /* Why Section Media Query, 768px wide, mobile. */
 @media screen and (max-width: 768px) {
-    
-    /* Adjust why section padding to keep consistency with other sections. */
-    #why {
-      padding: 6rem 1rem 8rem 1rem;
-    } 
+
+  /* Adjust why section padding to keep consistency with other sections. */
+  #why {
+    padding: 6rem 1rem 8rem 1rem;
+  }
 
 }
 
@@ -1050,11 +1068,11 @@ footer > nav {
 }
 
 /* Flex proportions of the image and content containers. */
-#about > img {
+#about>img {
   flex: 1.5;
 }
 
-#about > article {
+#about>article {
   flex: 2;
   padding: 0;
 }
@@ -1069,12 +1087,12 @@ footer > nav {
   }
 
   /* Adjust the image size on smaller screens, retaining it's width will scaling down. */
-  #about > img {
+  #about>img {
     max-width: 100%;
   }
 
   /* About article content padding. */
-  #about > article {
+  #about>article {
     padding: 0 0 2rem 0;
   }
 
@@ -1153,7 +1171,8 @@ footer > nav {
   background-color: var(--primary-orange);
 }
 
-.carousel-control-next, .carousel-control-prev {
+.carousel-control-next,
+.carousel-control-prev {
   position: absolute;
   top: 40%;
   height: 50px;
@@ -1187,7 +1206,7 @@ footer > nav {
 }
 
 /* Review card heading and image container styles. Positioning the elements side by side. */
-.review > div {
+.review>div {
   display: flex;
   align-items: center;
   gap: 1.25rem;
@@ -1195,7 +1214,7 @@ footer > nav {
 }
 
 /* Review heading styles. */
-.review > div h3 {
+.review>div h3 {
   /* Dynamically adjust the font based on the device viewport width. */
   font-size: clamp(18px, 5vw, 22px);
   font-weight: 600;
@@ -1203,7 +1222,7 @@ footer > nav {
 }
 
 /* Review card image styles. */
-.review > div img {
+.review>div img {
   max-width: 100%;
   border-radius: 50%;
   border: 3px solid var(--primary-yellow);
@@ -1218,7 +1237,7 @@ footer > nav {
 
 /* Review Card Media Query, 1200px Wide */
 @media screen and (max-width: 1200px) {
-  
+
   /* Apply a min-height to the review cards, stack the card content and center it. */
   .review {
     min-height: 25rem;
@@ -1255,14 +1274,16 @@ footer > nav {
   }
 
   /* Reduce the size of the next and prev buttons. */
-  .carousel-control-next, .carousel-control-prev {
+  .carousel-control-next,
+  .carousel-control-prev {
     top: 45%;
     width: 35px;
     height: 35px;
   }
 
   /* Reduce the size of the next and prev button icons. */
-  .carousel-control-next-icon, .carousel-control-prev-icon {
+  .carousel-control-next-icon,
+  .carousel-control-prev-icon {
     width: 25px;
     height: 25px;
   }
@@ -1292,7 +1313,7 @@ footer > nav {
 @media screen and (max-width: 360px) {
 
   /* Stack the review card content on very small screen sizes */
-  .review > div {
+  .review>div {
     flex-direction: column;
     /* Remove the gap and center the card contents. */
     gap: 0;
@@ -1300,22 +1321,22 @@ footer > nav {
   }
 
   /* Slight spacing of the primary content and heading container content. */
-  .review > div article {
+  .review>div article {
     margin: 1rem 0;
   }
 
-  .review > div article p {
+  .review>div article p {
     margin: 0;
   }
 
   /* Review card image styles */
-  .review > div img {
+  .review>div img {
     height: 70px;
     width: 70px;
   }
 
   /* Center text  */
-  .review > div,
+  .review>div,
   .review-content {
     text-align: center;
   }
@@ -1343,7 +1364,7 @@ footer > nav {
   padding: 10rem 3rem;
   z-index: 99;
   margin-bottom: 5rem;
- 
+
 }
 
 /* Padding to the accordion buttons in the collapsed state. */
@@ -1385,7 +1406,7 @@ footer > nav {
   margin: 1rem 0;
 }
 
-#faq > p:nth-of-type(1) {
+#faq>p:nth-of-type(1) {
   font-weight: 600;
 }
 
@@ -1403,7 +1424,7 @@ footer > nav {
 }
 
 /* Add some padding to the button heading, adjust the font size with clamp, and font weight. */
-.accordion-flush .accordion-item .accordion-button, 
+.accordion-flush .accordion-item .accordion-button,
 .accordion-flush .accordion-item .accordion-button.collapsed {
   padding: 1.25rem;
   font-size: clamp(var(--mobile-h3), 5vw, var(--desktop-h3));
@@ -1427,7 +1448,8 @@ footer > nav {
 }
 
 /* When an item is focused, remove the border colour, box-shadow and outline styles. */
-.accordion-button:focus, .accordion-button:active {
+.accordion-button:focus,
+.accordion-button:active {
   border-color: none;
   box-shadow: none;
   outline: 0;
@@ -1476,7 +1498,7 @@ footer > nav {
 
   /* For smaller screens, increase the FAQ section padding on the top and bottom, and reduce the horizontal padding */
   #faq {
-    padding: 10rem 1rem;    
+    padding: 10rem 1rem;
   }
 
   /* Reduce accordion container padding to prevent overflow. */
@@ -1484,7 +1506,7 @@ footer > nav {
     padding: 1.5rem 1.25rem;
   }
 
-  .accordion-flush .accordion-item .accordion-button, 
+  .accordion-flush .accordion-item .accordion-button,
   .accordion-flush .accordion-item .accordion-button.collapsed {
     padding: 1.25rem 0;
   }
@@ -1500,19 +1522,233 @@ footer > nav {
   }
 
   /* On mobile, the life buoy graphic will be positioned in the center */
-  .life-buoy { 
+  .life-buoy {
     bottom: -20px;
-    right: 0;  
+    right: 0;
   }
 
   /* On very small screen widths of 368px, push down the buoy graphic positioning adjusting the bottom value. */
   @media screen and (max-width: 368px) {
-      
-      .life-buoy {
-        bottom: 15px;      
-      }
+
+    .life-buoy {
+      bottom: 15px;
+    }
   }
 
 }
 
 /* End of FAQs Styles */
+
+/* Contact Us Page Styles */
+
+.contact-us {
+  background-color: var(--primary-background);
+  overflow: hidden;
+}
+
+.contact-us-header {
+  margin-top: -60px;
+  background-image: url('/public/header-gb-desktop.jpg');
+  background-size: cover;
+  height: 320px;
+  background-repeat: no-repeat;
+}
+
+
+.contact-us .container {
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 0 15px;
+  position: relative;
+}
+
+.contact-us .container::after {
+  content: url('/public/decor-vector-desktop.png');
+  left: 55%;
+  top: -18%;
+  position: absolute;
+}
+
+.contact-us-info {
+  margin-bottom: 200px;
+}
+
+.contact-info {
+  padding-right: 0;
+  margin-right: 119px;
+}
+
+.contact-us h1 {
+  font-family: var(--heading-font);
+  font-size: clamp(var(--mobile-h1), 5vw, var(--desktop-h1));
+  color: var(--primary-heading);
+  font-weight: 800;
+  margin-bottom: 7px;
+}
+
+.contact-us p,
+.contact-us ul li {
+  font-family: var(--body-font);
+  font-size: clamp(var(--mobile-body), 3vw, var(--desktop-body));
+  color: var(--primary-body);
+  font-weight: 400;
+}
+
+.contact-us ul li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.contact-us ul li img {
+  margin-right: 5px;
+}
+
+.contact-us ul li p {
+  margin-bottom: 0;
+}
+
+.contact-us .contact-us-form {
+  background-color: var(--white);
+  padding: 0;
+  width: 357px;
+  height: 428px;
+  border-radius: 6px;
+  box-shadow: var(--large-shadow);
+  margin-top: -80px;
+  z-index: 5;
+}
+
+.contact-us .contact-us-form form {
+  width: 100%;
+  height: 331px;
+  padding: 45px 35px;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-us label {
+  font-size: var(--label-font);
+  font-family: var(--body-font);
+  padding-left: 4px;
+  font-weight: 500;
+}
+
+.contact-us-form placeholder {
+  font-size: clamp(var(--mobile-body), 3vw, var(--desktop-body));
+  font-family: var(--body-font);
+  font-weight: 400;
+  color: rgb(179, 187, 193)
+}
+
+.contact-us input {
+  width: 100%;
+  height: 43px;
+  border: 1px solid rgb(179, 187, 193);
+  border-radius: 6px;
+  box-shadow: var(--medium-shadow);
+}
+
+.contact-us input:focus {
+  border-color: #3499d7;
+  outline: #3499d7;
+}
+
+.contact-us fieldset {
+  margin-bottom: 20px;
+}
+
+.contact-us form fieldset:nth-child(3) {
+  margin-bottom: 45px;
+}
+
+.contact-us button {
+  font-family: var(--body-font);
+  width: 100%;
+  background-color: var(--cta-button);
+  color: var(--primary-background);
+  border: none;
+  border-radius: 137px;
+  font-weight: 700;
+  padding: 16px 0;
+  transition: var(--global-transition);
+}
+
+.contact-us button:hover {
+  background-color: var(--cta-button-hover);
+}
+
+/* Media Queries Contact Us Page*/
+@media screen and (max-width: 400px) {
+  
+  .contact-us-header {
+    margin-top: -60px;
+    background-image: url('/public/header-bg-mobile.jpg');
+    background-size: cover;
+    height: 185px;
+    background-repeat: no-repeat;
+    margin-bottom: 13px;
+  }
+
+  .contact-us .contact-us-form {
+    margin: 0 auto;
+    margin-top: 6px;
+  }
+
+  .contact-us-info {
+    margin-bottom: 140px;
+  }
+
+  .contact-info {
+    z-index: 2;
+    padding-right: 20px;
+  }
+
+  .contact-us .container::after {
+    content: url('/public/decor-vector-mobile.png');
+    left: 5%;
+    top: 25%;
+    position: absolute;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  
+  .contact-us .contact-us-form {
+    margin: 0 auto;
+    margin-top: 6px;
+  }
+
+  .contact-us-info {
+    margin-bottom: 100px;
+  }
+
+  .contact-us .container::after {
+    content: url('/public/decor-vector-desktop.png');
+    left: 0%;
+    top: 38%;
+    position: absolute;
+  }
+
+  .contact-info {
+    z-index: 2;
+    padding-right: 20px;
+  }
+}
+
+@media screen and (min-width: 801px) and (max-width: 1000px) {
+  
+  .contact-us .contact-us-form {
+    margin: 0 auto;
+    margin-top: 6px;
+  }
+
+  .contact-us .container::after {
+    content: url('/public/decor-vector-desktop.png');
+    left: 25%;
+    top: 38%;
+    position: absolute;
+  }
+}
+
+/* End of Contact Us Page Styles */
