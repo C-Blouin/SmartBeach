@@ -1548,7 +1548,7 @@ footer>nav {
 
 .contact-us-header {
   margin-top: -60px;
-  background-image: url('/public/header-gb-desktop.jpg');
+  background-image: url('src/images/contact/header-gb-desktop.jpg');
   background-size: cover;
   height: 320px;
   background-repeat: no-repeat;
@@ -1563,7 +1563,7 @@ footer>nav {
 }
 
 .contact-us .container::after {
-  content: url('/public/decor-vector-desktop.png');
+  content: url('src/images/contact/decor-vector-desktop.png');
   left: 55%;
   top: -18%;
   position: absolute;
@@ -1634,14 +1634,14 @@ footer>nav {
   font-weight: 500;
 }
 
-.contact-us-form placeholder {
-  font-size: clamp(var(--mobile-body), 3vw, var(--desktop-body));
+.contact-us-form input::placeholder {
   font-family: var(--body-font);
   font-weight: 400;
-  color: rgb(179, 187, 193)
+  color: rgb(179, 187, 193);
 }
 
 .contact-us input {
+  padding-left: 9px;
   width: 100%;
   height: 43px;
   border: 1px solid rgb(179, 187, 193);
@@ -1666,12 +1666,13 @@ footer>nav {
   font-family: var(--body-font);
   width: 100%;
   background-color: var(--cta-button);
-  color: var(--primary-background);
+  color: #ffffff;
   border: none;
   border-radius: 137px;
   font-weight: 700;
   padding: 16px 0;
   transition: var(--global-transition);
+  font-size: 20px;
 }
 
 .contact-us button:hover {
@@ -1680,10 +1681,10 @@ footer>nav {
 
 /* Media Queries Contact Us Page*/
 @media screen and (max-width: 400px) {
-  
+
   .contact-us-header {
     margin-top: -60px;
-    background-image: url('/public/header-bg-mobile.jpg');
+    background-image: url('src/images/contact/header-bg-mobile.jpg');
     background-size: cover;
     height: 185px;
     background-repeat: no-repeat;
@@ -1705,7 +1706,7 @@ footer>nav {
   }
 
   .contact-us .container::after {
-    content: url('/public/decor-vector-mobile.png');
+    content: url('src/images/contact/decor-vector-mobile.png');
     left: 5%;
     top: 25%;
     position: absolute;
@@ -1713,7 +1714,7 @@ footer>nav {
 }
 
 @media screen and (max-width: 800px) {
-  
+
   .contact-us .contact-us-form {
     margin: 0 auto;
     margin-top: 6px;
@@ -1724,7 +1725,7 @@ footer>nav {
   }
 
   .contact-us .container::after {
-    content: url('/public/decor-vector-desktop.png');
+    content: url('src/images/contact/decor-vector-desktop.png');
     left: 0%;
     top: 38%;
     position: absolute;
@@ -1737,14 +1738,14 @@ footer>nav {
 }
 
 @media screen and (min-width: 801px) and (max-width: 1000px) {
-  
+
   .contact-us .contact-us-form {
     margin: 0 auto;
     margin-top: 6px;
   }
 
   .contact-us .container::after {
-    content: url('/public/decor-vector-desktop.png');
+    content: url('src/images/contact/decor-vector-desktop.png');
     left: 25%;
     top: 38%;
     position: absolute;
@@ -1752,3 +1753,14 @@ footer>nav {
 }
 
 /* End of Contact Us Page Styles */
+
+/* dashboard page */
+.dashboard-safety-indicators .safety-indicators ul li,
+.dashboard-safety-indicators .safety-indicators ul li div {
+  display: flex;
+}
+
+.dashboard-safety-indicators .safety-indicators ul li>div img {
+  background-color: #3499d7;
+  border-radius: 50%;
+}
