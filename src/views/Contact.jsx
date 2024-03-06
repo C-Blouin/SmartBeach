@@ -1,5 +1,10 @@
 import React, { useEffect } from "react";
 
+// import icons
+import phoneIcon from "../images/contact/icons/phone-icon.svg";
+import mailIcon from "../images/contact/icons/mail-icon.svg";
+import emailIcon from "../images/contact/icons/email-icon.svg";
+
 function Contact() {
   useEffect(() => {
     document.title = "Smart Beach | Contact Us";
@@ -18,30 +23,15 @@ function Contact() {
             </p>
             <ul>
               <li>
-                <img
-                  src="icons/email-icon.svg"
-                  width="35px"
-                  height="35px"
-                  alt="icon"
-                />
+                <img src={emailIcon} width="35px" height="35px" alt="icon" />
                 <p>smartbeach@gmail.com</p>
               </li>
               <li>
-                <img
-                  src="icons/phone-icon.svg"
-                  width="35px"
-                  height="35px"
-                  alt="icon"
-                />
+                <img src={phoneIcon} width="35px" height="35px" alt="icon" />
                 <p>(519)764-0000</p>
               </li>
               <li>
-                <img
-                  src="icons/mail-icon.svg"
-                  width="35px"
-                  height="35px"
-                  alt="icon"
-                />
+                <img src={mailIcon} width="35px" height="35px" alt="icon" />
                 <p>200 Station Beach Road Kincardine, Ontario</p>
               </li>
             </ul>
@@ -72,6 +62,7 @@ function Contact() {
               <fieldset>
                 <label for="contact-message">E-mail:</label>
                 <input
+                  class="email"
                   type="email"
                   name="email"
                   id="email"
@@ -79,7 +70,7 @@ function Contact() {
                   required
                 ></input>
               </fieldset>
-              <button type="submit">Receive Assistance</button>
+              <button type="submit">Get Help</button>
             </form>
           </div>
         </section>
