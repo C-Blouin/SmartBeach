@@ -1755,6 +1755,102 @@ footer>nav {
 /* End of Contact Us Page Styles */
 
 /* dashboard page */
+.dashboard-wrapper {
+  background-image: url(../images/landing/hero/hero-desktop.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* Negative margin to bring the background image behind the header. */
+  margin-top: -300px;
+  /* Positioning the content with padding top, beinging it back into the viewport. */
+  padding-top: 300px;
+  padding-bottom: 84px;
+}
+/*Menu placeholder*/
+.dashboard-menu {
+  border: solid black 1px;
+  background-color: #1b3244;
+  height: 55px;
+  margin-bottom: 24px;
+  border-radius: 68px;
+}
+/*2 cols w/ space between*/
+.dashboard-widgets-grid-container{
+  display: flex;
+  justify-content: space-between;
+}
+/* Weather Info*/
+.dashboard-weather-widget-container {
+  margin-top: 24px;
+  display: grid;
+  gap: 8px;
+}
+
+.dashboard-widget-card{
+  background-color: var(--white);
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid black;
+}
+
+
+.weather-info>h1 {
+  font-size: var(--desktop-h1);
+}
+
+.weather-info>img {
+  border: 2px black solid;
+}
+.tooltip-toggle{
+  border: 2px solid black;
+}
+.dashboard-safety-indicators-container {
+  background-color: var(--white);
+  box-shadow: var(--extra-large-shadow);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  margin-top: 24px;
+  height: 495px;
+  border-radius: 6px;
+  padding: 24px;
+}
+.safety-indicators-top{
+  display: flex;
+  margin-bottom: 40px;
+}
+.safety-indicators li {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+.safety-indicators li:not(:last-of-type){
+  border-bottom: 1px solid var(--blue-accent-5);
+}
+.safety-indicators-left-content,safety-indicators-right-content{
+  margin-bottom: 16px;
+}
+/*add space between images & text*/
+.safety-indicators-left-content > p{
+  margin-left: 16px;
+}
+.safety-indicators-right-content > p{
+  margin-right: 4px;
+}
+/*Safety indic box styles*/
+.safety-indicators-right-content{
+  background-color: var(--blue-accent-5);
+  border-radius: 4px;
+  padding: 3px 4px 3px 4px;
+  gap: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 25px;
+}
+
 .dashboard-safety-indicators .safety-indicators ul li,
 .dashboard-safety-indicators .safety-indicators ul li div {
   display: flex;
