@@ -1756,7 +1756,7 @@ footer>nav {
 
 /* dashboard page */
 .dashboard-wrapper {
-  background-image: url(../images/landing/hero/hero-desktop.jpg);
+  background-image: url(../images/dashboard/dashboard-desktop.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1790,35 +1790,46 @@ footer>nav {
   background-color: var(--white);
   padding: 8px;
   border-radius: 4px;
-  border: 1px solid black;
 }
-
 
 .weather-info>h1 {
   font-size: var(--desktop-h1);
 }
 
-.weather-info>img {
-  border: 2px black solid;
+#weather-icon{
+  margin-left: 37px;
+  border: solid 2px black;
 }
-.tooltip-toggle{
-  border: 2px solid black;
+#dashboard-weather-label{
+  display: flex;
+  justify-content: space-around;
+}
+.weather-info{
+  display: flex;
+}
+.dashboard-temperature-wrapper{
+  display: flex;
+}
+
+.dashboard-temperature-wrapper > small:first-of-type{
+  margin-right: 22px;
 }
 .dashboard-safety-indicators-container {
   background-color: var(--white);
   box-shadow: var(--extra-large-shadow);
   display: flex;
   flex-direction: column;
-  justify-content: center;
-
   margin-top: 24px;
-  height: 495px;
+  height: max-content;
   border-radius: 6px;
   padding: 24px;
 }
+.dashboard-safety-indicators-container > span{
+  border: 1px solid beige;
+}
 .safety-indicators-top{
   display: flex;
-  margin-bottom: 40px;
+
 }
 .safety-indicators li {
   display: flex;

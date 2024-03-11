@@ -19,15 +19,18 @@ function Dashboard() {
                 <h1>
                   <span id="temperature">24 º </span>
                 </h1>
-                <img src={sunVector} id="weather-icon" alt="sun-icon" />
-                <p>Sunny</p>
+                <img src={sunVector} width="67" height="67" id="weather-icon" alt="sun-icon" />
               </div>
-              <p>
-                <i>High Icon</i> H: <span id="high-temperature">32 º</span>
-              </p>
-              <p>
-                <i>Low Icon</i> L: <span id="low-temperature">16 º</span>
-              </p>
+              <p id="dashboard-weather-label">Sunny</p>
+              <div className="dashboard-temperature-wrapper">
+              <small>
+                <i></i> H: <span id="high-temperature">32 º</span>
+              </small>
+              <small>
+                <i></i> L: <span id="low-temperature">16 º</span>
+              </small>
+              </div>
+              
             </article>
 
             {/* Sample markup for the data cards */}
