@@ -1775,6 +1775,7 @@ footer>nav {
   margin: 0 auto;
   width: 718px;
   height: 55px;
+  margin-top: 20px;
   margin-bottom: 24px;
   border-radius: 68px;
 }
@@ -1783,7 +1784,16 @@ footer>nav {
   display: flex;
   justify-content: space-between;
 }
-
+@media screen and (max-width: 990px) {
+  .dashboard-widgets-grid-container{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 480px){
+  
+}
 /*Forecast component styles*/
 
 /* Temperature card styles*/
@@ -1795,12 +1805,8 @@ footer>nav {
   /*Have temp label sit left & 
   weatherIcon sit at the right end of container*/
   display: flex;
+}
 
-}
-.dashboard-temperature-card-top>img{
-  /*remove border when icon color is updated*/
-  border: solid 2px black;
-}
 .dashboard-temperature-card-top>h1 {
   /*Manage h1 same as hero*/
   font-size: clamp(38px, 5vw, 70px);
