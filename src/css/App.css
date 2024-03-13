@@ -1791,25 +1791,21 @@ footer>nav {
   /*Add space between menu*/
   margin-top: 24px;
 }
-.dashboard-temperature-widget-top>h1 {
+.dashboard-temperature-card-top{
+  /*Have temp label sit left & 
+  weatherIcon sit at the right end of container*/
+  display: flex;
+
+}
+.dashboard-temperature-card-top>img{
+  /*remove border when icon color is updated*/
+  border: solid 2px black;
+}
+.dashboard-temperature-card-top>h1 {
   /*Manage h1 same as hero*/
   font-size: clamp(38px, 5vw, 70px);
 }
-/*Weather icon beside temperature label*/
-#weather-icon{
-  margin-left: 37px;
-  /*Outline the white sun icon. update icon color
-  remove border when fixed*/
-  border: solid 2px black;
-}
 
-#dashboard-weather-label{
-  display: flex;
-  justify-content: space-around;
-}
-.dashboard-temperature-widget-top{
-  display: flex;
-}
 /*Weather widget small cards*/
 .dashboard-data-card-container {
   gap: 8px;
@@ -1844,7 +1840,6 @@ footer>nav {
   /*manage h3 font-size same as widget-card on hero*/
   font-size: clamp(var(--mobile-body), 3vw, var(--desktop-body));
 }
-
 .dashboard-data-card > img{
   max-width: 100%;
   height: 120px;
@@ -1886,6 +1881,7 @@ footer>nav {
 .safety-indicators li:not(:last-of-type){
   border-bottom: 1px solid var(--blue-accent-5);
 }
+
 .safety-indicators-left-content,safety-indicators-right-content{
   margin-bottom: 16px;
 }

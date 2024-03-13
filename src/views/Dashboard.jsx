@@ -16,7 +16,7 @@ function Dashboard() {
           <section className="dashboard-forecast-container">
 
             <article className="dashboard-primary-widget-wrapper">
-              <div className="dashboard-temperature-widget-top">
+              <div className="dashboard-temperature-card-top">
                 <h1>
                   <span id="dashboard-temperature-label">24 º </span>
                 </h1>
