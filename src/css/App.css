@@ -1882,6 +1882,162 @@ footer>nav {
 
 
 /* dashboard page */
+.dashboard-wrapper {
+  background-image: url(../images/dashboard/dashboard-desktop.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* Negative margin to bring the background image behind the header. */
+  margin-top: -300px;
+  /* Positioning the content with padding top, beinging it back into the viewport. */
+  padding-top: 300px;
+  padding-bottom: 84px;
+}
+.dashboard-wrapper > p{
+  color: var(--primary-body);
+}
+/*Menu placeholder*/
+.dashboard-menu {
+  background-color: var(--slate-accent-5);
+  margin: 0 auto;
+  width: 718px;
+  height: 55px;
+  margin-top: 20px;
+  margin-bottom: 24px;
+  border-radius: 68px;
+}
+/*2 cols w/ space between*/
+.dashboard-widgets-grid-container{
+  display: flex;
+  justify-content: space-between;
+}
+@media screen and (max-width: 990px) {
+  .dashboard-widgets-grid-container{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 480px){
+  
+}
+/*Forecast component styles*/
+
+/* Temperature card styles*/
+.dashboard-forecast-container{
+  /*Add space between menu*/
+  margin-top: 24px;
+}
+.dashboard-temperature-card-top{
+  /*Have temp label sit left & 
+  weatherIcon sit at the right end of container*/
+  display: flex;
+}
+
+.dashboard-temperature-card-top>h1 {
+  /*Manage h1 same as hero*/
+  font-size: clamp(38px, 5vw, 70px);
+}
+
+/*Weather widget small cards*/
+.dashboard-data-card-container {
+  gap: 8px;
+  /*Forces container to be 450px same as .hero-forecast limit*/
+  max-width: 450px;
+    /* Two columns */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+}
+
+/*small card styles.*/
+.dashboard-data-card{
+  background-color: var(--white);
+  /*Card sizing*/
+  width: 195px;
+  height: 170px;
+  padding: 8px;
+  border-radius: 4px;
+  /*Content alignment*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /*Border is just to show how the cards look.
+   hard to see on the placeholder bg remove later*/
+  border: black solid 1px;
+}
+
+/* Push danger label to right end*/
+.dashboard-data-card-top {
+  display: flex;
+  justify-content: space-between;
+  /*manage h3 font-size same as widget-card on hero*/
+  font-size: clamp(var(--mobile-body), 3vw, var(--desktop-body));
+}
+.dashboard-data-card > img{
+  max-width: 100%;
+  height: 120px;
+}
+
+.dashboard-forecast-prediction-value{
+  /*Makes the text stand out more
+  same styles from .hero-forecast*/
+  font-size: clamp(18px, 5vw, 22px);
+  font-weight: 600;
+  line-height: normal;
+}
+
+.dashboard-temperature-wrapper > small:first-of-type{
+  margin-right: 22px;
+}
+
+/*Safety Indicator Component Styles*/
+.dashboard-safety-indicators-container {
+  background-color: var(--white);
+  box-shadow: var(--extra-large-shadow);
+  display: flex;
+  flex-direction: column;
+  margin-top: 24px;
+  height: max-content;
+  border-radius: 6px;
+  padding: 24px;
+}
+
+.safety-indicators-top{
+  display: flex;
+
+}
+.safety-indicators li {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+.safety-indicators li:not(:last-of-type){
+  border-bottom: 1px solid var(--blue-accent-5);
+}
+
+.safety-indicators-left-content,safety-indicators-right-content{
+  margin-bottom: 16px;
+}
+/*add space between images & text*/
+.safety-indicators-left-content > p{
+  margin-left: 16px;
+}
+.safety-indicators-right-content > p{
+  margin-right: 4px;
+}
+/*Safety indic box styles*/
+.safety-indicators-right-content{
+  background-color: var(--blue-accent-5);
+  border-radius: 4px;
+  padding: 3px 4px 3px 4px;
+  gap: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 25px;
+}
+
 .dashboard-safety-indicators .safety-indicators ul li,
 .dashboard-safety-indicators .safety-indicators ul li div {
   display: flex;
