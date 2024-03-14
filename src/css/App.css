@@ -609,7 +609,6 @@ footer>nav {
   /* Position at the top of the widget and span across all columns. */
   grid-area: 1 / 1 / 2 / 5;
   display: flex;
-  justify-content: center;
   align-items: center;
   gap: 2rem;
 }
@@ -704,11 +703,12 @@ footer>nav {
   /* Button color properties. */
   background-color: var(--primary-orange);
   color: var(--primary-background);
+  font-size: var(--desktop-body);
   text-align: center;
   font-weight: 700;
   /* Spacing properties. */
   padding: 1rem 0;
-  margin: 0.25rem auto 0 auto;
+  margin: 1rem auto 0 auto;
   border-radius: 5rem;
   /* Setting up button transition for hover state. */
   transition: var(--global-transition);
@@ -1879,9 +1879,76 @@ footer>nav {
 /* End of About the Project Page Styles */
 
 
+/* Dashboard Styles */
 
+/* Dashboard Navigation Menu Styles */
 
-/* dashboard page */
+.dashboard-menu {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  overflow: auto;
+  white-space: nowrap;
+  margin: 3rem auto 1rem auto;
+  border-radius: 5rem;
+}
+
+/* Dashboard Button Container Wrapper */
+.button-container {
+  padding: 0.35rem 0.45rem;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background-color: var(--slate-accent-5);
+  border-radius: 5rem;
+}
+
+/* Dashboard Nav Menu Button Styles. */
+.button-container button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.25rem;
+  text-decoration: none;
+  color: var(--primary-body);
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-radius: 2rem;
+  margin-right: 0.75rem;
+  transition: var(--global-transition);
+}
+
+/* All buttons will contain a margin right except the last button. */
+.button-container button:last-child {
+  margin-right: 0;
+}
+
+/* The Active button the user clicks will be white, while the remaining buttons will be transparant. */
+.button-container button.active {
+  background-color: var(--white);
+}
+
+/* Dashboard Nav Menu Button Paragraph Styles. */
+.button-container button p {
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Remove the horizontal scrollbar from the overflow container. */
+.dashboard-menu::-webkit-scrollbar {
+  display: none;
+}
+
+/* Align the navigation menu contents to the start of the container, to prevent content cutoff. */
+@media screen and (max-width: 1200px) {
+  
+  .dashboard-menu {
+    justify-content: flex-start;
+  }
+
+}
+
 .dashboard-wrapper {
   background-image: url(../images/dashboard/dashboard-desktop.jpg);
   background-size: cover;
@@ -1893,19 +1960,11 @@ footer>nav {
   padding-top: 300px;
   padding-bottom: 84px;
 }
+
 .dashboard-wrapper > p{
   color: var(--primary-body);
 }
-/*Menu placeholder*/
-.dashboard-menu {
-  background-color: var(--slate-accent-5);
-  margin: 0 auto;
-  width: 718px;
-  height: 55px;
-  margin-top: 20px;
-  margin-bottom: 24px;
-  border-radius: 68px;
-}
+
 /*2 cols w/ space between*/
 .dashboard-widgets-grid-container{
   display: flex;
