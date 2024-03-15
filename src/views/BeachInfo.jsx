@@ -1,321 +1,319 @@
+import React, { useEffect } from "react";
+
+import reasonIcon from "../images/info/reason-icons/reason-icon.svg";
+import safetySign from "../images/info/rectangle-safety-signs.png";
+import lifeBuoy from "../images/info/life-buoy.png";
+
 function BeachInfo() {
+  useEffect(() => {
+    document.title = "Smart Beach | Beach Info";
+  }, []);
+
   return (
-      <section className="container">
-        <article className="col-8">
+    <div className="beach-info">
+      <section className="beach-info-header row"></section>
+      <div className="container">
+        <h1>Info</h1>
+        <section className="our-services">
           <h2>Our Services</h2>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta
-            fugiat maxime consequuntur asperiores repellat ipsa voluptatibus
-            doloribus corrupti assumenda vel.
-          </p>
-        </article>
-
-        <section className="row">
-          <article className="col-lg-3 col-md-4">
-            <h3>Reason 1</h3>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem ea
-              magnam iusto laboriosam, velit reprehenderit nostrum, id animi
-              ullam, veritatis ratione alias. Exercitationem quos repudiandae modi
-              reprehenderit corporis aspernatur expedita!
-            </p>
-          </article>
-          <article className="col-lg-3 col-md-4">
-            <h3>Reason 2</h3>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem ea
-              magnam iusto laboriosam, velit reprehenderit nostrum, id animi
-              ullam, veritatis ratione alias. Exercitationem quos repudiandae modi
-              reprehenderit corporis aspernatur expedita!
-            </p>
-          </article>
-          <article className="col-lg-3 col-md-4">
-            <h3>Reason 3</h3>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem ea
-              magnam iusto laboriosam, velit reprehenderit nostrum, id animi
-              ullam, veritatis ratione alias. Exercitationem quos repudiandae modi
-              reprehenderit corporis aspernatur expedita!
-            </p>
-          </article>
-          <article className="col-lg-3 col-md-4">
-            <h3>Reason 4</h3>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem ea
-              magnam iusto laboriosam, velit reprehenderit nostrum, id animi
-              ullam, veritatis ratione alias. Exercitationem quos repudiandae modi
-              reprehenderit corporis aspernatur expedita!
-            </p>
-          </article>
-          <article className="col-lg-3 col-md-4">
-            <h3>Reason 5</h3>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem ea
-              magnam iusto laboriosam, velit reprehenderit nostrum, id animi
-              ullam, veritatis ratione alias. Exercitationem quos repudiandae modi
-              reprehenderit corporis aspernatur expedita!
-            </p>
-          </article>
-          <article className="col-lg-3 col-md-4">
-            <h3>Reason 6</h3>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem ea
-              magnam iusto laboriosam, velit reprehenderit nostrum, id animi
-              ullam, veritatis ratione alias. Exercitationem quos repudiandae modi
-              reprehenderit corporis aspernatur expedita!
-            </p>
-          </article>
-          <article className="col-lg-3 col-md-4">
-            <h3>Reason 7</h3>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem ea
-              magnam iusto laboriosam, velit reprehenderit nostrum, id animi
-              ullam, veritatis ratione alias. Exercitationem quos repudiandae modi
-              reprehenderit corporis aspernatur expedita!
-            </p>
-          </article>
-          <article className="col-lg-3 col-md-4">
-            <h3>Reason 8</h3>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem ea
-              magnam iusto laboriosam, velit reprehenderit nostrum, id animi
-              ullam, veritatis ratione alias. Exercitationem quos repudiandae modi
-              reprehenderit corporis aspernatur expedita!
-            </p>
-          </article>
+          <div className="services">
+            <div className="row">
+              <article className="col-lg-3">
+                <img src={reasonIcon} alt="Reason" />
+                <div>
+                  <h3 className="reason-heading">Heading</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur.</p>
+                </div>
+              </article>
+              <article className="col-lg-3">
+                <img src={reasonIcon} alt="Reason" />
+                <div>
+                  <h3 className="reason-heading">Heading</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur.</p>
+                </div>
+              </article>
+              <article className="col-lg-3">
+                <img src={reasonIcon} alt="Reason" />
+                <div>
+                  <h3 className="reason-heading">Heading</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur.</p>
+                </div>
+              </article>
+              <article className="col-lg-3">
+                <img src={reasonIcon} alt="Reason" />
+                <div>
+                  <h3 className="reason-heading">Heading</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur.</p>
+                </div>
+              </article>
+            </div>
+            <div className="row">
+              <article className="col-lg-3">
+                <img src={reasonIcon} alt="Reason" />
+                <div>
+                  <h3 className="reason-heading">Heading</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur.</p>
+                </div>
+              </article>
+              <article className="col-lg-3">
+                <img src={reasonIcon} alt="Reason" />
+                <div>
+                  <h3 className="reason-heading">Heading</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur.</p>
+                </div>
+              </article>
+              <article className="col-lg-3">
+                <img src={reasonIcon} alt="Reason" />
+                <div>
+                  <h3 className="reason-heading">Heading</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur.</p>
+                </div>
+              </article>
+              <article className="col-lg-3">
+                <img src={reasonIcon} alt="Reason" />
+                <div>
+                  <h3 className="reason-heading">Heading</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur.</p>
+                </div>
+              </article>
+            </div>
+          </div>
         </section>
-
-        <article className="col-8">
+        <section className="safety-signs">
           <h2>Safety Signs</h2>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta
-            fugiat maxime consequuntur asperiores repellat ipsa voluptatibus
-            doloribus corrupti assumenda vel.
-          </p>
-        </article>
-
-        <section className="row">
-
-          <article className="row col-lg-6 col-sm-12">
-            <figure className="col-lg-4">
-              <img src="https://fakeimg.pl/200x200?text=Placeholder" className="img-fluid" alt="Placeholder Image"/>
-            </figure>
-            <div className="col-lg-8">
-              <h2>Signage Header</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod ratione, iure architecto explicabo,
-                voluptas ullam hic aliquid, vel culpa blanditiis soluta eum earum? Porro id obcaecati iusto, nihil neque
-                culpa cumque, beatae omnis quam sit, aspernatur sapiente corporis atque tenetur.</p>
+          <div className="safety-signs-signs">
+            <div className="row">
+              <article className="col-lg-6 col-md-6">
+                <img
+                  src={safetySign}
+                  width="166"
+                  height="158"
+                  alt="Safety Sign"
+                />
+                <div>
+                  <h3 className="reason-heading">Heading</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur.</p>
+                </div>
+              </article>
+              <article className="col-lg-6 col-md-6">
+                <img
+                  src={safetySign}
+                  width="166"
+                  height="158"
+                  alt="Safety Sign"
+                />
+                <div>
+                  <h3 className="reason-heading">Heading</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur.</p>
+                </div>
+              </article>
             </div>
-          </article>
-
-          <article className="row col-lg-6 col-sm-12">
-            <figure className="col-lg-4">
-              <img src="https://fakeimg.pl/200x200?text=Placeholder" className="img-fluid" alt="Placeholder Image"/>
-            </figure>
-            <div className="col-lg-8">
-              <h2>Signage Header</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod ratione, iure architecto explicabo,
-                voluptas ullam hic aliquid, vel culpa blanditiis soluta eum earum? Porro id obcaecati iusto, nihil neque
-                culpa cumque, beatae omnis quam sit, aspernatur sapiente corporis atque tenetur.</p>
+            <div className="row">
+              <article className="col-lg-6 col-md-6">
+                <img
+                  src={safetySign}
+                  width="166"
+                  height="158"
+                  alt="Safety Sign"
+                />
+                <div>
+                  <h3 className="reason-heading">Heading</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur.</p>
+                </div>
+              </article>
+              <article className="col-lg-6 col-md-6">
+                <img
+                  src={safetySign}
+                  width="166"
+                  height="158"
+                  alt="Safety Sign"
+                />
+                <div>
+                  <h3 className="reason-heading">Heading</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur.</p>
+                </div>
+              </article>
             </div>
-          </article>
-
-
-          <article className="row col-lg-6 col-sm-12">
-            <figure className="col-lg-4">
-              <img src="https://fakeimg.pl/200x200?text=Placeholder" className="img-fluid" alt="Placeholder Image"/>
-            </figure>
-            <div className="col-lg-8">
-              <h2>Signage Header</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod ratione, iure architecto explicabo,
-                voluptas ullam hic aliquid, vel culpa blanditiis soluta eum earum? Porro id obcaecati iusto, nihil neque
-                culpa cumque, beatae omnis quam sit, aspernatur sapiente corporis atque tenetur.</p>
-            </div>
-          </article>
-
-
-          <article className="row col-lg-6 col-sm-12">
-            <figure className="col-lg-4">
-              <img src="https://fakeimg.pl/200x200?text=Placeholder" className="img-fluid" alt="Placeholder Image"/>
-            </figure>
-            <div className="col-lg-8">
-              <h2>Signage Header</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod ratione, iure architecto explicabo,
-                voluptas ullam hic aliquid, vel culpa blanditiis soluta eum earum? Porro id obcaecati iusto, nihil neque
-                culpa cumque, beatae omnis quam sit, aspernatur sapiente corporis atque tenetur.</p>
-            </div>
-          </article>
-
-          <article className="row col-lg-6 col-sm-12">
-            <figure className="col-lg-4">
-              <img src="https://fakeimg.pl/200x200?text=Placeholder" className="img-fluid" alt="Placeholder Image"/>
-            </figure>
-            <div className="col-lg-8">
-              <h2>Signage Header</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod ratione, iure architecto explicabo,
-                voluptas ullam hic aliquid, vel culpa blanditiis soluta eum earum? Porro id obcaecati iusto, nihil neque
-                culpa cumque, beatae omnis quam sit, aspernatur sapiente corporis atque tenetur.</p>
-            </div>
-          </article>
-
-
-          <article className="row col-lg-6 col-sm-12">
-            <figure className="col-lg-4">
-              <img src="https://fakeimg.pl/200x200?text=Placeholder" className="img-fluid" alt="Placeholder Image"/>
-            </figure>
-            <div className="col-lg-8">
-              <h2>Signage Header</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod ratione, iure architecto explicabo,
-                voluptas ullam hic aliquid, vel culpa blanditiis soluta eum earum? Porro id obcaecati iusto, nihil neque
-                culpa cumque, beatae omnis quam sit, aspernatur sapiente corporis atque tenetur.</p>
-            </div>
-          </article>
+          </div>
         </section>
+        <section className="fag-section">
+          <h3>F.A.Q.</h3>
+          <div className="fag">
+            <section className="faq">
+              <div className="accordion accordion-flush" id="faq-accordion">
+                <article className="accordion-item">
+                  <h2 className="accordion-header" id="headingOne">
+                    <button
+                      className="accordion-button"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseOne"
+                      aria-expanded="true"
+                      aria-controls="collapseOne"
+                    >
+                      What is SmartBeach and how does it work?
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseOne"
+                    className="accordion-collapse collapse show"
+                    aria-labelledby="headingOne"
+                    data-bs-parent="faq-accordion"
+                  >
+                    <div className="accordion-body">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Quis unde consequatur sunt fugiat voluptatibus
+                        voluptatem doloremque adipisci nemo, veniam, velit qui!
+                        Neque nihil consequuntur repellendus est suscipit
+                        doloremque voluptatibus minima tenetur illum assumenda
+                        excepturi tempore, laboriosam commodi saepe sunt!
+                        Accusamus eius animi dolore dignissimos mollitia? A
+                        fugiat corporis explicabo sapiente!
+                      </p>
+                    </div>
+                  </div>
+                </article>
+                <article className="accordion-item">
+                  <h2 className="accordion-header" id="headingTwo">
+                    <button
+                      className="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseTwo"
+                      aria-expanded="false"
+                      aria-controls="collapseTwo"
+                    >
+                      What type of information does SmartBeach provide about
+                      beach facilities?
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseTwo"
+                    className="accordion-collapse collapse"
+                    aria-labelledby="headingTwo"
+                    data-bs-parent="faq-accordion"
+                  >
+                    <div className="accordion-body">
+                      <p>
+                        SmartBeach not only focuses on water conditions but also
+                        offers detailed information about beach facilities. You
+                        can find details about amenities such as restrooms,
+                        lifeguard availability, beach equipment rentals, and
+                        more. This ensures you have all the information you need
+                        for a comfortable and enjoyable day at the beach.
+                      </p>
+                    </div>
+                  </div>
+                </article>
+                <article className="accordion-item">
+                  <h2 className="accordion-header" id="headingThree">
+                    <button
+                      className="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseThree"
+                      aria-expanded="false"
+                      aria-controls="collapseThree"
+                    >
+                      Can Smart Beach help me plan activities at the beach?
+                    </button>
+                  </h2>
 
-        <section className="row">
-          <h3 className="text-center">F.A.Q</h3>
-          <figure className="col-lg-4">
-            <img src="https://fakeimg.pl/400x400?text=Placeholder" className="img-fluid" alt="Placeholder Image"/>
-          </figure>
-          <section
-              className="accordion accordion-flush questions p-5 col-lg-8"
-              id="faqsQuestions"
-          >
-            <article className="accordion-item">
-              <h2 className="accordion-header">
-                <button
-                    className="accordion-button collapsed"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#collapseOne"
-                    aria-expanded="true"
-                    aria-controls="collapseOne"
-                >
-                  Question 1
-                </button>
-              </h2>
-              <div
-                  id="collapseOne"
-                  className="accordion-collapse collapse"
-                  data-bs-parent="#faqsQuestions"
-              >
-                <p className="accordion-body">
-                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                  accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-                  quae ab illo inventore veritatis et quasi architecto beatae vitae
-                  dicta sunt explicabo.
-                </p>
+                  <div
+                    id="collapseThree"
+                    className="accordion-collapse collapse"
+                    aria-labelledby="headingThree"
+                    data-bs-parent="faq-accordion"
+                  >
+                    <div className="accordion-body">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Quis unde consequatur sunt fugiat voluptatibus
+                        voluptatem doloremque adipisci nemo, veniam, velit qui!
+                        Neque nihil consequuntur repellendus est suscipit
+                        doloremque voluptatibus minima tenetur illum assumenda
+                        excepturi tempore, laboriosam commodi saepe sunt!
+                        Accusamus eius animi dolore dignissimos mollitia? A
+                        fugiat corporis explicabo sapiente!
+                      </p>
+                    </div>
+                  </div>
+                </article>
+                <article className="accordion-item">
+                  <h2 className="accordion-header" id="headingFour">
+                    <button
+                      className="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseFour"
+                      aria-expanded="false"
+                      aria-controls="collapseFour"
+                    >
+                      Are there any safety alerts provided by SmartBeach?
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseFour"
+                    className="accordion-collapse collapse"
+                    aria-labelledby="headingFour"
+                    data-bs-parent="faq-accordion"
+                  >
+                    <div className="accordion-body">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Quis unde consequatur sunt fugiat voluptatibus
+                        voluptatem doloremque adipisci nemo, veniam, velit qui!
+                        Neque nihil consequuntur repellendus est suscipit
+                        doloremque voluptatibus minima tenetur illum assumenda
+                        excepturi tempore, laboriosam commodi saepe sunt!
+                        Accusamus eius animi dolore dignissimos mollitia? A
+                        fugiat corporis explicabo sapiente!
+                      </p>
+                    </div>
+                  </div>
+                </article>
+                <article className="accordion-item">
+                  <h2 className="accordion-header" id="headingFive">
+                    <button
+                      className="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseFive"
+                      aria-expanded="false"
+                      aria-controls="collapseFive"
+                    >
+                      How can I contribute to Smart Beach and share my
+                      experiences?
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseFive"
+                    className="accordion-collapse collapse"
+                    aria-labelledby="headingFive"
+                    data-bs-parent="faq-accordion"
+                  >
+                    <div className="accordion-body">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Quis unde consequatur sunt fugiat voluptatibus
+                        voluptatem doloremque adipisci nemo, veniam, velit qui!
+                        Neque nihil consequuntur repellendus est suscipit
+                        doloremque voluptatibus minima tenetur illum assumenda
+                        excepturi tempore, laboriosam commodi saepe sunt!
+                        Accusamus eius animi dolore dignissimos mollitia? A
+                        fugiat corporis explicabo sapiente!
+                      </p>
+                    </div>
+                  </div>
+                </article>
               </div>
-            </article>
-            <article className="accordion-item">
-              <h2 className="accordion-header">
-                <button
-                    className="accordion-button collapsed"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#collapseTwo"
-                    aria-expanded="false"
-                    aria-controls="collapseTwo"
-                >
-                  Question 2
-                </button>
-              </h2>
-              <div
-                  id="collapseTwo"
-                  className="accordion-collapse collapse"
-                  data-bs-parent="#faqsQuestions"
-              >
-                <p className="accordion-body">
-                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                  accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-                  quae ab illo inventore veritatis et quasi architecto beatae vitae
-                  dicta sunt explicabo.
-                </p>
-              </div>
-            </article>
-            <article className="accordion-item">
-              <h2 className="accordion-header">
-                <button
-                    className="accordion-button collapsed"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#collapseThree"
-                    aria-expanded="false"
-                    aria-controls="collapseThree"
-                >
-                  Question 3
-                </button>
-              </h2>
-              <div
-                  id="collapseThree"
-                  className="accordion-collapse collapse"
-                  data-bs-parent="#faqsQuestions"
-              >
-                <p className="accordion-body">
-                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                  accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-                  quae ab illo inventore veritatis et quasi architecto beatae vitae
-                  dicta sunt explicabo.
-                </p>
-              </div>
-            </article>
-            <article className="accordion-item">
-              <h2 className="accordion-header">
-                <button
-                    className="accordion-button collapsed"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#collapseFour"
-                    aria-expanded="false"
-                    aria-controls="collapseFour"
-                >
-                  Question 4
-                </button>
-              </h2>
-              <div
-                  id="collapseFour"
-                  className="accordion-collapse collapse"
-                  data-bs-parent="#faqsQuestions"
-              >
-                <p className="accordion-body">
-                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                  accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-                  quae ab illo inventore veritatis et quasi architecto beatae vitae
-                  dicta sunt explicabo.
-                </p>
-              </div>
-            </article>
-            <article className="accordion-item">
-              <h2 className="accordion-header">
-                <button
-                    className="accordion-button collapsed"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#collapseFive"
-                    aria-expanded="false"
-                    aria-controls="collapseFive"
-                >
-                  Question 5
-                </button>
-              </h2>
-              <div
-                  id="collapseFive"
-                  className="accordion-collapse collapse"
-                  data-bs-parent="#faqsQuestions"
-              >
-                <p className="accordion-body">
-                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                  accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-                  quae ab illo inventore veritatis et quasi architecto beatae vitae
-                  dicta sunt explicabo.
-                </p>
-              </div>
-            </article>
-          </section>
+              <img src={lifeBuoy} alt="Life Buoy" className="life-buoy" />
+            </section>
+          </div>
         </section>
-
-        {/*Page Wrapper*/}
-      </section>
+      </div>
+    </div>
   );
 }
 
