@@ -1547,7 +1547,8 @@ footer>nav {
 }
 
 .contact-us-header,
-.about-the-project-header {
+.about-the-project-header,
+.beach-info-header {
   margin-top: -40px;
   background-image: url('src/images/contact/header-gb-desktop.jpg');
   background-size: cover;
@@ -1557,7 +1558,8 @@ footer>nav {
 
 
 .contact-us .container,
-.about-the-project .container {
+.about-the-project .container,
+.beach-info .container {
   margin: 0 auto;
   max-width: 960px;
   padding: 0 15px;
@@ -1581,7 +1583,7 @@ footer>nav {
 }
 
 .contact-us h1 {
-  font-family: var(--heading-font);
+  font-size: clamp(var(--mobile-h1), 5vw, var(--desktop-h1));
   font-size: var(--desktop-h1);
   color: var(--primary-heading);
   font-weight: 800;
@@ -1689,7 +1691,8 @@ footer>nav {
   }
 
   .contact-us-header,
-  .about-the-project-header {
+  .about-the-project-header,
+  .beach-info-header {
     margin-top: -60px;
     background-image: url('src/images/contact/header-bg-mobile.jpg');
     background-size: cover;
@@ -1777,7 +1780,7 @@ footer>nav {
 
 .about-the-project h1 {
   font-family: var(--heading-font);
-  font-size: var(--desktop-h1);
+  font-size: clamp(var(--mobile-h1), 5vw, var(--desktop-h1));
   color: var(--primary-heading);
   font-weight: 800;
   margin: 24px auto 40px;
@@ -1942,7 +1945,7 @@ footer>nav {
 
 /* Align the navigation menu contents to the start of the container, to prevent content cutoff. */
 @media screen and (max-width: 1200px) {
-  
+
   .dashboard-menu {
     justify-content: flex-start;
   }
@@ -1961,33 +1964,35 @@ footer>nav {
   padding-bottom: 84px;
 }
 
-.dashboard-wrapper > p{
+.dashboard-wrapper>p {
   color: var(--primary-body);
 }
 
 /*2 cols w/ space between*/
-.dashboard-widgets-grid-container{
+.dashboard-widgets-grid-container {
   display: flex;
   justify-content: space-between;
 }
+
 @media screen and (max-width: 990px) {
-  .dashboard-widgets-grid-container{
+  .dashboard-widgets-grid-container {
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
 }
-@media screen and (max-width: 480px){
-  
-}
+
+@media screen and (max-width: 480px) {}
+
 /*Forecast component styles*/
 
 /* Temperature card styles*/
-.dashboard-forecast-container{
+.dashboard-forecast-container {
   /*Add space between menu*/
   margin-top: 24px;
 }
-.dashboard-temperature-card-top{
+
+.dashboard-temperature-card-top {
   /*Have temp label sit left & 
   weatherIcon sit at the right end of container*/
   display: flex;
@@ -2003,13 +2008,13 @@ footer>nav {
   gap: 8px;
   /*Forces container to be 450px same as .hero-forecast limit*/
   max-width: 450px;
-    /* Two columns */
+  /* Two columns */
   display: grid;
-  grid-template-columns: repeat(2, 1fr); 
+  grid-template-columns: repeat(2, 1fr);
 }
 
 /*small card styles.*/
-.dashboard-data-card{
+.dashboard-data-card {
   background-color: var(--white);
   /*Card sizing*/
   width: 195px;
@@ -2032,12 +2037,13 @@ footer>nav {
   /*manage h3 font-size same as widget-card on hero*/
   font-size: clamp(var(--mobile-body), 3vw, var(--desktop-body));
 }
-.dashboard-data-card > img{
+
+.dashboard-data-card>img {
   max-width: 100%;
   height: 120px;
 }
 
-.dashboard-forecast-prediction-value{
+.dashboard-forecast-prediction-value {
   /*Makes the text stand out more
   same styles from .hero-forecast*/
   font-size: clamp(18px, 5vw, 22px);
@@ -2045,7 +2051,7 @@ footer>nav {
   line-height: normal;
 }
 
-.dashboard-temperature-wrapper > small:first-of-type{
+.dashboard-temperature-wrapper>small:first-of-type {
   margin-right: 22px;
 }
 
@@ -2061,31 +2067,37 @@ footer>nav {
   padding: 24px;
 }
 
-.safety-indicators-top{
+.safety-indicators-top {
   display: flex;
 
 }
+
 .safety-indicators li {
   display: flex;
   justify-content: space-between;
   margin-top: 16px;
 }
-.safety-indicators li:not(:last-of-type){
+
+.safety-indicators li:not(:last-of-type) {
   border-bottom: 1px solid var(--blue-accent-5);
 }
 
-.safety-indicators-left-content,safety-indicators-right-content{
+.safety-indicators-left-content,
+safety-indicators-right-content {
   margin-bottom: 16px;
 }
+
 /*add space between images & text*/
-.safety-indicators-left-content > p{
+.safety-indicators-left-content>p {
   margin-left: 16px;
 }
-.safety-indicators-right-content > p{
+
+.safety-indicators-right-content>p {
   margin-right: 4px;
 }
+
 /*Safety indic box styles*/
-.safety-indicators-right-content{
+.safety-indicators-right-content {
   background-color: var(--blue-accent-5);
   border-radius: 4px;
   padding: 3px 4px 3px 4px;
@@ -2105,4 +2117,171 @@ footer>nav {
 .dashboard-safety-indicators .safety-indicators ul li>div img {
   background-color: #3499d7;
   border-radius: 50%;
+}
+
+/* Beach-Info Styles */
+.beach-info {
+  background-color: var(--primary-background);
+  overflow: hidden;
+}
+
+.beach-info h1 {
+  font-family: var(--heading-font);
+  font-size: clamp(var(--mobile-h1), 5vw, var(--desktop-h1));
+  color: var(--primary-heading);
+  font-weight: 800;
+  margin: 27px auto 10px;
+  text-align: center;
+}
+
+.beach-info h2 {
+  margin-bottom: 31px;
+}
+
+/* Our Services Section */
+
+.our-services {
+  margin-bottom: 125px;
+}
+
+.services {
+  padding: 0 15px;
+
+}
+
+.beach-info .services .row {
+  margin-bottom: 19px;
+}
+
+.beach-info .services article {
+  margin-left: 24px;
+  max-width: 23%;
+  text-align: center;
+  padding: 23px 17px;
+  box-shadow: var(--large-shadow);
+  border-radius: 1rem;
+  border: 0.5px solid rgb(186, 181, 181);
+}
+
+.beach-info .services article:nth-child(1) {
+  margin-left: 0;
+}
+
+/* Safety Signs Section */
+.safety-signs {
+  margin-bottom: 125px;
+}
+
+.safety-signs h2 {
+  margin-bottom: 36px;
+}
+
+.safety-signs-signs article {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 19px;
+}
+
+.safety-signs-signs img {
+  margin-right: 29px;
+}
+
+.safety-signs-signs h3 {
+  margin-top: 0;
+}
+
+/* FAQ Section */
+
+/* All Styles for FAQ Section are from landing Page */
+
+
+.beach-info .fag-section {
+  margin-bottom: 174px;
+}
+
+.beach-info .fag-section h3 {
+  text-align: center;
+  margin-bottom: -20px;
+}
+
+.beach-info .faq {
+  position: relative;
+  margin: 0 auto;
+  z-index: 99;
+  margin-bottom: 5rem;
+}
+
+.beach-info .life-buoy {
+  bottom: -190px;
+  right: -160px;
+  z-index: 1;
+  height: auto;
+  pointer-events: none;
+}
+
+.beach-info .faq .accordion-item h2 {
+  margin-bottom: 0;
+}
+
+.beach-info .faq {
+  width: 85%;
+}
+
+/* media queries */
+@media screen and (max-width: 400px) {
+  .beach-info h1 {
+    text-align: left;
+  }
+
+  .beach-info .life-buoy {
+    bottom: -160px;
+    left: 20px;
+  }
+
+  .beach-info .services article:nth-child(4),
+  .beach-info .services article:nth-child(8) {
+    margin-bottom: -10px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .beach-info h1 {
+    text-align: left;
+  }
+
+  .beach-info .life-buoy {
+    right: 20px;
+  }
+
+  .beach-info .services article {
+    margin: 10px auto;
+    max-width: 100%;
+  }
+
+  .beach-info .services article:nth-child(1) {
+    margin: 10px auto;
+  }
+
+  .beach-info .services article:nth-child(4),
+  .beach-info .services article:nth-child(8) {
+    margin-bottom: -10px;
+  }
+
+}
+
+@media screen and (min-width: 801px) and (max-width: 1000px) {
+  .beach-info .life-buoy {
+    right: 20px;
+  }
+
+  .beach-info .services article {
+    max-width: 100%;
+    margin: 10px auto;
+  }
+
+  .beach-info .services article:nth-child(4),
+  .beach-info .services article:nth-child(8) {
+    margin-bottom: -10px;
+  }
+
 }
