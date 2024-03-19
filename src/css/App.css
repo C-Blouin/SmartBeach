@@ -2131,6 +2131,10 @@ footer>nav {
   margin-top: 0.75rem;
 }
 
+.dashboard-data-card-top img {
+  margin-top: 0;
+}
+
 @media screen and (max-width: 900px) {
 
   .dashboard-data-card-top {
@@ -2144,6 +2148,7 @@ footer>nav {
 
   .dashboard-card-bottom p {
     margin-left: auto;
+    margin-top: 0;
   }
 
 }
