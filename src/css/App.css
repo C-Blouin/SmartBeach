@@ -1786,7 +1786,8 @@ footer>nav {
 /* Start of About the Project Page Styles */
 
 .about-container, 
-.contact-container {
+.contact-container,
+.beach-info-container {
     margin-top: -180px;
     padding-top: 380px;
     background-color: var(--primary-background);
@@ -1798,7 +1799,8 @@ footer>nav {
 @media screen and (max-width: 1200px) {
 
   .about-container, 
-  .contact-container {
+  .contact-container,
+  .beach-info-container {
     margin-top: -45px;
     padding-top: 315px;
     background-image: url(src/images/contact/header-bg-desktop.jpg);
@@ -1813,7 +1815,8 @@ footer>nav {
 
 @media screen and (max-width: 1000px) {
   .about-container,
-  .contact-container {
+  .contact-container,
+  .beach-info-container {
     margin-top: -20px;
     padding-top: 330px;
   }
@@ -1821,7 +1824,8 @@ footer>nav {
 
 @media screen and (max-width: 365px) {
   .about-container,
-  .contact-container {
+  .contact-container,
+  .beach-info-container {
     margin-top: -20px;
     padding-top: 200px;
     background-image: url(src/images/contact/header-bg-mobile.jpg);
@@ -1926,6 +1930,12 @@ footer>nav {
 
 /* Dashboard Styles */
 
+.dashboard-body {
+  padding: 0 3rem;
+  max-width: 1366px;
+  margin: 0 auto;
+}
+
 /* Dashboard Navigation Menu Styles */
 
 .dashboard-menu {
@@ -1990,12 +2000,14 @@ footer>nav {
   
   .dashboard-menu {
     justify-content: flex-start;
+    padding: 0 5rem;
+    margin-top: 5rem;
   }
 
 }
 
 .dashboard-wrapper {
-  background-image: url(../images/dashboard/dashboard-desktop.jpg);
+  background-image: url(../images/dashboard/dashboard-bg.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -2003,7 +2015,7 @@ footer>nav {
   margin-top: -300px;
   /* Positioning the content with padding top, beinging it back into the viewport. */
   padding-top: 300px;
-  padding-bottom: 84px;
+  padding-bottom: 120px;
 }
 
 .dashboard-wrapper > p{
@@ -2014,17 +2026,10 @@ footer>nav {
 .dashboard-widgets-grid-container{
   display: flex;
   justify-content: space-between;
+  align-items: start;
+  margin-top: 2rem;
 }
-@media screen and (max-width: 990px) {
-  .dashboard-widgets-grid-container{
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-}
-@media screen and (max-width: 480px){
-  
-}
+
 /*Forecast component styles*/
 
 /* Temperature card styles*/
@@ -2032,22 +2037,44 @@ footer>nav {
   /*Add space between menu*/
   margin-top: 24px;
 }
+
+.dashboard-primary-container {
+  margin: 5rem 0 2rem 0;
+}
+
+.dashboard-temperature-container {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.dashboard-temperature-container > div {
+  display: flex;
+  align-items: center;
+}
+
+.dashboard-temperature-container p {
+  margin: 0;
+}
+
 .dashboard-temperature-card-top{
   /*Have temp label sit left & 
   weatherIcon sit at the right end of container*/
   display: flex;
+  gap: 1rem;
 }
 
 .dashboard-temperature-card-top>h1 {
   /*Manage h1 same as hero*/
-  font-size: clamp(38px, 5vw, 70px);
+  font-size: 70px;
+  font-weight: 500;
+  line-height: 1;
+  margin: 0;
 }
 
 /*Weather widget small cards*/
 .dashboard-data-card-container {
   gap: 8px;
-  /*Forces container to be 450px same as .hero-forecast limit*/
-  max-width: 450px;
     /* Two columns */
   display: grid;
   grid-template-columns: repeat(2, 1fr); 
@@ -2057,29 +2084,68 @@ footer>nav {
 .dashboard-data-card{
   background-color: var(--white);
   /*Card sizing*/
-  width: 195px;
   height: 170px;
-  padding: 8px;
+  padding: 0.5rem 1rem;
   border-radius: 4px;
   /*Content alignment*/
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /*Border is just to show how the cards look.
-   hard to see on the placeholder bg remove later*/
-  border: black solid 1px;
+}
+
+@media screen and (max-width: 900px) {
+
+  .dashboard-data-card {
+    height: 120px;
+  }
+
+  @media screen and (max-width: 600px) {
+    .dashboard-data-card {
+      padding: 0.5rem 0.75rem;
+    }
+  }
+  
 }
 
 /* Push danger label to right end*/
 .dashboard-data-card-top {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   /*manage h3 font-size same as widget-card on hero*/
   font-size: clamp(var(--mobile-body), 3vw, var(--desktop-body));
+  gap: 3.5rem;
 }
-.dashboard-data-card > img{
+
+.dashboard-data-card-top > p {
+  margin: 0;
+}
+
+.dashboard-card-bottom {
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-data-card img, .dashboard-card-bottom p {
   max-width: 100%;
-  height: 120px;
+  margin-top: 0.75rem;
+}
+
+@media screen and (max-width: 900px) {
+
+  .dashboard-data-card-top {
+    gap: 0;
+  }
+
+  .dashboard-card-bottom {
+    flex-direction: row;
+    align-items: baseline;
+  }
+
+  .dashboard-card-bottom p {
+    margin-left: auto;
+  }
+
 }
 
 .dashboard-forecast-prediction-value{
@@ -2088,6 +2154,7 @@ footer>nav {
   font-size: clamp(18px, 5vw, 22px);
   font-weight: 600;
   line-height: normal;
+  margin: 0;
 }
 
 .dashboard-temperature-wrapper > small:first-of-type{
@@ -2100,7 +2167,6 @@ footer>nav {
   box-shadow: var(--extra-large-shadow);
   display: flex;
   flex-direction: column;
-  margin-top: 24px;
   height: max-content;
   border-radius: 6px;
   padding: 24px;
@@ -2108,33 +2174,142 @@ footer>nav {
 
 .safety-indicators-top{
   display: flex;
-
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 1.75rem;
 }
+
+.safety-indicators-top > h2 {
+  margin: 0;
+  max-width: 200px;
+}
+
+.safety-indicators-top .tooltip-toggle {
+  border: none;
+  appearance: none;
+  background-color: transparent;
+  cursor: pointer; 
+}
+
+.safety-indicators-top .tooltip-toggle > img {
+  width: 30px;
+  height: auto;
+}
+
 .safety-indicators li {
   display: flex;
   justify-content: space-between;
-  margin-top: 16px;
+  align-items: center;
+  gap: 5rem;
+  margin-top: 2rem;
 }
+
+.safety-indicators li:first-of-type {
+  margin-top: 0;
+}
+
 .safety-indicators li:not(:last-of-type){
   border-bottom: 1px solid var(--blue-accent-5);
 }
 
-.safety-indicators-left-content,.safety-indicators-right-content{
+.safety-indicators-left-content > p {
+  max-width: 100px;
+}
+
+.safety-indicators-left-content > p, 
+.safety-indicators-right-content > p {
+  margin: 0;
+  font-size: clamp(var(--mobile-body), 3vw, var(--desktop-body));
+}
+
+.safety-indicators-left-content, 
+.safety-indicators-right-content {
   margin-bottom: 16px;
+  align-items: center;
+  gap: 0.75rem;
 }
-/*add space between images & text*/
-.safety-indicators-left-content > p{
-  margin-left: 16px;
+
+.safety-indicators-left-content > img {
+  width: 50px;
+  height: auto;
 }
-.safety-indicators-right-content > p{
-  margin-right: 4px;
+
+@media screen and (max-width: 990px) {
+
+  .dashboard-body {
+    padding: 0 2rem;
+  }
+
+  @media screen and (max-width: 768px) {
+
+    .dashboard-body {
+      padding: 0 1rem;
+    }
+
+    .dashboard-primary-container {
+      margin: 3rem 0 2rem 0;
+    }
+
+  }
+
+  .safety-indicators-left-content > img {
+    width: 35px;
+  }
+
+  .dashboard-widgets-grid-container{
+    flex-direction: column;
+  }
+
+  .dashboard-safety-indicators-container {
+    margin-top: 2rem;
+  }
+
+  .dashboard-data-card-container,
+  .dashboard-safety-indicators-container {
+    width: 100%;
+  }
+
+  .dashboard-widgets-grid-container,
+  .main-forecast-container {
+    padding: 0 5rem;
+  }
+
+  @media screen and (max-width: 600px) {
+    .dashboard-widgets-grid-container,
+    .main-forecast-container,
+    .dashboard-menu {
+      padding: 0 2rem;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    .dashboard-widgets-grid-container,
+    .main-forecast-container,
+    .dashboard-menu {
+      padding: 0;
+    }
+  
+  }
+
 }
+
+@media screen and (max-width: 600px) {
+
+  .dashboard-data-card img {
+    width: 40px;
+  }
+
+  .safety-indicators li {
+    gap: 2rem;
+  }
+  
+}
+
 /*Safety indic box styles*/
 .safety-indicators-right-content{
-  background-color: var(--blue-accent-5);
+  background-color: var(--section-background);
   border-radius: 4px;
-  padding: 3px 4px 3px 4px;
-  gap: 4px;
+  padding: 3px 6px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2147,12 +2322,17 @@ footer>nav {
   display: flex;
 }
 
-.dashboard-safety-indicators .safety-indicators ul li>div img {
-  background-color: #3499d7;
+.dashboard-safety-indicators .safety-indicators-left-content > img {
+  background-color: var(--primary-blue);
   border-radius: 50%;
 }
 
 /* Beach-Info Styles */
+
+.beach-info-container {
+  margin-bottom: 5rem;
+}
+
 .beach-info {
   background-color: var(--primary-background);
   overflow: hidden;
@@ -2163,7 +2343,7 @@ footer>nav {
   font-size: clamp(var(--mobile-h1), 5vw, var(--desktop-h1));
   color: var(--primary-heading);
   font-weight: 800;
-  margin: 27px auto 10px;
+  margin: 27px auto ;
   text-align: center;
 }
 
