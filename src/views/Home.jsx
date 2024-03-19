@@ -176,7 +176,7 @@ function Home() {
               dicta sunt explicabo. Sed ut perspiciatis unde omnis iste natus
               error sit voluptatem accusantium doloremque laudantium.
             </p>
-            <a href="#">Read More</a>
+            <a href="/about">Read More</a>
           </div>
         </article>
         {/* End of Why Section Primary Content */}
