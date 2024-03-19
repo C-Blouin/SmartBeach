@@ -153,7 +153,7 @@ function Home() {
             </article>
 
             {/* Forecast Call to Action */}
-            <a href="#" id="forecast-cta">
+            <a href="/dashboard" id="forecast-cta">
               Get Full Forecast
             </a>
           </div>

@@ -1543,38 +1543,30 @@ footer>nav {
 
 .contact-us {
   background-color: var(--primary-background);
-  overflow: hidden;
+  /* overflow: hidden; */
+  margin-top: 2rem;
 }
-
-.contact-us-header,
-.about-the-project-header,
-.beach-info-header {
-  margin-top: -40px;
-  background-image: url('src/images/contact/header-gb-desktop.jpg');
-  background-size: cover;
-  height: 320px;
-  background-repeat: no-repeat;
-}
-
 
 .contact-us .container,
-.about-the-project .container,
-.beach-info .container {
+.about-the-project .container {
   margin: 0 auto;
-  max-width: 960px;
+  max-width: 1100px;
   padding: 0 15px;
   position: relative;
 }
 
-.contact-us .container::after {
+.contact-container::after {
   content: url('src/images/contact/decor-vector-desktop.png');
-  left: 55%;
-  top: -18%;
+  right:0;
+  top: 0;
   position: absolute;
 }
 
 .contact-us-info {
   margin-bottom: 200px;
+  display: flex;
+  align-items: end;
+  padding: 0 0.5rem;
 }
 
 .contact-info {
@@ -1583,7 +1575,7 @@ footer>nav {
 }
 
 .contact-us h1 {
-  font-size: clamp(var(--mobile-h1), 5vw, var(--desktop-h1));
+  font-family: var(--heading-font);
   font-size: var(--desktop-h1);
   color: var(--primary-heading);
   font-weight: 800;
@@ -1598,6 +1590,10 @@ footer>nav {
   font-weight: 400;
 }
 
+.contact-info > p {
+  margin: 1rem 0 1.75rem 0;
+}
+
 .contact-us ul li {
   display: flex;
   align-items: center;
@@ -1605,7 +1601,7 @@ footer>nav {
 }
 
 .contact-us ul li img {
-  margin-right: 5px;
+  margin-right: 10px;
 }
 
 .contact-us ul li p {
@@ -1636,6 +1632,7 @@ footer>nav {
   font-family: var(--body-font);
   padding-left: 4px;
   font-weight: 500;
+  margin-bottom: 0.35rem;
 }
 
 .contact-us-form input::placeholder {
@@ -1691,19 +1688,13 @@ footer>nav {
   }
 
   .contact-us-header,
-  .about-the-project-header,
-  .beach-info-header {
+  .about-the-project-header {
     margin-top: -60px;
     background-image: url('src/images/contact/header-bg-mobile.jpg');
     background-size: cover;
     height: 185px;
     background-repeat: no-repeat;
     margin-bottom: 13px;
-  }
-
-  .contact-us .contact-us-form {
-    margin: 0 auto;
-    margin-top: 6px;
   }
 
   .contact-us-info {
@@ -1715,12 +1706,12 @@ footer>nav {
     padding-right: 20px;
   }
 
-  .contact-us .container::after {
+  /* .contact-us .container::after {
     content: url('src/images/contact/decor-vector-mobile.png');
     left: 5%;
     top: 25%;
     position: absolute;
-  }
+  } */
 }
 
 @media screen and (max-width: 800px) {
@@ -1729,20 +1720,8 @@ footer>nav {
     font-size: var(--mobile-h1);
   }
 
-  .contact-us .contact-us-form {
-    margin: 0 auto;
-    margin-top: 6px;
-  }
-
   .contact-us-info {
     margin-bottom: 100px;
-  }
-
-  .contact-us .container::after {
-    content: url('src/images/contact/decor-vector-desktop.png');
-    left: 0%;
-    top: 38%;
-    position: absolute;
   }
 
   .contact-info {
@@ -1751,39 +1730,110 @@ footer>nav {
   }
 }
 
+@media screen and (max-width: 1000px) {
+
+  .contact-info {
+    padding-right: 0;
+    max-width: 70%;
+    margin: 0 auto;
+  }
+
+  .contact-us .contact-us-form {
+    width: 70%;
+    margin: 2rem auto 0 auto;
+  }
+
+  @media screen and (max-width: 600px) {
+
+    .contact-info {
+      max-width: 100%;
+      padding: 0;
+    }
+
+    .contact-info,
+    .contact-us .contact-us-form {
+        width: 100%;            
+    }
+
+    .contact-us .contact-us-form {
+      padding: 0;
+    }
+
+    .contact-us .contact-us-form form {      
+      padding: 25px 15px 45px 15px;     
+    }
+
+  }
+
+}
+
 @media screen and (min-width: 801px) and (max-width: 1000px) {
 
   .contact-us h1 {
     font-size: var(--mobile-h1);
   }
 
-  .contact-us .contact-us-form {
-    margin: 0 auto;
-    margin-top: 6px;
-  }
-
-  .contact-us .container::after {
+  /* .contact-us .container::after {
     content: url('src/images/contact/decor-vector-desktop.png');
     left: 25%;
     top: 38%;
     position: absolute;
-  }
+  } */
 }
 
 /* End of Contact Us Page Styles */
 
 /* Start of About the Project Page Styles */
-.about-the-project {
-  background-color: var(--primary-background);
-  overflow: hidden;
+
+.about-container, 
+.contact-container {
+    margin-top: -180px;
+    padding-top: 380px;
+    background-color: var(--primary-background);
+    background-image: url(/src/images/contact/desktop-header-narrow-light.png);
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 1200px) {
+
+  .about-container, 
+  .contact-container {
+    margin-top: -45px;
+    padding-top: 315px;
+    background-image: url(src/images/contact/header-bg-desktop.jpg);
+    background-size: auto;
+  }
+  
+  .contact-container::after {
+    content: "";
+  }
+
+}
+
+@media screen and (max-width: 1000px) {
+  .about-container,
+  .contact-container {
+    margin-top: -20px;
+    padding-top: 330px;
+  }
+}
+
+@media screen and (max-width: 365px) {
+  .about-container,
+  .contact-container {
+    margin-top: -20px;
+    padding-top: 200px;
+    background-image: url(src/images/contact/header-bg-mobile.jpg);
+  }
 }
 
 .about-the-project h1 {
   font-family: var(--heading-font);
-  font-size: clamp(var(--mobile-h1), 5vw, var(--desktop-h1));
+  font-size: var(--desktop-h1);
   color: var(--primary-heading);
   font-weight: 800;
-  margin: 24px auto 40px;
+  margin: 34px 0 40px 0;
   text-align: center;
 }
 
@@ -1797,39 +1847,24 @@ footer>nav {
 .about-the-project-info {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  margin-bottom: 207px;
+  gap: 4rem;
+  margin: 3rem 0 12rem 0;
+  
 }
 
-.about-the-project img {
-  margin-top: -30px;
+.about-the-project-info img {
+  display: inline-block;
+  margin: 0 auto 5rem auto;
 }
 
 .about-the-project-info article {
   width: 60%;
 }
 
-/* Media Queries About the Project Page*/
-@media screen and (max-width: 400px) {
-  .about-the-project h1 {
-    text-align: left;
-    margin-bottom: 13px;
-    margin-top: 13px;
-    font-size: var(--mobile-h1);
-  }
-
+@media screen and (max-width: 1000px) {
   .about-the-project-info {
-    flex-direction: column-reverse;
-    margin-bottom: 0;
-  }
-
-  .about-the-project-info article {
-    width: 100%;
-  }
-
-  .about-the-project-info img {
-    display: inline-block;
-    margin: 0 auto;
+    margin: 0 0 12rem 0;
+    gap: 0;
   }
 }
 
@@ -1840,9 +1875,8 @@ footer>nav {
   }
 
   .about-the-project h1 {
-    margin-bottom: 13px;
-    margin-top: 13px;
     font-size: var(--mobile-h1);
+    margin: 1.5rem 0 1.25rem 0;
   }
 
   .about-the-project-info article {
@@ -1850,10 +1884,24 @@ footer>nav {
     width: 100%;
   }
 
-  .about-the-project-info img {
-    display: inline-block;
-    margin: 0 auto;
+}
+
+/* Media Queries About the Project Page*/
+@media screen and (max-width: 400px) {
+  .about-the-project h1 {
+    text-align: left;
+    font-size: var(--mobile-h1);
   }
+
+  .about-the-project-info {
+    flex-direction: column-reverse;
+    margin-bottom: 0;
+  }
+
+  .about-the-project-info article {
+    width: 100%;
+  }
+
 }
 
 @media screen and (min-width: 801px) and (max-width: 1000px) {
@@ -1863,8 +1911,6 @@ footer>nav {
   }
 
   .about-the-project h1 {
-    margin-bottom: 13px;
-    margin-top: 13px;
     font-size: clamp(var(--mobile-h1), 3vw, var(--desktop-h1));
   }
 
@@ -1873,10 +1919,6 @@ footer>nav {
     width: 100%;
   }
 
-  .about-the-project-info img {
-    display: inline-block;
-    margin: 0 auto;
-  }
 }
 
 /* End of About the Project Page Styles */
@@ -1945,7 +1987,7 @@ footer>nav {
 
 /* Align the navigation menu contents to the start of the container, to prevent content cutoff. */
 @media screen and (max-width: 1200px) {
-
+  
   .dashboard-menu {
     justify-content: flex-start;
   }
@@ -1964,35 +2006,33 @@ footer>nav {
   padding-bottom: 84px;
 }
 
-.dashboard-wrapper>p {
+.dashboard-wrapper > p{
   color: var(--primary-body);
 }
 
 /*2 cols w/ space between*/
-.dashboard-widgets-grid-container {
+.dashboard-widgets-grid-container{
   display: flex;
   justify-content: space-between;
 }
-
 @media screen and (max-width: 990px) {
-  .dashboard-widgets-grid-container {
+  .dashboard-widgets-grid-container{
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
 }
-
-@media screen and (max-width: 480px) {}
-
+@media screen and (max-width: 480px){
+  
+}
 /*Forecast component styles*/
 
 /* Temperature card styles*/
-.dashboard-forecast-container {
+.dashboard-forecast-container{
   /*Add space between menu*/
   margin-top: 24px;
 }
-
-.dashboard-temperature-card-top {
+.dashboard-temperature-card-top{
   /*Have temp label sit left & 
   weatherIcon sit at the right end of container*/
   display: flex;
@@ -2008,13 +2048,13 @@ footer>nav {
   gap: 8px;
   /*Forces container to be 450px same as .hero-forecast limit*/
   max-width: 450px;
-  /* Two columns */
+    /* Two columns */
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr); 
 }
 
 /*small card styles.*/
-.dashboard-data-card {
+.dashboard-data-card{
   background-color: var(--white);
   /*Card sizing*/
   width: 195px;
@@ -2037,13 +2077,12 @@ footer>nav {
   /*manage h3 font-size same as widget-card on hero*/
   font-size: clamp(var(--mobile-body), 3vw, var(--desktop-body));
 }
-
-.dashboard-data-card>img {
+.dashboard-data-card > img{
   max-width: 100%;
   height: 120px;
 }
 
-.dashboard-forecast-prediction-value {
+.dashboard-forecast-prediction-value{
   /*Makes the text stand out more
   same styles from .hero-forecast*/
   font-size: clamp(18px, 5vw, 22px);
@@ -2051,7 +2090,7 @@ footer>nav {
   line-height: normal;
 }
 
-.dashboard-temperature-wrapper>small:first-of-type {
+.dashboard-temperature-wrapper > small:first-of-type{
   margin-right: 22px;
 }
 
@@ -2067,37 +2106,31 @@ footer>nav {
   padding: 24px;
 }
 
-.safety-indicators-top {
+.safety-indicators-top{
   display: flex;
 
 }
-
 .safety-indicators li {
   display: flex;
   justify-content: space-between;
   margin-top: 16px;
 }
-
-.safety-indicators li:not(:last-of-type) {
+.safety-indicators li:not(:last-of-type){
   border-bottom: 1px solid var(--blue-accent-5);
 }
 
-.safety-indicators-left-content,
-safety-indicators-right-content {
+.safety-indicators-left-content,.safety-indicators-right-content{
   margin-bottom: 16px;
 }
-
 /*add space between images & text*/
-.safety-indicators-left-content>p {
+.safety-indicators-left-content > p{
   margin-left: 16px;
 }
-
-.safety-indicators-right-content>p {
+.safety-indicators-right-content > p{
   margin-right: 4px;
 }
-
 /*Safety indic box styles*/
-.safety-indicators-right-content {
+.safety-indicators-right-content{
   background-color: var(--blue-accent-5);
   border-radius: 4px;
   padding: 3px 4px 3px 4px;
