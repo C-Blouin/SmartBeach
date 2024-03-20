@@ -25,10 +25,48 @@ import reviewImage from "../images/landing/reviews/laura.png";
 import lifeBuoy from "../images/landing/faq/life-buoy.png";
 
 function Home() {
+  // Weather API
+  const [weatherData, setWeatherData] = useState([]);
+  const url =
+    "https://weather338.p.rapidapi.com/weather/forecast?date=20240319&latitude=44.17489200&longitude=-81.63615400&language=en-US&units=m";
+  const options = {
+    method: "GET",
+    headers: {
+      "X-RapidAPI-Key": "9e50bcac30msh30b61ae579c247ap1caef3jsn9fbd44d87e03",
+      "X-RapidAPI-Host": "weather338.p.rapidapi.com",
+    },
+  };
+
   // Setting Document Title for the Home Page.
   useEffect(() => {
     document.title = "Smart Beach | Home";
+
+    ///////////////////////////////////////////////////////////
+    const fetchData = async () => {
+      try {
+        const response = await fetch(url, options);
+        if (!response.ok) {
+          console.log(response);
+          setErrorMessage(response.statusText);
+        }
+        const result = await response.json();
+        setWeatherData(result["v3-wx-observations-current"]);
+        console.log(result);
+      } catch (error) {
+        console.log(`error: ${error}`);
+        setErrorMessage(error);
+      }
+    };
+    // fetchData();
   }, []);
+
+  let temperature;
+
+  if (weatherData != null && weatherData.temperature != null) {
+    temperature = weatherData.temperature;
+  } else {
+    temperature = "N/A";
+  }
 
   return (
     <div className="container-fluid p-0">
@@ -52,7 +90,7 @@ function Home() {
               <img src={thunderstorm} alt="Thunderstorm" />
               <div className="primary-card-content">
                 <article>
-                  <h3>24°</h3>
+                  <h3>{temperature}°</h3>
                   <p>Thunderstorms</p>
                 </article>
                 <div className="temperature-container">
