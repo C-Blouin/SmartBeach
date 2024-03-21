@@ -196,6 +196,34 @@ function Home() {
     }
   }), [rainChance];
 
+  // Weather Icons Object, Setting the weather icon codes from the API to the imported SVGs. These icons will be dynamically rendered based on the current weather condition.
+  const weatherIcons = {
+    '01d': sunnyIcon,                     // 01d, 01n - Clear Sky
+    '01n': sunnyIconNight,              
+    '02d': sunWithCloudsIcon,             // 02d, 02n - Sun with Clouds
+    '02n': sunWithCloudsIconNight,       
+    '03d': cloudIcon,                     // 03d, 03n - Clouds
+    '03n': cloudIconNight,               
+    '04d': partlyCloudyIcon,              // 04d, 04n - Broken Clouds
+    '04n': partlyCloudyIconNight,               
+    '09d': cloudWithRainIcon,             // 09d, 09n - Clouds with Showers
+    '09n': cloudWithRainIconNight,        
+    '10d': sunCloudsRainIcon,             // 10d, 10n - Sun, Cloud, and Rain
+    '10n': sunCloudsRainIconNight,        
+    '11d': cloudWithLightningIcon,        // 11d, 11n - Thunderstorms
+    '11n': cloudWithLightningIconNight,  
+    '13d': snowyIcon,                     // 13d, 13n - Snow
+    '13n': snowyIconNight,                
+  };
+
+  // Get the Weather Icon Code from the API, to pass it into the weatherIcons object to retrieve the corresponding weather icon for display.
+   const iconCode = weatherData && weatherData.list[0].weather[0].icon;
+   const weatherIcon = weatherIcons[iconCode];
+
+  // Hard coded icon value for demonstration purposes. Testing link: https://openweathermap.org/img/w/09d.png
+  // const iconCode = '13d';
+  // const weatherIcon = weatherIcons[iconCode];
+
   return (
     <div className="container-fluid p-0">
       {/* Start of Hero Wrapper */}
