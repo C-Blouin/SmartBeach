@@ -111,6 +111,91 @@ function Home() {
   // Probability of precipitation, converting it to a percentage.
   const rainChance = weatherData && (weatherData.list[0].pop * 100).toFixed(0);
 
+  /*
+
+  Conditional Logic to display safety indicators based on the wind speed, wind gusts, humidity, and rain chance.
+
+  */
+
+  // Wind Speed Indicator, declaring the initial state of the wind speed indicator to update the state dynamically based on the wind speed value from the API.
+  const [windSpeedIndicatorSrc, setWindSpeedIndicatorSrc] = useState(safeIndicator);
+  const [windSpeedIndicatorAlt, setWindSpeedIndicatorAlt] = useState("Safe Indicator");
+
+  // Wind Speed Conditional Logic Effect Hook
+  useEffect(() => {
+    // Wind Speed Indicator
+    if (windSpeed > 20 && windSpeed < 40) {
+      setWindSpeedIndicatorSrc(cautionIndicator);
+      setWindSpeedIndicatorAlt("Caution Indicator");
+    } else if (windSpeed >= 40) { 
+      setWindSpeedIndicatorSrc(dangerIndicator);
+      setWindSpeedIndicatorAlt("Danger Indicator");
+    } else {
+      setWindSpeedIndicatorSrc(safeIndicator);
+      setWindSpeedIndicatorAlt("Safe Indicator");
+    }
+    // Passing in windSpeed into the useEffect hook to consistently adjust the value change logic.
+  }, [windSpeed]);
+
+  // Wind Gusts State Initialization
+  const [windGustsIndicatorSrc, setWindGustsIndicatorSrc] = useState(safeIndicator);
+  const [windGustsIndicatorAlt, setWindGustsIndicatorAlt] = useState("Safe Indicator");
+
+  // Wind Gusts Conditional Logic Effect Hook
+  useEffect(() => {
+    // Wind Speed Indicator
+    if (windGusts > 20 && windGusts < 40) {
+      setWindGustsIndicatorSrc(cautionIndicator);
+      setWindGustsIndicatorAlt("Caution Indicator");
+    } else if (windGusts >= 40) { 
+      setWindGustsIndicatorSrc(dangerIndicator);
+      setWindGustsIndicatorAlt("Danger Indicator");
+    } else {
+      setWindGustsIndicatorSrc(safeIndicator);
+      setWindGustsIndicatorAlt("Safe Indicator");
+    }
+  }, [windGusts]);
+
+  // Humidity Indicator State Initialization
+  const [humidityIndicatorSrc, setHumidityIndicatorSrc] = useState(safeIndicator);
+  const [humidityIndicatorAlt, setHumidityIndicatorAlt] = useState("Safe Indicator");
+
+  // Humidity Conditional Logic Effect Hook
+  useEffect(() => {
+    if (humidity > 60 && humidity < 80) {
+      setHumidityIndicatorSrc(cautionIndicator);
+      setHumidityIndicatorAlt("Caution Indicator");
+    }
+    else if (humidity >= 80){
+      setHumidityIndicatorSrc(dangerIndicator);
+      setHumidityIndicatorAlt("Danger Indicator");
+    }
+    else {
+      setHumidityIndicatorSrc(safeIndicator);
+      setHumidityIndicatorAlt("Safe Indicator");
+    }
+  }), [humidity];
+
+  // Rain Chance Indicator State Initialization
+  const [rainChanceIndicatorSrc, setRainChanceIndicatorSrc] = useState(safeIndicator);
+  const [rainChanceIndicatorAlt, setRainChanceIndicatorAlt] = useState("Safe Indicator");
+
+  // Rain Chance Conditional Logic Effect Hook
+  useEffect(() => {
+    if (rainChance > 30 && rainChance < 60) {
+      setRainChanceIndicatorSrc(cautionIndicator);
+      setHumidityIndicatorAlt("Caution Indicator");
+    }
+    else if (rainChance >= 60){
+      setRainChanceIndicatorSrc(dangerIndicator);
+      setRainChanceIndicatorAlt("Danger Indicator");
+    }
+    else {
+      setRainChanceIndicatorSrc(safeIndicator);
+      setRainChanceIndicatorAlt("Safe Indicator");
+    }
+  }), [rainChance];
+
   return (
     <div className="container-fluid p-0">
       {/* Start of Hero Wrapper */}
