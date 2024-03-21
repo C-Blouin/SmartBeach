@@ -32,6 +32,45 @@ import cautionIndicator from "../images/landing/safety-indicators/caution.svg";
 import dangerIndicator from "../images/landing/safety-indicators/danger.svg";
 
 function Dashboard() {
+  function updateWaveHeight(waveHeight) {
+    let wavesIndicatorText = document.getElementById("waves-indicator-text");
+    let wavesIndicatorImage = document.getElementById("waves-indicator-image");
+    let waveIndicatorHeightLeft = document.getElementById(
+      "waveIndicatorHeightLeft"
+    );
+    let waveIndicatorHeightLeftIcon = document.getElementById(
+      "waveIndicatorHeightLeftIcon"
+    );
+
+    // If its higher than 1m its a Dangerous Wave
+    if (waveHeight > 1) {
+      wavesIndicatorText.textContent = "dangerous";
+      wavesIndicatorImage.src = dangerIndicator;
+      waveIndicatorHeightLeftIcon.src = dangerIndicator;
+      console.log("dangerous");
+    } // If its between 0.5 to 1m its a Moderate Wave
+    else if (waveHeight < 1 && waveHeight > 0.5) {
+      wavesIndicatorText.textContent = "moderate";
+      wavesIndicatorImage.src = cautionIndicator;
+      waveIndicatorHeightLeftIcon.src = cautionIndicator;
+      console.log("Moderate");
+    } // If its below 0.5 its a Safe Wave
+    else {
+      wavesIndicatorText.textContent = "safe";
+      wavesIndicatorImage.src = safeIndicator;
+      waveIndicatorHeightLeftIcon.src = safeIndicator;
+      console.log("Safe");
+    }
+
+    waveIndicatorHeightLeft.textContent = waveHeight + " m";
+  }
+
+  function updateSeaTemp(seaTemperature) {
+    let waterTemperatureText = document.getElementById("waterTemperature");
+
+    waterTemperatureText.textContent = seaTemperature + "°";
+  }
+
   useEffect(() => {
     const fetchData = async () => {
       // API
@@ -46,31 +85,17 @@ function Dashboard() {
         });
         let responseJson = await response.json();
 
-        let waveHeight =
-          responseJson[0]["sea_surface_wave_significant_height (m)"];
+        let waveHeight = Math.floor(
+          responseJson[0]["sea_surface_wave_significant_height (m)"]
+        );
         console.log("Wave Height (m):" + waveHeight);
+        updateWaveHeight(waveHeight);
 
-        let wavesIndicatorText = document.getElementById(
-          "waves-indicator-text"
+        let seaTemperature = Math.floor(
+          responseJson[0]["sea_water_temperature_3 (K)"] - 273
         );
-        let wavesIndicatorImage = document.getElementById(
-          "waves-indicator-image"
-        );
-
-        // If its higher than 1m its a Dangerous Wave If its between 0.5 to 1m its a Moderate Wave If its below 0.5 its a Safe Wave
-        if (waveHeight > 1) {
-          wavesIndicatorText.textContent = "Dangerous";
-          wavesIndicatorImage.src = dangerIndicator;
-          console.log("Dangerous");
-        } else if (waveHeight < 1 && waveHeight > 0.5) {
-          wavesIndicatorText.textContent = "Moderate";
-          wavesIndicatorImage.src = cautionIndicator;
-          console.log("Moderate");
-        } else {
-          wavesIndicatorText.textContent = "Safe";
-          wavesIndicatorImage.src = safeIndicator;
-          console.log("Safe");
-        }
+        console.log("sea Temperature:" + seaTemperature);
+        updateSeaTemp(seaTemperature);
       } catch (error) {
         console.log(error);
       }
@@ -208,8 +233,11 @@ function Dashboard() {
                     width="50"
                     height="50"
                   />
-                  <p className="dashboard-forecast-prediction-value">
-                    56 <small>km/h</small>
+                  <p
+                    className="dashboard-forecast-prediction-value"
+                    id="windSpeedLeft"
+                  >
+                    <small>km/h</small>
                   </p>
                 </div>
               </article>
@@ -247,6 +275,7 @@ function Dashboard() {
                     height="19"
                     alt="Safe Indicator"
                     className="safety-indicators"
+                    id="waveIndicatorHeightLeftIcon"
                   />
                 </div>
                 <div className="dashboard-card-bottom">
@@ -256,8 +285,11 @@ function Dashboard() {
                     width="50"
                     height="50"
                   />
-                  <p className="dashboard-forecast-prediction-value">
-                    0.5 <small>m</small>
+                  <p
+                    className="dashboard-forecast-prediction-value"
+                    id="waveIndicatorHeightLeft"
+                  >
+                    <small>m</small>
                   </p>
                 </div>
               </article>
@@ -280,8 +312,11 @@ function Dashboard() {
                     width="50"
                     height="50"
                   />
-                  <p className="dashboard-forecast-prediction-value">
-                    20 <small>º</small>
+                  <p
+                    className="dashboard-forecast-prediction-value"
+                    id="waterTemperature"
+                  >
+                    <small>º</small>
                   </p>
                 </div>
               </article>
