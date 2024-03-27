@@ -59,6 +59,8 @@ import snowyIcon from "../images/dashboard/weather/cloud-with-snow.svg";
 import snowyIconNight from "../images/dashboard/weather/cloud-with-snow.svg";
 
 function Dashboard() {
+  document.title = "SmartBeach | Dashboard";
+
   function updateWaveHeight(waveHeight) {
     let wavesIndicatorText = document.getElementById("waves-indicator-text");
     let wavesIndicatorImage = document.getElementById("waves-indicator-image");
@@ -68,7 +70,6 @@ function Dashboard() {
     let waveIndicatorHeightLeftIcon = document.getElementById(
       "waveIndicatorHeightLeftIcon"
     );
-    let windSppedLeft = document.getElementById("windSpeedLeft");
 
     // If its higher than 1m its a Dangerous Wave
     if (waveHeight > 1) {
@@ -100,9 +101,9 @@ function Dashboard() {
   }
 
   function updateWindSpeed(windSpeed) {
-    let windSpeedText = document.getElementById("windSpeed");
+    let windSpeedText = document.getElementById("windSpeedLeft");
 
-    windSpeedText.textContent = windSpeed;
+    windSpeedText.textContent = windSpeed + " k/mh";
   }
   useEffect(() => {
     const fetchData = async () => {
@@ -132,6 +133,7 @@ function Dashboard() {
 
         let windSpeed = Math.floor(responseJson[0]["wind_speed (m s-1)"] * 3.6);
         console.log("wind speed:" + windSpeed);
+        updateWindSpeed(windSpeed);
       } catch (error) {
         console.log(error);
       }
@@ -141,6 +143,71 @@ function Dashboard() {
 
   //WEATHER API FROM HOME
 
+  // Setting the initial state of the weather data to null, which will be populated later with the fetched data from the API.
+  const [weatherData, setWeatherData] = useState(null);
+
+  // useEffect Hook to fetch the weather data from the API, and update the state with the fetched data.
+  useEffect(() => {
+    const fetchWeatherData = async () => {
+      // Try to fetch the data, if there is an error, log the error to the console.
+      try {
+        const response = await fetch('https://api.openweathermap.org/data/2.5/forecast/daily?lat=44.18339&lon=-81.63307&cnt=7&appid=b50c1df1821232d52ebcfef4330bb7d6');
+        if (!response.ok) {
+          console.log(`Error fetching weather data: ${response.status} ${response.statusText}`)
+        }
+        // IF the response is successful, parse the response into JSON and set the weatherData state to the fetched data.
+        const data = await response.json();
+        console.log(data);
+        setWeatherData(data);
+      } 
+      // Catch any errors and log them to the console.
+      catch (error) {
+        console.error('Error fetching weather data:', error);
+      }
+    };
+
+    // Invoking the fetchWeatherData function to fetch the weather data from the API.
+    fetchWeatherData();
+  }, []);
+
+    // Kelvin to Celsius
+    const convertKelvinToCelsius = (kelvin) => {
+      return (kelvin - 273.15).toFixed(1);
+    };
+
+  // Capitalize the first letter of each word in a string
+  const capitalizeEachWord = (word) => {
+    return word.replace(/\b\w/g, (char) => char.toUpperCase());
+  };
+
+  // Each day the API is fetching a new 7 day forecast, so these calculations will be based on the first day or the current day of the forecast.
+  const temperature = weatherData && Math.round(convertKelvinToCelsius(weatherData.list[0].temp.day)) + "°";
+  // Min & Max Temperature for the current day
+  const minTemperature = weatherData && Math.round(convertKelvinToCelsius(weatherData.list[0].temp.min)) + "°";
+  const maxTemperature = weatherData && Math.round(convertKelvinToCelsius(weatherData.list[0].temp.max)) + "°";
+  // Weather Condition (Light Snow, Sunny, etc). Passing it through the capitalizeEachWord function to capitalize the first letter of each word for consistentcy.
+  const condition = weatherData && capitalizeEachWord(weatherData.list[0].weather[0].description);
+    
+  // Weather Icons Object, Setting the weather icon codes from the API to the imported SVGs. These icons will be dynamically rendered based on the current weather condition.
+  const weatherIcons = {
+    '01d': sunnyIcon,                     // 01d, 01n - Clear Sky
+    '01n': sunnyIconNight,              
+    '02d': sunWithCloudsIcon,             // 02d, 02n - Sun with Clouds
+    '02n': sunWithCloudsIconNight,       
+    '03d': cloudIcon,                     // 03d, 03n - Clouds
+    '03n': cloudIconNight,               
+    '04d': partlyCloudyIcon,              // 04d, 04n - Broken Clouds
+    '04n': partlyCloudyIconNight,               
+    '09d': cloudWithRainIcon,             // 09d, 09n - Clouds with Showers
+    '09n': cloudWithRainIconNight,        
+    '10d': sunCloudsRainIcon,             // 10d, 10n - Sun, Cloud, and Rain
+    '10n': sunCloudsRainIconNight,        
+    '11d': cloudWithLightningIcon,        // 11d, 11n - Thunderstorms
+    '11n': cloudWithLightningIconNight,  
+    '13d': snowyIcon,                     // 13d, 13n - Snow
+    '13n': snowyIconNight,                
+  };
+  
   return (
     <div className="dashboard-wrapper">
       <div className="dashboard-body">
@@ -200,7 +267,7 @@ function Dashboard() {
           <div className="main-forecast-container">
             <div className="dashboard-temperature-card-top">
               <h1>
-                <span id="dashboard-temperature-label">24</span>
+                <span id="dashboard-temperature-label">{temperature}</span>
               </h1>
               <img
                 src={sunIcon}
@@ -211,7 +278,7 @@ function Dashboard() {
               />
             </div>
             <div className="dashboard-temperature-container">
-              <p id="dashboard-weather-condition-label">sunny</p>
+              <p id="dashboard-weather-condition-label">{condition}</p>
               <div>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -227,7 +294,7 @@ function Dashboard() {
                   />
                 </svg>
                 <p>
-                  H: <span>32°</span>
+                  H: <span>{maxTemperature}</span>
                 </p>
               </div>
               <div>
@@ -245,7 +312,7 @@ function Dashboard() {
                   />
                 </svg>
                 <p>
-                  L: <span>16°</span>
+                  L: <span>{minTemperature}</span>
                 </p>
               </div>
             </div>
