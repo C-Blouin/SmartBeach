@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import infoVector from "../images/dashboard/info-vector.svg";
 
 // Menu Navigation Icon Imports
 import sunIcon from "../images/dashboard/weather/sun.svg";
-import sunWithClouds from "../images/dashboard/weather/sun-with-clouds.svg";
+import sunWithClouds from "../images/dashboard/weather/sun-light-clouds.svg";
 import sunLightClouds from "../images/dashboard/weather/sun-light-clouds.svg";
 import cloud from "../images/dashboard/weather/cloud.svg";
 import cyclone from "../images/dashboard/weather/cyclone.svg";
@@ -31,6 +31,33 @@ import safeIndicator from "../images/landing/safety-indicators/safe.svg";
 import cautionIndicator from "../images/landing/safety-indicators/caution.svg";
 import dangerIndicator from "../images/landing/safety-indicators/danger.svg";
 
+// Weather Icon Imports for Icon Object to dynamically render the weather icons based on the weather condition.
+
+// 01d, 01n - Clear Sky
+import sunnyIcon from "../images/dashboard/weather/sun.svg";
+import sunnyIconNight from "../images/dashboard/weather/sun.svg";
+// 02d, 02n - Sun with Clouds
+import sunWithCloudsIcon from "../images/dashboard/weather/sun-light-clouds.svg";
+import sunWithCloudsIconNight from "../images/dashboard/weather/sun-light-clouds.svg";
+// 03d, 03n - Clouds
+import cloudIcon from "../images/dashboard/weather/cloud.svg";
+import cloudIconNight from "../images/dashboard/weather/cloud.svg";
+// 04d, 04n - Broken Clouds
+import partlyCloudyIcon from "../images/dashboard/weather/cloud.svg";
+import partlyCloudyIconNight from "../images/dashboard/weather/cloud.svg";
+// 09d, 09n - Clouds with Showers
+import cloudWithRainIcon from "../images/dashboard/weather/cloud-with-rain.svg";
+import cloudWithRainIconNight from "../images/dashboard/weather/cloud-with-rain.svg";
+// 10d, 10n - Sun, Cloud, and Rain
+import sunCloudsRainIcon from "../images/dashboard/weather/sun-clouds-with-rain.svg";
+import sunCloudsRainIconNight from "../images/dashboard/weather/sun-clouds-with-rain.svg";
+// 11d, 11n - Thunderstorm
+import cloudWithLightningIcon from "../images/dashboard/weather/cloud-with-lightning-and-rain.svg";
+import cloudWithLightningIconNight from "../images/dashboard/weather/cloud-with-lightning-and-rain.svg";
+// 13d, 13n - Snow
+import snowyIcon from "../images/dashboard/weather/cloud-with-snow.svg";
+import snowyIconNight from "../images/dashboard/weather/cloud-with-snow.svg";
+
 function Dashboard() {
   function updateWaveHeight(waveHeight) {
     let wavesIndicatorText = document.getElementById("waves-indicator-text");
@@ -41,6 +68,7 @@ function Dashboard() {
     let waveIndicatorHeightLeftIcon = document.getElementById(
       "waveIndicatorHeightLeftIcon"
     );
+    let windSppedLeft = document.getElementById("windSpeedLeft");
 
     // If its higher than 1m its a Dangerous Wave
     if (waveHeight > 1) {
@@ -71,6 +99,11 @@ function Dashboard() {
     waterTemperatureText.textContent = seaTemperature + "°";
   }
 
+  function updateWindSpeed(windSpeed) {
+    let windSpeedText = document.getElementById("windSpeed");
+
+    windSpeedText.textContent = windSpeed;
+  }
   useEffect(() => {
     const fetchData = async () => {
       // API
@@ -96,12 +129,17 @@ function Dashboard() {
         );
         console.log("sea Temperature:" + seaTemperature);
         updateSeaTemp(seaTemperature);
+
+        let windSpeed = Math.floor(responseJson[0]["wind_speed (m s-1)"] * 3.6);
+        console.log("wind speed:" + windSpeed);
       } catch (error) {
         console.log(error);
       }
     };
     fetchData();
   }, []);
+
+  //WEATHER API FROM HOME
 
   return (
     <div className="dashboard-wrapper">
@@ -162,7 +200,7 @@ function Dashboard() {
           <div className="main-forecast-container">
             <div className="dashboard-temperature-card-top">
               <h1>
-                <span id="dashboard-temperature-label">24 º</span>
+                <span id="dashboard-temperature-label">24</span>
               </h1>
               <img
                 src={sunIcon}
@@ -173,7 +211,7 @@ function Dashboard() {
               />
             </div>
             <div className="dashboard-temperature-container">
-              <p id="dashboard-weather-condition-label">Sunny</p>
+              <p id="dashboard-weather-condition-label">sunny</p>
               <div>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -237,7 +275,7 @@ function Dashboard() {
                     className="dashboard-forecast-prediction-value"
                     id="windSpeedLeft"
                   >
-                    <small>km/h</small>
+                    <small>k/hm</small>
                   </p>
                 </div>
               </article>
