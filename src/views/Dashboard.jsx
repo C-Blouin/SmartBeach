@@ -104,7 +104,10 @@ function Dashboard() {
     let windSpeedText = document.getElementById("windSpeedLeft");
 
     windSpeedText.textContent = windSpeed + " k/mh";
+
+    //if else logic for safety indicators
   }
+
   useEffect(() => {
     const fetchData = async () => {
       // API
@@ -134,6 +137,7 @@ function Dashboard() {
         let windSpeed = Math.floor(responseJson[0]["wind_speed (m s-1)"] * 3.6);
         console.log("wind speed:" + windSpeed);
         updateWindSpeed(windSpeed);
+
       } catch (error) {
         console.log(error);
       }
@@ -208,6 +212,10 @@ function Dashboard() {
     '13n': snowyIconNight,                
   };
   
+   // Get the Weather Icon Code from the API, to pass it into the weatherIcons object to retrieve the corresponding weather icon for display.
+   const iconCode = weatherData && weatherData.list[0].weather[0].icon;
+   const weatherIcon = weatherIcons[iconCode];
+
   return (
     <div className="dashboard-wrapper">
       <div className="dashboard-body">
@@ -270,7 +278,7 @@ function Dashboard() {
                 <span id="dashboard-temperature-label">{temperature}</span>
               </h1>
               <img
-                src={sunIcon}
+                src={weatherIcon}
                 width="67"
                 height="67"
                 id="weather-icon"
@@ -365,7 +373,7 @@ function Dashboard() {
                     width="50"
                     height="50"
                   />
-                  <p className="dashboard-forecast-prediction-value">
+                  <p className="dashboard-forecast-prediction-value" id="humidityPercentage">
                     8 <small>%</small>
                   </p>
                 </div>
