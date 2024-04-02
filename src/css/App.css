@@ -1557,7 +1557,7 @@ footer>nav {
 
 .contact-container::after {
   content: url(/src/images/contact/decor-vector-desktop.png);
-  right:0;
+  right: 0;
   top: 0;
   position: absolute;
 }
@@ -1590,7 +1590,7 @@ footer>nav {
   font-weight: 400;
 }
 
-.contact-info > p {
+.contact-info>p {
   margin: 1rem 0 1.75rem 0;
 }
 
@@ -1752,15 +1752,15 @@ footer>nav {
 
     .contact-info,
     .contact-us .contact-us-form {
-        width: 100%;            
+      width: 100%;
     }
 
     .contact-us .contact-us-form {
       padding: 0;
     }
 
-    .contact-us .contact-us-form form {      
-      padding: 25px 15px 45px 15px;     
+    .contact-us .contact-us-form form {
+      padding: 25px 15px 45px 15px;
     }
 
   }
@@ -1785,20 +1785,20 @@ footer>nav {
 
 /* Start of About the Project Page Styles */
 
-.about-container, 
+.about-container,
 .contact-container,
 .beach-info-container {
-    margin-top: -180px;
-    padding-top: 380px;
-    background-color: var(--primary-background);
-    background-image: url(/src/images/contact/desktop-header-narrow-light.png);
-    background-repeat: no-repeat;
-    overflow: hidden;
+  margin-top: -180px;
+  padding-top: 380px;
+  background-color: var(--primary-background);
+  background-image: url(/src/images/contact/desktop-header-narrow-light.png);
+  background-repeat: no-repeat;
+  overflow: hidden;
 }
 
 @media screen and (max-width: 1200px) {
 
-  .about-container, 
+  .about-container,
   .contact-container,
   .beach-info-container {
     margin-top: -45px;
@@ -1806,7 +1806,7 @@ footer>nav {
     background-image: url(/src/images/contact/header-bg-desktop.jpg);
     background-size: auto;
   }
-  
+
   .contact-container::after {
     content: "";
   }
@@ -1814,6 +1814,7 @@ footer>nav {
 }
 
 @media screen and (max-width: 1000px) {
+
   .about-container,
   .contact-container,
   .beach-info-container {
@@ -1823,6 +1824,7 @@ footer>nav {
 }
 
 @media screen and (max-width: 365px) {
+
   .about-container,
   .contact-container,
   .beach-info-container {
@@ -1853,7 +1855,7 @@ footer>nav {
   flex-wrap: wrap;
   gap: 4rem;
   margin: 3rem 0 12rem 0;
-  
+
 }
 
 .about-the-project-info img {
@@ -1997,7 +1999,7 @@ footer>nav {
 
 /* Align the navigation menu contents to the start of the container, to prevent content cutoff. */
 @media screen and (max-width: 1200px) {
-  
+
   .dashboard-menu {
     justify-content: flex-start;
     padding: 0 5rem;
@@ -2018,12 +2020,12 @@ footer>nav {
   padding-bottom: 120px;
 }
 
-.dashboard-wrapper > p{
+.dashboard-wrapper>p {
   color: var(--primary-body);
 }
 
 /*2 cols w/ space between*/
-.dashboard-widgets-grid-container{
+.dashboard-widgets-grid-container {
   display: flex;
   justify-content: space-between;
   align-items: start;
@@ -2033,7 +2035,7 @@ footer>nav {
 /*Forecast component styles*/
 
 /* Temperature card styles*/
-.dashboard-forecast-container{
+.dashboard-forecast-container {
   /*Add space between menu*/
   margin-top: 24px;
 }
@@ -2048,7 +2050,7 @@ footer>nav {
   margin: 1rem 0;
 }
 
-.dashboard-temperature-container > div {
+.dashboard-temperature-container>div {
   display: flex;
   align-items: center;
 }
@@ -2057,7 +2059,7 @@ footer>nav {
   margin: 0;
 }
 
-.dashboard-temperature-card-top{
+.dashboard-temperature-card-top {
   /*Have temp label sit left & 
   weatherIcon sit at the right end of container*/
   display: flex;
@@ -2075,13 +2077,13 @@ footer>nav {
 /*Weather widget small cards*/
 .dashboard-data-card-container {
   gap: 8px;
-    /* Two columns */
+  /* Two columns */
   display: grid;
-  grid-template-columns: repeat(2, 1fr); 
+  grid-template-columns: repeat(2, 1fr);
 }
 
 /*small card styles.*/
-.dashboard-data-card{
+.dashboard-data-card {
   background-color: var(--white);
   /*Card sizing*/
   height: 170px;
@@ -2104,7 +2106,7 @@ footer>nav {
       padding: 0.5rem 0.75rem;
     }
   }
-  
+
 }
 
 /* Push danger label to right end*/
@@ -2117,7 +2119,7 @@ footer>nav {
   gap: 3.5rem;
 }
 
-.dashboard-data-card-top > p {
+.dashboard-data-card-top>p {
   margin: 0;
 }
 
@@ -2126,7 +2128,8 @@ footer>nav {
   flex-direction: column;
 }
 
-.dashboard-data-card img, .dashboard-card-bottom p {
+.dashboard-data-card img,
+.dashboard-card-bottom p {
   max-width: 100%;
   margin-top: 0.75rem;
 }
@@ -2153,7 +2156,7 @@ footer>nav {
 
 }
 
-.dashboard-forecast-prediction-value{
+.dashboard-forecast-prediction-value {
   /*Makes the text stand out more
   same styles from .hero-forecast*/
   font-size: clamp(18px, 5vw, 22px);
@@ -2162,7 +2165,7 @@ footer>nav {
   margin: 0;
 }
 
-.dashboard-temperature-wrapper > small:first-of-type{
+.dashboard-temperature-wrapper>small:first-of-type {
   margin-right: 22px;
 }
 
@@ -2177,14 +2180,14 @@ footer>nav {
   padding: 24px;
 }
 
-.safety-indicators-top{
+.safety-indicators-top {
   display: flex;
   justify-content: space-between;
   align-items: start;
   margin-bottom: 1.75rem;
 }
 
-.safety-indicators-top > h2 {
+.safety-indicators-top>h2 {
   margin: 0;
   max-width: 200px;
 }
@@ -2193,10 +2196,10 @@ footer>nav {
   border: none;
   appearance: none;
   background-color: transparent;
-  cursor: pointer; 
+  cursor: pointer;
 }
 
-.safety-indicators-top .tooltip-toggle > img {
+.safety-indicators-top .tooltip-toggle>img {
   width: 30px;
   height: auto;
 }
@@ -2213,28 +2216,28 @@ footer>nav {
   margin-top: 0;
 }
 
-.safety-indicators li:not(:last-of-type){
+.safety-indicators li:not(:last-of-type) {
   border-bottom: 1px solid var(--blue-accent-5);
 }
 
-.safety-indicators-left-content > p {
+.safety-indicators-left-content>p {
   max-width: 100px;
 }
 
-.safety-indicators-left-content > p, 
-.safety-indicators-right-content > p {
+.safety-indicators-left-content>p,
+.safety-indicators-right-content>p {
   margin: 0;
   font-size: clamp(var(--mobile-body), 3vw, var(--desktop-body));
 }
 
-.safety-indicators-left-content, 
+.safety-indicators-left-content,
 .safety-indicators-right-content {
   margin-bottom: 16px;
   align-items: center;
   gap: 0.75rem;
 }
 
-.safety-indicators-left-content > img {
+.safety-indicators-left-content>img {
   width: 50px;
   height: auto;
 }
@@ -2257,11 +2260,11 @@ footer>nav {
 
   }
 
-  .safety-indicators-left-content > img {
+  .safety-indicators-left-content>img {
     width: 35px;
   }
 
-  .dashboard-widgets-grid-container{
+  .dashboard-widgets-grid-container {
     flex-direction: column;
   }
 
@@ -2280,6 +2283,7 @@ footer>nav {
   }
 
   @media screen and (max-width: 600px) {
+
     .dashboard-widgets-grid-container,
     .main-forecast-container,
     .dashboard-menu {
@@ -2288,12 +2292,13 @@ footer>nav {
   }
 
   @media screen and (max-width: 500px) {
+
     .dashboard-widgets-grid-container,
     .main-forecast-container,
     .dashboard-menu {
       padding: 0;
     }
-  
+
   }
 
 }
@@ -2307,11 +2312,11 @@ footer>nav {
   .safety-indicators li {
     gap: 2rem;
   }
-  
+
 }
 
 /*Safety indic box styles*/
-.safety-indicators-right-content{
+.safety-indicators-right-content {
   background-color: var(--section-background);
   border-radius: 4px;
   padding: 3px 6px;
@@ -2327,7 +2332,7 @@ footer>nav {
   display: flex;
 }
 
-.dashboard-safety-indicators .safety-indicators-left-content > img {
+.dashboard-safety-indicators .safety-indicators-left-content>img {
   background-color: var(--primary-blue);
   border-radius: 50%;
 }
@@ -2348,7 +2353,7 @@ footer>nav {
   font-size: clamp(var(--mobile-h1), 5vw, var(--desktop-h1));
   color: var(--primary-heading);
   font-weight: 800;
-  margin: 27px auto ;
+  margin: 27px auto;
   text-align: center;
 }
 
