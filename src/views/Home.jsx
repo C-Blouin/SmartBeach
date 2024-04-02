@@ -52,6 +52,33 @@ function Home() {
 
   document.title = "SmartBeach | Home";
 
+
+  // Buoy Data API Fetch
+  const [buoyData, setBuoyData] = useState(null);
+
+  useEffect(() => {
+    const fetchBuoyData = async () => {
+      // Buoy Data API Data URL.
+      const apiUrl = "https://micbrucecounty22f.onrender.com/get-predict";
+
+      try {
+        let response = await fetch(apiUrl, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+        let responseJson = await response.json();
+        setBuoyData(responseJson);
+        console.log(responseJson);          
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchBuoyData();
+  }, []);
+
+
   // Setting the initial state of the weather data to null, which will be populated later with the fetched data from the API.
   const [weatherData, setWeatherData] = useState(null);
 
@@ -102,9 +129,14 @@ function Home() {
   const maxTemperature = weatherData && Math.round(convertKelvinToCelsius(weatherData.list[0].temp.max)) + "°";
   // Weather Condition (Light Snow, Sunny, etc). Passing it through the capitalizeEachWord function to capitalize the first letter of each word for consistentcy.
   const condition = weatherData && capitalizeEachWord(weatherData.list[0].weather[0].description);
+ 
   // Wind Speed & Gusts, these values are in meters per second, but we want to display it in kilometers per hour, using the formula: (m/s * 3.6) = km/h, and fixing the value to to 2 decimal places.
   const windSpeed = weatherData && Math.round((weatherData.list[0].speed * 3.6).toFixed(2));
-  // Wind Gusts, converting meters per second to kilometers per hour
+
+  // Buoy Wind Speed is more accurate than the weather API, so we will use the buoy data for the wind speed.
+  const buoyWindSpeed = buoyData && Math.floor(buoyData[0]["wind_speed (m s-1)"] * 3.6);
+
+  // Wind Gusts, converting meters per second to kilometers per hour. NOTE: WE SHOULD REVISIT THE WIND DATA TO SEE IF WE CAN GET GUSTS FROM THE BUOY DATA.
   const windGusts = weatherData && Math.round((weatherData.list[0].gust * 3.6).toFixed(2));
   // Humidity
   const humidity = weatherData && weatherData.list[0].humidity;
@@ -124,18 +156,18 @@ function Home() {
   // Wind Speed Conditional Logic Effect Hook
   useEffect(() => {
     // Wind Speed Indicator
-    if (windSpeed > 20 && windSpeed < 40) {
+    if (buoyWindSpeed > 20 && buoyWindSpeed < 40) {
       setWindSpeedIndicatorSrc(cautionIndicator);
       setWindSpeedIndicatorAlt("Caution Indicator");
-    } else if (windSpeed >= 40) { 
+    } else if (buoyWindSpeed >= 40) { 
       setWindSpeedIndicatorSrc(dangerIndicator);
       setWindSpeedIndicatorAlt("Danger Indicator");
     } else {
       setWindSpeedIndicatorSrc(safeIndicator);
       setWindSpeedIndicatorAlt("Safe Indicator");
     }
-    // Passing in windSpeed into the useEffect hook to consistently adjust the value change logic.
-  }, [windSpeed]);
+    // Passing in buoyWindSpeed into the useEffect hook to consistently adjust the value change logic.
+  }, [buoyWindSpeed]);
 
   // Wind Gusts State Initialization
   const [windGustsIndicatorSrc, setWindGustsIndicatorSrc] = useState(safeIndicator);
@@ -301,7 +333,7 @@ function Home() {
               </div>
               <img src={windSpeedImage} alt="Wind Speed Icon" />
               <p>
-                {windSpeed} <small>km/h</small>
+                {buoyWindSpeed} <small>km/h</small>
               </p>
             </article>
 
