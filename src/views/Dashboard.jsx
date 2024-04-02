@@ -672,12 +672,12 @@ function Dashboard() {
                       <p>UV</p>
                     </div>
                     <div className="safety-indicators-right-content">
-                      <p>dangerous</p>
+                      <p>Safe</p>
                       <img
-                        src={dangerIndicator}
+                        src={safeIndicator}
                         width="19"
                         height="19"
-                        alt="danger-indicator"
+                        alt="safe-indicator"
                       />
                     </div>
                   </li>
@@ -773,12 +773,12 @@ function Dashboard() {
                       <p>Air Quality</p>
                     </div>
                     <div className="safety-indicators-right-content">
-                      <p>moderate</p>
+                      <p>Safe</p>
                       <img
-                        src={cautionIndicator}
+                        src={safeIndicator}
                         width="19"
                         height="19"
-                        alt="moderate-indicator"
+                        alt="safe-indicator"
                       />
                     </div>
                   </li>
