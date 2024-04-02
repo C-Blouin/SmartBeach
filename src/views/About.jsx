@@ -24,7 +24,7 @@ function About() {
               </p>
               <p>
                 Dr. Houser, the Dean of the Faculty of Science at the University
-                of Windsor, heads the Coastal Research Group. This team of
+                of Waterloo, heads the Coastal Research Group. This team of
                 dedicated researchers assesses drowning hazards posed by rip
                 currents in various field sites, including the Great Lakes, the
                 Maritimes, and Costa Rica.
