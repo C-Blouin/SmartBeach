@@ -40,10 +40,9 @@ function About() {
                 We are deeply concerned about the rising number of drownings in
                 the Great Lakes. In 2022 alone, there have been 47 confirmed
                 drownings and 12 rescues. Since 2010, 1,093 drownings have been
-                confirmed in the Great Lakes. Our team, by utilizing a buoy at
-                Kincardine’s Station Beach, is actively collecting data to examine
-                if inshore water movement (wave conditions and currents) and
-                drowning incidents can be predicted.
+                confirmed in the Great Lakes. By utilizing a buoy at
+                Kincardine’s Station Beach, our team is actively collecting data to examine
+                if tracking inshore water movement (wave conditions and currents) can help us reduce drowning incidents.
               </p>
               <p>
                 We believe that our work can help save lives and create a safer
