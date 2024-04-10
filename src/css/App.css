@@ -226,6 +226,7 @@ nav ul li a:hover,
   max-width: 1800px;
   margin: 0 auto;
   z-index: 99;
+  padding: 0;
 }
 
 /* Primary Navigation Links */
@@ -326,7 +327,7 @@ div .navbar-toggler:focus {
 
 /* Social link hover */
 .social-links-container a:hover {
-  background-color: var(--primary-slate);
+  background-color: var(--blue-accent-2);
 }
 
 /* Navigation Media Query, at 1200px Max Width, Apply the following properties. */
@@ -423,6 +424,11 @@ div .navbar-toggler:focus {
     .social-links-container a:hover {
       background-color: transparent;
     }
+
+    header .logo {
+      width: 140px;
+    }
+
   }
 
 }
@@ -496,8 +502,18 @@ footer>nav {
 
   /* Mobile footer spacing of the navigation items. */
   .footer-top ul .nav-item {
-    margin: 0.75rem 0;
+    margin: 0 0 1rem 0;
     padding: 0;
+    font-weight: 600;
+    font-size: 18px;
+  }
+
+  .footer-top ul .nav-item:nth-of-type(1) {
+    margin-top: 0.75rem;
+  }
+
+  .footer-top ul .nav-item:last-of-type {
+    margin-bottom: 0.5rem;
   }
 
   .footer-top ul .nav-item .nav-link {
@@ -512,6 +528,10 @@ footer>nav {
   .social-links-container a svg {
     width: 27px;
     height: 25px;
+  }
+
+  footer .social-links-container a {
+    margin-right: 1.75rem;
   }
 
   /* Adjust padding to keep consistent with header. */
@@ -1956,7 +1976,7 @@ footer>nav {
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  background-color: var(--slate-accent-5);
+  background-color: #e8e9eb;
   border-radius: 5rem;
 }
 
