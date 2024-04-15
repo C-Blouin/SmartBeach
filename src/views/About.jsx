@@ -17,7 +17,7 @@ function About() {
               <p>
                 Welcome to the official website of the SmartBeach project at
                 Station Beach in Kincardine, Ontario, led by Dr. Chris Houser from
-                the University of Windsor. Our initiative aims to develop an
+                the University of Waterloo. Our initiative aims to develop an
                 integrated sensor network that will provide a real-time and
                 locally calibrated risk and hazard warning system for beach users
                 and local authorities.
