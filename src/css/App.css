@@ -1814,6 +1814,7 @@ footer>nav {
   background-image: url(/src/images/contact/desktop-header-narrow-light.png);
   background-repeat: no-repeat;
   overflow: hidden;
+  background-size: contain;
 }
 
 @media screen and (max-width: 1200px) {
