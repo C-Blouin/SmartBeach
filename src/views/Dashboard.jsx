@@ -94,7 +94,8 @@ function Dashboard() {
       // Try to fetch the data, if there is an error, log the error to the console.
       try {
         const response = await fetch(
-          "https://api.openweathermap.org/data/2.5/forecast/daily?lat=44.18339&lon=-81.63307&cnt=7&appid=b50c1df1821232d52ebcfef4330bb7d6"
+          // "https://api.openweathermap.org/data/2.5/forecast/daily?lat=44.18339&lon=-81.63307&cnt=7&appid=b50c1df1821232d52ebcfef4330bb7d6"
+          "https://api.openweathermap.org/data/2.5/forecast/daily?lat=44.18339&lon=-81.63307&cnt=7&appid=acf18add5a12d3c71802ca9d98bf29d3"
         );
         if (!response.ok) {
           console.log(
